@@ -1,0 +1,28 @@
+.nav {
+    display: flex;
+    flex-direction: row;
+
+    &-item {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex: 1;
+        padding: .6rem 1.2rem;
+        color: var(--white--300);
+
+        &:nth-child(1) {
+            background-color: var(--grey--100);
+        }
+        &:nth-child(2) {
+            background-color: var(--grey--200);
+        }
+        &:nth-child(3) {
+            background-color: var(--grey--400);
+        }
+
+        &__number, &__page {
+            font-size: 1.4rem;
+            font-weight: 400;
+        }
+    }
+}

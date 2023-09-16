@@ -1,0 +1,118 @@
+.hello {
+    display: flex;
+    flex-direction: row;
+    padding: 1.2rem;
+    background-color: var(--white--0);
+    color: var(--blue--0);
+
+    [class^='hello__main-block'] {
+        display: flex;
+        flex: 1;
+    }
+
+    &__content {
+        gap: 1.2rem;
+    }
+
+    &__main {
+        &-block {
+            &--description, &--dropdown {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            &--description {
+                width: 50%;
+                font-size: 3.2rem;
+            }
+            &--dropdown {
+                flex-direction: column;
+                border-top: 1px solid var(--blue--0);
+            }
+        }
+    }
+    &__dropdown {
+        &-tabs {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        &-tab {
+            &--fields {
+                max-height: 0;
+                overflow: hidden;
+            }
+            &--tools {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                padding: 1.2rem;
+                border: 1px solid var(--blue--0);
+                border-top: none;
+            }
+        }
+
+        &-buttons {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 1.8rem 0 .6rem 0;
+        }
+
+        &-fields {
+            flex: 1;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            &-item {
+                list-style: none;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                padding: 1.2rem 1.2rem 1.2rem 0;
+                border-bottom: 1px solid var(--blue--0);
+                font-size: 1.6rem;
+            }
+        }
+        &-tools {
+
+            &-row {
+                flex: 1;
+                display: flex;
+                justify-content: space-between;
+
+                &:nth-child(2) {
+                    align-items: center;
+                }
+                &:nth-child(3) {
+                    align-items: flex-end;
+                }
+            }
+
+            &-item {
+                font-size: 1.6rem;
+            }
+        }
+    }
+}
+
+.btn--hello-dropdown {
+    &-toggler {
+        display: none;
+    }
+    &-label {
+        font-size: 1.6rem;
+        font-family: 'Poppins';
+        padding: .6rem 1.2rem;
+        border: 1px solid var(--blue--0);
+        border-radius: 2.4rem;
+
+        &:hover {
+            background-color: var(--blue--0);
+            color: var(--white--100);
+        }
+    }
+}
+
+
