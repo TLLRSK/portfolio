@@ -1,0 +1,43 @@
+.contact {
+    color: var(--grey--0);
+    background-color: var(--blue--100);
+    padding: 1.2rem;
+    
+    &__content {
+        gap: 1.2rem;
+    }
+    &__subtitle {
+        display: flex;
+        align-items: flex-end;
+        writing-mode: vertical-lr;
+        text-orientation: upright;
+        font-size: 1.4rem;
+    }
+
+    &__mail {
+        flex: 1;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
+
+    &__sublinks-list {
+        display: flex;
+        justify-content: space-between;
+        &-item {
+            padding: 1.2rem .6rem;
+            color: var(--grey--0);
+        }
+    }
+}
+
+.link--contact-mail {
+    color: var(--grey--0);
+    font-size: 4.8rem;
+    font-weight: 600;
+    text-align: right;
+}
+.link--contact-sublink {
+    font-size: 1.6rem;
+    color: var(--grey--0);
+}
