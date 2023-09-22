@@ -1,0 +1,19 @@
+.project__visit {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.link--project-visit {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    font-size: 3.2rem;
+    gap: 1.2rem;
+    color: var(--black--0);
+}
+.arrow--project-visit {
+    width: 3.2rem;
+    height: 3.2rem;
+    border: 1px solid;
+}

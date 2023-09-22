@@ -1,7 +1,5 @@
 .contact {
-    color: var(--grey--0);
-    background-color: var(--blue--100);
-    padding: 1.2rem;
+    color: var(--white--300);
     
     &__content {
         gap: 1.2rem;
@@ -25,19 +23,17 @@
         display: flex;
         justify-content: space-between;
         &-item {
-            padding: 1.2rem .6rem;
-            color: var(--grey--0);
         }
     }
 }
 
 .link--contact-mail {
-    color: var(--grey--0);
-    font-size: 4.8rem;
+    color: var(--white--300);
+    font-size: 9.6rem;
     font-weight: 600;
-    text-align: right;
+    text-align: left;
 }
 .link--contact-sublink {
     font-size: 1.6rem;
-    color: var(--grey--0);
+    color: var(--white--300);
 }

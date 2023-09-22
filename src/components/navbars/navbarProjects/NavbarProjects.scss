@@ -1,0 +1,26 @@
+[class^='navbar-projects-link'] {
+    display: flex;
+    gap: 1.2rem;
+    border-radius: 2.4rem;
+    padding: .6rem 1.2rem;
+    
+    & p {
+        font-size: 1.6rem;
+    }
+}
+
+.navbar-projects {
+    display: flex;
+    justify-content: space-between;
+
+    &-link {
+        &--previous {
+           border-left: 1px solid;
+           color: var(--black--0);
+        }
+        &--next {
+            border-right: 1px solid;
+            color: var(--black--0);
+        }
+    }
+}
