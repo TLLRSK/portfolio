@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default function Work() {
     return <section className="work">
         <article className="work__content">
-            <HeaderSection/>
+            <HeaderSection section={'Work'} color={'color--black--0'}/>
             <main className="work__main">
                 <div className="work__main-block--top">
                     <div className="work__filter">
@@ -30,19 +30,19 @@ export default function Work() {
                 </div>
 
                 <div className="work__projects">
-                    <Link className="work__project-tab link">
+                    <Link to='project/aboutme' className="work__project-tab link">
                         <p className="work__project-title">ABOUTME</p>
                         <div className="work__project-arrow"></div>
                     </Link>
-                    <Link className="work__project-tab link">
+                    <Link to='project/todoapp' className="work__project-tab link">
                         <p className="work__project-title">TODOAPP</p>
                         <div className="work__project-arrow"></div>
                     </Link>
-                    <Link className="work__project-tab link">
+                    <Link to='project/quoteapp' className="work__project-tab link">
                         <p className="work__project-title">QUOTEAPP</p>
                         <div className="work__project-arrow"></div>
                     </Link>
-                    <Link className="work__project-tab link">
+                    <Link to='project/robbertas' className="work__project-tab link">
                         <p className="work__project-title">ROBBERTAS</p>
                         <div className="work__project-arrow"></div>
                     </Link>

@@ -4,12 +4,12 @@ import HeaderSection from "../../components/headers/headerSection";
 export default function Hello() {
     return <section className="hello">
         <article className='hello__content'>
-            <HeaderSection/>
+        <HeaderSection section={'Hello'} color={'color--blue--0'}/>
             <main className='hello__main'>
                 <div className="hello__main-block--description">
                     <div className="hello__main-description">
                         <p>I’m Pedro J. Gil</p>
-                        <p>~ a Visual Dev & UX/UI Enginer based in Valencia (Spain).</p>
+                        <p>~ a <br/>Visual Dev & UX/UI Enginer <br/>based in Valencia (Spain).</p>
                     </div>
                 </div>
                 <div className="hello__main-block--dropdown">
@@ -44,39 +44,39 @@ export default function Hello() {
                         <div className="hello__dropdown-tab--tools">
                             <div className='hello__dropdown-tools-row'>
                                 <div className="hello__dropdown-tools-item">
-                                    <p>TECH</p>
+                                    <p>HTML</p>
                                 </div>
 
                                 <div className="hello__dropdown-tools-item">
-                                    <p>TECH</p>
+                                    <p>CSS</p>
                                 </div>
 
                                 <div className="hello__dropdown-tools-item">
-                                    <p>TECH</p>
-                                </div>
-                            </div>
-
-                            <div className='hello__dropdown-tools-row'>
-                                <div className="hello__dropdown-tools-item">
-                                    <p>TECH</p>
-                                </div>
-
-                                <div className="hello__dropdown-tools-item">
-                                    <p>TECH</p>
+                                    <p>SASS</p>
                                 </div>
                             </div>
 
                             <div className='hello__dropdown-tools-row'>
                                 <div className="hello__dropdown-tools-item">
-                                    <p>TECH</p>
+                                    <p>JS</p>
                                 </div>
 
                                 <div className="hello__dropdown-tools-item">
-                                    <p>TECH</p>
+                                    <p>REACT</p>
+                                </div>
+                            </div>
+
+                            <div className='hello__dropdown-tools-row'>
+                                <div className="hello__dropdown-tools-item">
+                                    <p>PHP</p>
                                 </div>
 
                                 <div className="hello__dropdown-tools-item">
-                                    <p>TECH</p>
+                                    <p>WORDPRESS</p>
+                                </div>
+
+                                <div className="hello__dropdown-tools-item">
+                                    <p>FIGMA</p>
                                 </div>
                             </div>
                         </div>

@@ -2,40 +2,15 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border-bottom: 1px solid;
 
     &-title {
         font-size: 2.0rem;
+        font-style: italic;
         font-weight: 300;
     }
 
-    // Close button
-    .btn-close {
-        &-toggler {
-            appearance: none;
-            position: absolute;
-        }
-        &-cross {
-            display: flex;
-            width: 2.4rem;
-            height: 2.4rem;
-            position: relative;
-
-            &-stick {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                width: 2.4rem;
-                height: .1rem;
-                background-color: var(--grey--300);
-
-                &:nth-child(1) {
-                    transform: translate(-50%, -50%) rotate(-45deg);
-                }
-                &:nth-child(2) {
-                    transform: translate(-50%, -50%) rotate(45deg);
-                }
-            }
-        }
+    &-home-btn {
+        font-size: 2.4rem;
     }
+    
 }

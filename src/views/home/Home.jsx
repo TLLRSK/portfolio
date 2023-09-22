@@ -1,18 +1,17 @@
 import './Home.scss';
 export default function Home() {
     return <section className="home">
-        <div className="home__main-block--top">
-            <h1 className="home-title">~ PJ GV</h1>
+        <header className="home__header">
+            <h1 className="home-title">PJ ~</h1>
 
             <div className="home-blank-box"></div>
-        </div>
+        </header>
 
-        <div className="home__main-block--center blurred">
+        <div className="home__main-block">
+            <div className="home__description">
+                <p>Crafting cutie digital experiences</p>
+            </div>
             <div className="home-ellipse"></div>
-        </div>
-
-        <div className="home__main-block--botom">
-            <h2 className="home-subtitle">developing</h2>
         </div>
     </section>
 }

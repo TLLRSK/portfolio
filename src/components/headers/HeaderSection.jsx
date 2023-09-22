@@ -1,17 +1,15 @@
+import { Link } from 'react-router-dom';
 import './HeaderSection.scss';
 
-export default function HeaderSection() {
+export default function HeaderSection(props) {
+    let {section,color} = props;
     return <header className="section__header">
         <h2 className="section__header-title">
-            SECTION
+            {section}
         </h2>
 
-        <div className="section__close-btn">
-            <input type="checkbox" id="btn-close-toggler" className="btn-close-toggler"/>
-            <label htmlFor="btn-close-toggler" className="btn-close-cross">
-                <span className="btn-close-cross-stick"></span>
-                <span className="btn-close-cross-stick"></span>
-            </label>
-        </div>
+        <Link to='/' className={`section__header-home-btn link ${color}`}>
+            <p>PJ</p>
+        </Link>
     </header>
 }
