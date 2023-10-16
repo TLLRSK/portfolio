@@ -1,21 +1,47 @@
 import './Contact.scss'
 import HeaderSection from "../../components/headers/headerSection";
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 export default function Contact() {
+
+    // HANDLING WINDOW SIZE
+    // media queries
+    const mediaQueryMobile = 720;
+    const mediaQueryDesktop = 1280;
+
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+        
+        window.addEventListener('resize', handleResize);
+        
+        return () => {
+        window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
+    // checking if resize's working
+    useEffect(() => {
+        console.log(windowWidth) 
+    }, [windowWidth]);
+    
     return <section className="contact">
         <article className='contact__content'>
-            <HeaderSection section={'Contact'} color={'color--white--300'}/>
+            <HeaderSection section={'Contact'} color={'color--white--200'}/>
             <main className='contact__main'>
                 <div className='contact__subtitle'>
-                    <div>
-                        <p>Get in touch</p>
-                    </div>
+                    <p>Get</p>
+                    <p>in</p>
+                    <p>touch</p>
                 </div>
 
                 <div className='contact__mail'>
                     <Link to='mailto:' className='link--contact-mail link'>
-                        <p>HI@<br/>PEDRO<br/>JGIL<br/>.COM</p>
+                        {windowWidth <= mediaQueryMobile ? <p>HI@<br/>PEDRO<br/>JGIL<br/>.COM</p> : <p>HI@PEDROJGIL.COM</p>}
                     </Link>
                 </div>
                 

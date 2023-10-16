@@ -1,0 +1,15 @@
+@import '../scss/mixins';
+
+.arrow {
+    display: flex;
+    justify-content: flex-end;
+
+    &--up-right {
+        width: 4.8rem;
+        height: 4.8rem;
+        @include mq-720 {
+            width: 6.8rem;
+            height: 6.8rem;
+        }
+    }
+}

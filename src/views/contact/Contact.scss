@@ -1,39 +1,48 @@
+@import '../../scss/mixins';
 .contact {
-    color: var(--white--300);
     
     &__content {
         gap: 1.2rem;
     }
     &__subtitle {
         display: flex;
-        align-items: flex-end;
-        writing-mode: vertical-lr;
-        text-orientation: upright;
+        justify-content: space-between;
         font-size: 1.4rem;
+        padding: 1.2rem;
+        @include mq-720 {
+            font-size: 2rem;
+            padding: 2.4rem;
+        }
     }
 
     &__mail {
         flex: 1;
         display: flex;
-        align-items: flex-end;
-        justify-content: flex-end;
+        align-items: center;
+        justify-content: center;
     }
 
     &__sublinks-list {
         display: flex;
         justify-content: space-between;
+        border-top: 1px solid;
         &-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+            border-right: 1px solid;
+            position: relative;
+            @include mq-720 {
+                font-size: 2rem;
+            }
+
+            &:nth-last-child(1) {
+                border: none;
+            }
         }
     }
-}
-
-.link--contact-mail {
-    color: var(--white--300);
-    font-size: 9.6rem;
-    font-weight: 600;
-    text-align: left;
-}
-.link--contact-sublink {
-    font-size: 1.6rem;
-    color: var(--white--300);
+    & a {
+        color: var(--white--200)
+    }
 }

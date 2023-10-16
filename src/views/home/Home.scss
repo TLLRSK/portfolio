@@ -1,7 +1,6 @@
+@import '../../scss/mixins';
+
 .home {
-    h1, h2, p {
-        color: var(--black--0);
-    }
     &__header {
         display: flex;
         flex-direction: row;
@@ -13,21 +12,30 @@
         flex-direction: column;
         justify-content: flex-end;
         padding: 1.2rem;
-        border: 1px solid var(--black--0);
-        // filter: blur(1.2rem);
+        border: 1px solid;
         
+        @include mq-720 {
+            padding: 2.4rem;
+        }
     }
     &__description {
         font-size: 3.6rem;
+        font-weight: 200;
+        @include mq-720 {
+            font-size: 4.8rem;
+        }
     }
     &-title {
         font-size: 2.4rem;
-        font-weight: 300;
+        font-weight: 400;
+        @include mq-720 {
+            font-size: 4.8rem;
+        }
     }
     &-blank-box {
-        width: 2.4rem;
-        height: 2.4rem;
-        border: 1px solid var(--black--0);
+        width: 4.8rem;
+        height: 4.8rem;
+        border: 1px solid;
     }
     &-subtitle {
         font-size: 1.6rem;
@@ -42,7 +50,12 @@
         transform: translate(-50%, -50%);
         width: 16.4rem;
         height: 16.4rem;
-        border: 1px solid var(--black--0);
-        border-radius: 50%;
+        border: 1px solid;
+        border-radius: 500rem;
+        @include mq-720 {
+            padding: 2.4rem;
+            width: 75%;
+            height: 60%;
+        }
     }
 }
