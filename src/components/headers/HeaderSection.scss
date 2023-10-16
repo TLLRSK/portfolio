@@ -1,3 +1,5 @@
+@import '../../scss/mixins';
+
 .section__header {
     display: flex;
     flex-direction: row;
@@ -7,10 +9,16 @@
         font-size: 2.0rem;
         font-style: italic;
         font-weight: 300;
+        @include mq-720 {
+            font-size: 4rem;
+        }
     }
 
     &-home-btn {
         font-size: 2.4rem;
+        @include mq-720 {
+            font-size: 3.2rem;
+        }
     }
     
 }

@@ -8,39 +8,42 @@ import ProjectTemplate from './views/projects/projectTemplate/ProjectTemplate'
 import { useEffect, useState } from 'react'
 import Navbar from './components/navbars/navbar/Navbar'
 
-
-
 function App() {
 
   // Managing location
   let location = useLocation();
-  {console.log(location.pathname);}
 
   // Setting style by location
+  let [bgColor, setBgColor] = useState('');
   let [color, setColor] = useState('');
 
   // Checking location
   useEffect(() => {
-    console.log(`now we are on ${location.pathname}`);
-    locationColor(location.pathname);
+    return locationColor(location.pathname);
   },[location.pathname])
   
-  // Calling back useState
+  // Calling back setBgColor
   let locationColor = (path) => {
-    switch(path) {
-      case '/' : setColor('color-bg--white--300')
-        break;
-      case '/hello' : setColor('color-bg--white--100')
-        break;
-      case '/work' : setColor('color-bg--white--0')
-        break;
-      case '/contact' : setColor('color-bg--blue--100')
-        break;
+    if (path === '/') {
+        setBgColor('color-bg--yellow');
+        setColor('color--black--300');
+    } else if (path === '/hello') {
+        setBgColor('color-bg--white--0');
+        setColor('color--black--0');
+    } else if (path === '/work') {
+        setBgColor('color-bg--grey--200');
+        setColor('color--black--100');
+    } else if (path.startsWith('/work/project/')) {
+        setBgColor('color-bg--white--0');
+        setColor('');
+    } else if (path === '/contact') {
+        setBgColor('color-bg--black--200');
+        setColor('color--white--200');
     }
-  }
+}
 
   return (
-    <div className={`app ${color}`}>
+    <div className={`app ${bgColor} ${color}`}>
       <Routes>
         <Route path='/' element={<Home/>}></Route>
         <Route path='/hello' element={<Hello/>}></Route>
@@ -48,7 +51,6 @@ function App() {
         <Route path='/work/project/*' element={<ProjectTemplate/>} />
         <Route path='/contact' element={<Contact/>}></Route>
       </Routes>
-
       <Navbar/>
     </div>
   )

@@ -1,7 +1,9 @@
+@import '../../scss/mixins';
+
 .hello {
     display: flex;
     flex-direction: row;
-    color: var(--blue--0);
+    // color: var(--black--0);
 
     [class^='hello__main-block'] {
         display: flex;
@@ -13,103 +15,289 @@
     }
 
     &__main {
-        &-block {
-            &--description, &--dropdown {
-                flex-direction: row;
-                justify-content: space-between;
-            }
-            &--description {
-                font-size: 3.2rem;
-            }
-            &--dropdown {
-                flex-direction: column;
-                border-top: 1px solid var(--blue--0);
-            }
-        }
-    }
-    &__dropdown {
-        &-tabs {
+        gap: 0;
+        overflow: auto;
+
+        &-page {
             flex: 1;
             display: flex;
             flex-direction: column;
+            position: relative;
         }
 
-        &-tab {
-            &--fields {
-                max-height: 0;
-                overflow: hidden;
+        &--page-1, &--page-2 {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 1.2rem;
+
+            @include mq-720 {
+                flex-direction: row;
+                padding: 2.4rem;
             }
-            &--tools {
-                flex: 1;
-                display: flex;
-                flex-direction: column;
-                padding: 1.2rem;
-                border: 1px solid var(--blue--0);
+        }
+        &--page-1 {
+            display: flex;
+            font-weight: 200;
+
+            &.hidden {
+                opacity: 0;
+            }
+            
+        }
+        &--page-2 {
+            position: absolute;
+            inset: 0 0 0 0;
+
+            @include mq-720 {
+                gap: 2.4rem;
+            }
+
+            &.hidden {
+                opacity: 0;
+            }
+        }
+    }
+    
+    
+    &__description-block {
+        &--top, &--bottom {
+            position: relative;
+        }
+        &--top {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding-bottom: 1.2rem;
+            font-size: 3.2rem;
+
+            & p {
+                max-width: 90%;
+            }
+            @include mq-720 {
+                width: 75%;
+                justify-content: flex-start;
+                gap: 2.4rem;
+                font-size: 6.4rem;
+            }
+        }
+        &--bottom {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-top: 1px dashed;
+            gap: 1.2rem;
+            @include mq-720 {
+                justify-content: center;
                 border-top: none;
+                border-left: 1px dashed;
+                font-size: 3.6rem;
+            }
+
+            & p {
+                font-size: 1.6rem;
+                font-weight: 300;
+                font-style: italic;
+                @include mq-720 {
+                    font-size: 2rem;
+                }
             }
         }
 
-        &-buttons {
+    }
+
+    &__description {
+        &-number--1, &-number--2 {
+            position: absolute;
+            font-size: 2rem;
+            font-weight: 300;
+            @include mq-720 {
+                position:inherit;
+                font-size: 3.2rem;
+            }
+        }
+        &-number--1 {
+            inset: 0 auto auto 0;
+        }
+        &-number--2 {
+            inset: 1.2rem 1.2rem auto auto;
+        }
+        &-text--bold {
+            font-weight: 600;
+        }
+        &-basedin {
             display: flex;
             flex-direction: row;
-            justify-content: space-between;
-            padding: 1.8rem 0 .6rem 0;
+            border-bottom: 1px solid;
+            gap: 1.2rem;
+        }
+    }
+   
+    &__fields {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        &-title {
+            font-size: 3.2rem;
+            font-weight: 500;
+            padding-bottom: 1.2rem;
+            @include mq-720 {
+                font-size: 4rem;;
+                padding-bottom: 2.4rem;
+            }
         }
 
-        &-fields {
+        &-list {
             flex: 1;
             margin: 0;
             display: flex;
             flex-direction: column;
+    
+            
             &-item {
+                flex: 1;
                 list-style: none;
                 display: flex;
                 flex-direction: row;
                 align-items: center;
                 justify-content: space-between;
                 padding: 1.2rem 1.2rem 1.2rem 0;
-                border-bottom: 1px solid var(--blue--0);
+                border-top: 1px dashed;
                 font-size: 2rem;
+                @include mq-720 {
+                    padding: 2.4rem 2.4rem 2.4rem 0;
+                    font-size: 4rem;
+                    font-weight: 300
+                }
+    
+                & span {
+                    font-size: 1.4rem;
+                    font-weight: 300;
+                    @include mq-720 {
+                        font-size: 2rem;
+                    }
+                }
             }
         }
-        &-tools {
 
-            &-row {
-                flex: 1;
-                display: flex;
-                justify-content: space-between;
+    }
 
-                &:nth-child(2) {
-                    align-items: center;
-                }
-                &:nth-child(3) {
-                    align-items: flex-end;
-                }
+    &__tools {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        &-title {
+            font-size: 3.2rem;
+            font-weight: 500;
+            padding-bottom: 1.2rem;
+            @include mq-720 {
+                font-size: 4rem;
+                padding-bottom: 2.4rem;
             }
+        }
+
+        &-grid {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: repeat(3,1fr);
+            border: 1px dashed;
+            padding: 1.2rem;
 
             &-item {
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 font-size: 2rem;
+
+                @include mq-720 {
+                    font-size: 4rem;
+                    font-weight: 300;
+                }
+
+                &:nth-child(1), &:nth-child(2), &:nth-child(3) {
+                    align-items: flex-start;
+                }
+                &:nth-child(7), &:nth-child(8), &:nth-child(9) {
+                    align-items: flex-end;
+                }
+                &:nth-child(1), &:nth-child(4), &:nth-child(7) {
+                    justify-content: flex-start;
+                }
+                &:nth-child(3), &:nth-child(6), &:nth-child(9) {
+                    justify-content: flex-end;
+                }
+            }
+        }
+
+        &-item {
+            font-size: 2rem;
+        }
+    }
+
+    &__page-switch {
+        appearance: none;
+
+        &:checked {
+            & ~ label {
+                & .hello__page-toggler-arrow {
+                    border-left: none;
+                    border-right: 1px solid;
+                }
             }
         }
     }
-}
 
-.btn--hello-dropdown {
-    &-toggler {
-        display: none;
-    }
-    &-label {
-        font-size: 1.6rem;
-        font-family: 'Poppins';
-        padding: .6rem 1.2rem;
-        border: 1px solid var(--blue--0);
-        border-radius: 2.4rem;
+    &__page-toggler {
+        display: flex;
+        align-items: center;
+        border-top: 1px dashed;
+        background: none;
+        // color: var(--black--0);
 
-        &:hover {
-            background-color: var(--blue--0);
-            color: var(--white--100);
+        &-block {
+            flex: 1;
+            display: flex;
+            flex-direction: row;
+            @include mq-720 {
+                &:hover {
+                    cursor: pointer;
+                    & > .hello__page-toggler-pusher {
+                        max-width: 15%;
+                    }
+                    & > .hello__page-toggler-pusher.active {
+                        max-width: 45%;
+                    }
+                }
+            }
+        }
+
+        &-pusher {
+            flex: 1;
+            max-width: 12%;
+            transition: max-width .1s ease-in-out;
+
+            &.active {
+                max-width: 50%;
+                @include mq-720 {
+                }
+            }
+        }
+
+        &-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 4.8rem;
+            border-left: 1px solid;
+            border-radius: 4.8rem;
+            padding: 0 1.2rem;
+            gap: 1.2rem;
+            font-size: 2rem;
+            font-weight: 300;
         }
     }
 }
-
 

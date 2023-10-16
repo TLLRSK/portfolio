@@ -1,10 +1,10 @@
-export default function ArrowForward({className}) {
+export default function ArrowBackward({className}) {
     return <div className="arrow"> 
         <svg version="1.1"
         id="Layer_1"
         viewBox="0 0 48 48"
         className={className}>
-        <path d="M24,1.7L46.3,24L24,46.3l-1.4-1.4l19.7-19.7L3,25.1v-2.3l39.3,0L22.6,3.1L24,1.7z"
+        <path d="M24,46.3L1.7,24L24,1.7l1.4,1.4L5.7,22.8L45,22.9v2.3l-39.3,0l19.7,19.7L24,46.3z"
         fill="currentColor"/>
         </svg>
     </div>

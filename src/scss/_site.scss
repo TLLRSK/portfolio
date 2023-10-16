@@ -1,3 +1,4 @@
+@import '../scss/mixins';
 :root {
     font-size: 62.5%;
 }
@@ -9,7 +10,7 @@
   margin: 0;
 }
 body {
-  line-height: 1.5;
+  // line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
 img, picture, video, canvas, svg {
@@ -32,10 +33,13 @@ section, article, main {
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
+    @include mq-720 {
+      gap: 2.4rem;
+    }
 }
 
 main {
-  padding: 1.2rem;
+  // padding: 1.2rem;
   border: 1px solid;
 }
 

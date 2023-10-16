@@ -1,101 +1,141 @@
 import './Hello.scss';
 import HeaderSection from "../../components/headers/headerSection";
+import { useEffect, useState } from 'react';
+import ArrowForward from '../../components/arrows/ArrowForward';
+import ArrowBackward from '../../components/arrows/ArrowBackward';
+
 
 export default function Hello() {
+
+    const [page, setPage] = useState(false);
+
     return <section className="hello">
         <article className='hello__content'>
-        <HeaderSection section={'Hello'} color={'color--blue--0'}/>
+
+            <HeaderSection section={'Hello'} color={'color--black--0'}/>
+
             <main className='hello__main'>
-                <div className="hello__main-block--description">
-                    <div className="hello__main-description">
-                        <p>I’m Pedro J. Gil</p>
-                        <p>~ a <br/>Visual Dev & UX/UI Enginer <br/>based in Valencia (Spain).</p>
+                <div className='hello__main-page'>
+                    <div className={`hello__main--page-1 ${page == true ? 'hidden' : 'visible'}`}>
+
+                        <div className="hello__description-block--top">
+                            <span className='hello__description-number--1'>01)</span>
+                            <p>I’M PEDRO J. GIL <br/>
+                                <span className='hello__description-text--bold'>VISUAL DEV</span>, <br/>
+                                <span className='hello__description-text--bold'>FRONTEND DEV</span> <br/>
+                                & <span className='hello__description-text--bold'>UX/UI ENGINEER</span> CRAFTING DIGITAL CUTIE EXPERIENCES
+                            </p>
+                        </div>
+
+                        <div className="hello__description-block--bottom">
+                            <div className="hello__description-basedin">
+                                <p>(</p>
+                                <p>Based in Valencia</p>
+                                <p>)</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div className="hello__main-block--dropdown">
-                    <div className='hello__dropdown-tabs'>
-                        <ul className="hello__dropdown-tab--fields hello__dropdown-fields">
-                            <li className='hello__dropdown-fields-item'>
-                                <span>a:</span>
-                                <p>ILLUSTRATION</p>
-                            </li>
 
-                            <li className='hello__dropdown-fields-item'>
-                                <span>a:</span>
-                                <p>WEB DEVELOPMENT</p>
-                            </li>
+                    <div className={`hello__main--page-2 ${page == true ? 'visible' : 'hidden'}`}>
+                        <span className='hello__description-number--2'>02)</span>
 
-                            <li className='hello__dropdown-fields-item'>
-                                <span>a:</span>
-                                <p>UX/UI DESIGN</p>
-                            </li>
+                        <div className="hello__fields">
+                            <p className='hello__fields-title'>
+                                FIELDS:
+                            </p>
 
-                            <li className='hello__dropdown-fields-item'>
-                                <span>a:</span>
-                                <p>ANIMATION</p>
-                            </li>
+                            <ul className="hello__fields-list">
+                                <li className='hello__fields-list-item'>
+                                    <span>a:</span>
+                                    <p>ILLUSTRATION</p>
+                                </li>
 
-                            <li className='hello__dropdown-fields-item'>
-                                <span>a:</span>
-                                <p>ART DIRECTION</p>
-                            </li>
-                        </ul>
+                                <li className='hello__fields-list-item'>
+                                    <span>b:</span>
+                                    <p>WEB DEVELOPMENT</p>
+                                </li>
 
-                        <div className="hello__dropdown-tab--tools">
-                            <div className='hello__dropdown-tools-row'>
-                                <div className="hello__dropdown-tools-item">
+                                <li className='hello__fields-list-item'>
+                                    <span>c:</span>
+                                    <p>UX/UI DESIGN</p>
+                                </li>
+
+                                <li className='hello__fields-list-item'>
+                                    <span>d:</span>
+                                    <p>ANIMATION</p>
+                                </li>
+
+                                <li className='hello__fields-list-item'>
+                                    <span>e:</span>
+                                    <p>ART DIRECTION</p>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div className="hello__tools">
+                            <p className='hello__tools-title'>
+                                TOOLS:
+                            </p>
+                            <div className='hello__tools-grid'>
+                                <div className="hello__tools-grid-item">
                                     <p>HTML</p>
                                 </div>
 
-                                <div className="hello__dropdown-tools-item">
+                                <div className="hello__tools-grid-item">
                                     <p>CSS</p>
                                 </div>
 
-                                <div className="hello__dropdown-tools-item">
+                                <div className="hello__tools-grid-item">
                                     <p>SASS</p>
                                 </div>
-                            </div>
 
-                            <div className='hello__dropdown-tools-row'>
-                                <div className="hello__dropdown-tools-item">
+                                <div className="hello__tools-grid-item">
                                     <p>JS</p>
                                 </div>
 
-                                <div className="hello__dropdown-tools-item">
+                                <div className="hello__tools-grid-item">
+                                    
+                                </div>
+
+                                <div className="hello__tools-grid-item">
                                     <p>REACT</p>
                                 </div>
-                            </div>
 
-                            <div className='hello__dropdown-tools-row'>
-                                <div className="hello__dropdown-tools-item">
+                                <div className="hello__tools-grid-item">
                                     <p>PHP</p>
                                 </div>
 
-                                <div className="hello__dropdown-tools-item">
+                                <div className="hello__tools-grid-item">
                                     <p>WORDPRESS</p>
                                 </div>
 
-                                <div className="hello__dropdown-tools-item">
+                                <div className="hello__tools-grid-item">
                                     <p>FIGMA</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className='hello__dropdown-buttons'>
-                        <div className='btn--hello-dropdown'>
-                            <input type="radio" id='fields' name='skills' className='btn--hello-dropdown-toggler'/>
-                            <label htmlFor="fields" className='btn--hello-dropdown-label'>Fields</label>
-                        </div>
+                </div>
+                
+                <div className='hello__page-toggler'>
+                    <input type="checkbox" className="hello__page-switch" id="page-switch"  onClick={(e) => setPage(e.target.checked)}/>
 
-                        <div className='btn--hello-dropdown'>
-                            <input type="radio" id='tools' name='skills' className='btn--hello-dropdown-toggler'/>
-                            <label htmlFor="tools" className='btn--hello-dropdown-label'>Tools</label>
-                        </div>
-                        
-                    </div>
+                    <label htmlFor="page-switch" className='hello__page-toggler-block' >
+                        <div className={`hello__page-toggler-pusher ${page ? '' : 'active'}`}></div>
+                        {page ?
+                            <div className='hello__page-toggler-arrow'>
+                                <ArrowBackward/>
+                                <span className='hello__page-toggler-number'>01)</span>
+                            </div>
+                        : 
+                            <div className='hello__page-toggler-arrow'>
+                                <ArrowForward/>
+                                <span className='hello__page-toggler-number'>02)</span>
+                            </div>
+                            }
+                    </label>
                 </div>
             </main>
         </article>
-        
     </section>
 }
