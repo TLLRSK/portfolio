@@ -6,28 +6,18 @@
         
         &-block--top {
             display: flex;
-            justify-content: flex-end;
-        }
-    }
-
-    &__filter {
-        flex: 1;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        padding: 0 1.2rem;
-        font-size: 1.6rem;
-        @include mq-720 {
-            padding: 0 1.2rem;
-            font-size: 2.4rem;
-        }
-        &-item {
-            &:nth-child(1) {
-                display: flex;
-                justify-content: flex-start;
+            align-items: center;
+            padding: 1.2rem;
+            @include mq-720 {
+                padding: 2.4rem;
             }
-            &:nth-child(3) {
-                display: flex;
-                justify-content: flex-end;
+
+            & p {
+                font-size: 2.4rem;
+                font-weight: 200;
+                @include mq-720 {
+                    font-size: 4rem;
+                }
             }
         }
     }
@@ -37,16 +27,18 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
-        border-top: 1px solid var(--black--100);
+        border-top: 1px solid;
 
         &-item {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             gap: 1.2rem;
-            color: var(--black--100);
+            color: var(--black);
             padding: 1.2rem;
             font-size: 2.4rem;
+            font-style: italic;
+            text-transform: uppercase;
             position: relative;
             @include mq-720 {
                 padding: 2.4rem;
@@ -58,7 +50,7 @@
             }
 
             &:hover {
-                color: var(--grey--200);
+                color: var(--white);
                 font-size: 4.8rem;
 
                 & span {
@@ -71,7 +63,7 @@
                 & > .arrow > .work__projects-grid-arrow {
                     height: 6.4rem;
                     width: 6.4rem;
-                    color: var(--grey--200); 
+                    color: var(--white); 
                 }
                 &::after {
                     inset: 0 0 0 0; 
@@ -81,7 +73,7 @@
                 position: absolute;
                 inset: 0  0 0 100%;
                 content: '';
-                background-color: var(--black--100);
+                background-color: var(--black);
                 transition: inset .2s ease-in-out;
             }
 
@@ -90,7 +82,6 @@
             }
 
             & span {
-                font-weight: 200;
                 @include mq-720 {
                     font-size: 3.2rem;
                 }
@@ -111,76 +102,4 @@
             height: 2.4rem;
         }
     }
-}
-
-.btn--filter {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-
-    &.selected {
-        & > .btn--filter-switch {
-            gap: 2rem;
-
-            &::after {
-                position: absolute;
-                content: '';
-                inset: auto 0 .6rem 0;
-                width: 100%;
-                height: 1px;
-                background-color: var(--black--100);  
-            }
-        }
-        & > .btn--filter-switch > .btn--filter-check {
-            display: block;
-            width: 1.2rem;
-            height: 1.2rem;
-            border: 1px solid;
-            background-color: var(--black--100);
-        }
-    }
-
-    &-switch {
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        padding: 1.2rem;
-        position: relative;
-        overflow: hidden;
-        gap: 0;
-        transition: all .2s ease-in-out;
-
-        &:hover {
-            gap: 2rem;
-            .btn--filter-check {
-                display: block;
-                width: 1.2rem;
-                height: 1.2rem;
-                border: 1px solid;
-            }
-            &::after {
-                position: absolute;
-                content: '';
-                inset: auto 0 .6rem 0;
-                width: 100%;
-                height: 1px;
-                background-color: var(--black--100);  
-            }
-        }
-    }
-
-    &-toggler {
-        display: none;
-        appearance: none;
-        position: absolute;
-    }
-
-    &-check {
-        display: block;
-        width: 0;
-        transition: width .1s ease-in;
-    }
-    
 }

@@ -25,20 +25,20 @@ function App() {
   // Calling back setBgColor
   let locationColor = (path) => {
     if (path === '/') {
-        setBgColor('color-bg--yellow');
-        setColor('color--black--300');
+        setBgColor('color-bg--green');
+        setColor('color--white');
     } else if (path === '/hello') {
-        setBgColor('color-bg--white--0');
-        setColor('color--black--0');
+        setBgColor('color-bg--white');
+        setColor('color--green');
     } else if (path === '/work') {
-        setBgColor('color-bg--grey--200');
-        setColor('color--black--100');
+      setBgColor('color-bg--white');
+      setColor('color--black');
     } else if (path.startsWith('/work/project/')) {
-        setBgColor('color-bg--white--0');
-        setColor('');
+      setBgColor('color-bg--white');
+      setColor('color--black');
     } else if (path === '/contact') {
-        setBgColor('color-bg--black--200');
-        setColor('color--white--200');
+        setBgColor('color-bg--black');
+        setColor('color--white');
     }
 }
 
@@ -51,7 +51,7 @@ function App() {
         <Route path='/work/project/*' element={<ProjectTemplate/>} />
         <Route path='/contact' element={<Contact/>}></Route>
       </Routes>
-      <Navbar/>
+      {location.pathname.includes('/work/project/') ? console.log('hello') : <Navbar/>}
     </div>
   )
 }

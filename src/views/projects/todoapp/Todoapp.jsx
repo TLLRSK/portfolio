@@ -16,10 +16,6 @@ export default function Todoapp() {
                     <span>3.</span>
                     <p>DELETE ANY COMPLETED TASK</p>
                 </li>
-                <li>
-                    <span>4.</span>
-                    <p>CHILL</p>
-                </li>
             </ul>
         </div>
     </>

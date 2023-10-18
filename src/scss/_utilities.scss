@@ -1,44 +1,11 @@
 // ** COLORS **
 
 // colors
-.color--white--0 {
-    color: var(--white--0);
+.color--white {
+    color: var(--white);
 }
-.color--white--100 {
-    color: var(--white--100);
-}
-.color--white--200 {
-    color: var(--white--200);
-}
-.color--white--300 {
-    color: var(--white--300);
-}
-.color--grey--0 {
-    color: var(--grey--0);
-}
-.color--grey--100 {
-    color: var(--grey--100);
-}
-.color--grey--200 {
-    color: var(--grey--200);
-}
-.color--grey--300 {
-    color: var(--grey--300);
-}
-.color--black--0 {
-    color: var(--black--0);
-}
-.color--black--100 {
-    color: var(--black--100);
-}
-.color--black--200 {
-    color: var(--black--200);
-}
-.color--black--300 {
-    color: var(--black--300);
-}
-.color--yellow {
-    color: var(--yellow);
+.color--black {
+    color: var(--black);
 }
 .color--blue {
     color: var(--blue);
@@ -46,46 +13,19 @@
 .color--green {
     color: var(--green);
 }
+.color--green--100 {
+    color: var(--green--100);
+}
 .color--red {
     color: var(--red);
 }
 
 // background
-.color-bg--white--0 {
-    background-color: var(--white--0);
+.color-bg--white {
+    background-color: var(--white);
 }
-.color-bg--white--100 {
-    background-color: var(--white--100);
-}
-.color-bg--white--200 {
-    background-color: var(--white--200);
-}
-.color-bg--white--300 {
-    background-color: var(--white--300);
-}
-.color-bg--grey--0 {
-    background-color: var(--grey--0);
-}
-.color-bg--grey--100 {
-    background-color: var(--grey--100);
-}
-.color-bg--grey--200 {
-    background-color: var(--grey--200);
-}
-.color-bg--grey--300 {
-    background-color: var(--grey--300);
-}
-.color-bg--black--0 {
-    background-color: var(--black--0);
-}
-.color-bg--black--100 {
-    background-color: var(--black--100);
-}
-.color-bg--black--200 {
-    background-color: var(--black--200);
-}
-.color-bg--black--300 {
-    background-color: var(--black--300);
+.color-bg--black {
+    background-color: var(--black);
 }
 .color-bg--yellow {
     background-color: var(--yellow);
@@ -95,6 +35,9 @@
 }
 .color-bg--green {
     background-color: var(--green);
+}
+.color-bg--green--100 {
+    background-color: var(--green--100);
 }
 .color-bg--red {
     background-color: var(--red);
