@@ -19,36 +19,11 @@ export default function Work() {
     return <section className="work">
         <article className="work__content">
 
-            <HeaderSection section={'Work'} color={'color--black--100'}/>
+            <HeaderSection section={'Work'} color={'black'}/>
             
             <main className="work__main">
                 <div className="work__main-block--top">
-                    <div className="work__filter">
-
-                        <div className={`work__filter-item btn--filter ${filter === 'all' ? 'selected' : ''}`}>
-                            <label htmlFor="all" name='projects' className='btn--filter-switch'>
-                                <input type="radio" className="btn--filter-toggler" name="filter" id="all" onChange={(e) => {setFilter(e.target.id)}}/>
-                                <span className="btn--filter-check"></span>
-                                <p>ALL</p>
-                            </label>
-                        </div>
-
-                        <div className={`work__filter-item btn--filter ${filter === 'web' ? 'selected' : ''}`}>
-                            <label htmlFor="web" name='projects' className='btn--filter-switch'>
-                                <input type="radio" className="btn--filter-toggler" name="filter" id="web" onChange={(e) => {setFilter(e.target.id)}}/>
-                                <span className="btn--filter-check"></span>
-                                <p>WEB</p>
-                            </label>
-                        </div>
-                        
-                        <div className={`work__filter-item btn--filter ${filter === 'app' ? 'selected' : ''}`}>
-                            <label htmlFor="app" name='projects' className='btn--filter-switch'>
-                                <input type="radio" className="btn--filter-toggler" name="filter" id="app" onChange={(e) => {setFilter(e.target.id)}}/>
-                                <span className="btn--filter-check"></span>
-                                <p>APP</p>
-                            </label>
-                        </div>
-                    </div>
+                    <p>PICK A PROJECT</p>
                 </div>
 
                 <div className="work__projects-grid">

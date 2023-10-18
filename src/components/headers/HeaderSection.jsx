@@ -8,7 +8,7 @@ export default function HeaderSection(props) {
             {section}
         </h2>
 
-        <Link to='/' className={`section__header-home-btn link ${color}`}>
+        <Link to='/' className={`section__header-home-btn link color--${color}`}>
             <p>pj</p>
         </Link>
     </header>

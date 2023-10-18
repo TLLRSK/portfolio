@@ -3,6 +3,22 @@
 .arrow {
     display: flex;
     justify-content: flex-end;
+    &--hello-page-1, &--hello-page-2 {
+        width: 2.4rem;
+        height: 2.4rem;
+        transition: all .1s ease-in-out;
+        @include mq-720 {
+            cursor: pointer;
+            width: 4rem;
+            height: 4rem;
+        }
+    }
+    &--hello-page-1:hover {
+        transform: translateX(-1.2rem);
+    }
+    &--hello-page-2:hover {
+        transform: translateX(1.2rem);
+    }
 
     &--up-right {
         width: 4.8rem;

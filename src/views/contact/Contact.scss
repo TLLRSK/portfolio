@@ -1,9 +1,6 @@
 @import '../../scss/mixins';
 .contact {
-    
-    &__content {
-        gap: 1.2rem;
-    }
+
     &__subtitle {
         display: flex;
         justify-content: space-between;
@@ -43,6 +40,6 @@
         }
     }
     & a {
-        color: var(--white--200)
+        color: var(--white)
     }
 }

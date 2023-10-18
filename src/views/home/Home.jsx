@@ -7,12 +7,12 @@ export default function Home() {
             <div className="home-blank-box"></div>
         </header>
 
-        <div className="home__main-block">
-            <div className="home__description">
-                <p>UX/UI</p>
-                <p>ENGINEER</p>
+        <main className="home__main">
+            <div className="home-ellipse">
+                <div className="home__description">
+                    <p>UX/UI ENGINEER</p>
+                </div>
             </div>
-            <div className="home-ellipse"></div>
-        </div>
+        </main>
     </section>
 }

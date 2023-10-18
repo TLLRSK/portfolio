@@ -12,32 +12,37 @@ export default function Hello() {
     return <section className="hello">
         <article className='hello__content'>
 
-            <HeaderSection section={'Hello'} color={'color--black--0'}/>
+            <HeaderSection section={'Hello'} color={'green'}/>
 
             <main className='hello__main'>
                 <div className='hello__main-page'>
                     <div className={`hello__main--page-1 ${page == true ? 'hidden' : 'visible'}`}>
 
-                        <div className="hello__description-block--top">
-                            <span className='hello__description-number--1'>01)</span>
-                            <p>I’M PEDRO J. GIL <br/>
-                                <span className='hello__description-text--bold'>VISUAL DEV</span>, <br/>
-                                <span className='hello__description-text--bold'>FRONTEND DEV</span> <br/>
-                                & <span className='hello__description-text--bold'>UX/UI ENGINEER</span> CRAFTING DIGITAL CUTIE EXPERIENCES
-                            </p>
+                        <div className="hello__description-block--1">
+                            <div>
+                                <span className='hello__description-number--1'>01)</span>
+                                <p>I’M PEDRO J. GIL</p>
+                            </div>
+                            <div>
+                                <span className='hello__description-number--1'>02)</span>
+                                <p>VISUAL DEV, FRONTEND DEV & UX/UI ENGINEER</p>
+                            </div>
+                            
                         </div>
 
-                        <div className="hello__description-block--bottom">
-                            <div className="hello__description-basedin">
-                                <p>(</p>
-                                <p>Based in Valencia</p>
-                                <p>)</p>
+                        <div className="hello__description-block--2">
+                            <div>
+                                <span className='hello__description-number--1'>03)</span>
+                                <p>CRAFTING CUTIE DIGITAL EXPERIENCES</p>
+                            </div>
+                            <div>
+                                <span className='hello__description-number--1'>04)</span>
+                                <p>BASED IN VALENCIA (SPAIN)</p>
                             </div>
                         </div>
                     </div>
 
                     <div className={`hello__main--page-2 ${page == true ? 'visible' : 'hidden'}`}>
-                        <span className='hello__description-number--2'>02)</span>
 
                         <div className="hello__fields">
                             <p className='hello__fields-title'>
@@ -121,16 +126,15 @@ export default function Hello() {
                     <input type="checkbox" className="hello__page-switch" id="page-switch"  onClick={(e) => setPage(e.target.checked)}/>
 
                     <label htmlFor="page-switch" className='hello__page-toggler-block' >
-                        <div className={`hello__page-toggler-pusher ${page ? '' : 'active'}`}></div>
                         {page ?
-                            <div className='hello__page-toggler-arrow'>
-                                <ArrowBackward/>
-                                <span className='hello__page-toggler-number'>01)</span>
+                            <div className='hello__page-toggler-content'>
+                                <ArrowBackward className={'arrow--hello-page-2'}/>
+                                <span className='hello__page-toggler-number'>(2/2)</span>
                             </div>
                         : 
-                            <div className='hello__page-toggler-arrow'>
-                                <ArrowForward/>
-                                <span className='hello__page-toggler-number'>02)</span>
+                            <div className='hello__page-toggler-content'>
+                                <span className='hello__page-toggler-number'>(1/2)</span>
+                                <ArrowForward className={'arrow--hello-page-1'}/>
                             </div>
                             }
                     </label>

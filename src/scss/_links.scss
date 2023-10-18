@@ -4,7 +4,7 @@
 
     &--project-to-home {
         font-size: 2.4rem;
-        color: var(--white--300);
+        color: var(--black);
         @include mq-720 {
             font-size: 3.2rem;
         }
@@ -14,14 +14,12 @@
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        padding-left: 1.2rem;
+        gap: 1.2rem;
+        color: var(--black);
         font-size: 3.2rem;
         font-weight: 300;
-        color: var(--white--300);
-        position: relative;
         @include mq-720 {
-            gap: 1.2rem;
-            font-size: 4.8rem;
+            font-size: 4rem;
         }
 
         &:hover {
@@ -35,9 +33,9 @@
             transition: color .15s ease-in-out;
         }
         & .arrow {
-            border-left: 1px solid var(--grey--300);
-            background-color: var(--white--300);
-            color: var(--grey--300);
+            border-left: 1px solid var(--black);
+            background-color: var(--white);
+            color: var(--black);
             z-index: 1;
         }
     }
@@ -54,7 +52,7 @@
             position: absolute;
             inset: calc(50% - .2rem) 100% calc(50% - .2rem) 0;
             content: '';
-            background: var(--white--200);
+            background: var(--white);
             transition: inset .2s ease-in-out;
         }
         &:hover {
@@ -82,13 +80,13 @@
         
         &:hover {
             & > p {
-                color: var(--black--200);
+                color: var(--black);
             }
             &::before {
                 position: absolute;
                 inset: 0 0 0 0;
                 content: '';
-                background-color: var(--white--200);
+                background-color: var(--white);
             }
         }
     }

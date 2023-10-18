@@ -17,7 +17,6 @@ export default function ProjectTemplate() {
 
   // // Setting current project
   const projectSetter = (project) => {
-    console.log('project setter is working')
     setCurrentProject(project);
   }
 
@@ -35,50 +34,50 @@ export default function ProjectTemplate() {
     locationSetter(location.pathname);
   },[location]);
 
-  return <section className={`project color--${currentProject?.mainColor}`}>
-          <HeaderProject projectTitle={currentProject?.title} projectColor={currentProject?.mainColor}/>
+  return <section className={`project`}>
+    <HeaderProject projectTitle={currentProject?.title} projectColor={currentProject?.mainColor}/>
 
-          <main className="project__main">
-            <Routes>
-                {projects.map(el => {
-                  return <Route 
-                    key = {el.index}
-                    title = {el.title}
-                    path = {el.path}
-                    maincolor = {el.mainColor}
-                    link = {el.link}
-                    element = {<el.component />}
-                    />
-                  })
-                }
-            </Routes>
+    <main className="project__main">
+      <Routes>
+          {projects.map(el => {
+            return <Route 
+              key = {el.index}
+              title = {el.title}
+              path = {el.path}
+              maincolor = {el.mainColor}
+              link = {el.link}
+              element = {<el.component />}
+              />
+            })
+          }
+      </Routes>
+      <div className="project__info">
+        <div className="project__info-roles">
+          <p>ROLES</p>
+          <p>{currentProject?.roles}</p>
+        </div>
 
-            <div className="project__footer">
-              <div className="project__info">
-                <div className="project__info-roles">
-                  <p>ROLES:</p>
-                  <p>{currentProject?.roles}</p>
-                </div>
+        <div className="project__info-techs">
+          <p>TECHS</p>
+          <p>{currentProject?.techs}</p>
+        </div>
+      </div>
 
-                <div className="project__info-techs">
-                  <p>TECHS:</p>
-                  <p>{currentProject?.techs}</p>
-                </div>
-              </div>
-
-              <div className="project__visit">
-                <Link className={`link link--project-visit`}>
-                  <p className={`color--${currentProject?.mainColor}`}>VISIT</p>
-                  <ArrowUpRight className={`color-bg--${currentProject?.mainColor} color--white--0`}/>
-                </Link>
-              </div>
-            </div>
-            
-            <NavbarProjects projects={projects} index={currentProject?.index} mainColor={currentProject?.mainColor}/>
-          </main>
-      
+      <div className="project__footer">
+        <div className="project__visit">
+          <Link className={`link link--project-visit`}>
+            <p>VISIT</p>
+            <ArrowUpRight className={`color-bg--black color--white`}/>
+          </Link>
+        </div>
+      </div>
+    </main>
+    
+    <NavbarProjects projects={projects} index={currentProject?.index}/>
   </section>
 }
+
+// PROJECTS NAVIGATOR
 
 let NavbarProjects = (props) => {
 
@@ -112,40 +111,25 @@ let NavbarProjects = (props) => {
     return currentIndex < pathsArrLength-1 ? `/work/project${pathsArr[currentIndex+1]?.path}` : `/work/project${pathsArr[currentIndex]?.path}`;
   }
 
-  // Styling hover
-  const [isPrevHover, setIsPrevHover] = useState(false);
-  const [isNextHover, setIsNextHover] = useState(false);
-
-  const handlePrevOnMouseEnter = () => {
-    setIsPrevHover(true);
-  }
-  const handlePrevOnMouseLeave = () => {
-    setIsPrevHover(false);
-  }
-  const handleNextOnMouseEnter = () => {
-    setIsNextHover(true);
-  }
-  const handleNextOnMouseLeave = () => {
-    setIsNextHover(false);
-  }
-
   return <nav className='navbar-projects'>
-    <div className="navbar-projects-item">
+    <div className={`navbar-projects-item ${currentIndex - 1 < 0 ? 'hidden' : ''}`}>
         <Link to={toPrevProject()}
-        className={`navbar-projects-link--previous link color-bg--${isPrevHover ? mainColor : ''} color--${isPrevHover ? 'white--0' : mainColor}`} 
-        onClick={() => {prevIndex()}} 
-        onMouseEnter={handlePrevOnMouseEnter}
-        onMouseLeave={handlePrevOnMouseLeave}>
+        className={`navbar-projects-link--previous link`} 
+        onClick={() => {prevIndex()}}>
             <p>PREV</p>
         </Link>
     </div>
-    
+
     <div className="navbar-projects-item">
+      <Link to="/work" className={`navbar-projects-link--back link`}>
+        <p>BACK</p>
+      </Link>
+    </div>
+    
+    <div className={`navbar-projects-item ${currentIndex + 1 >= pathsArrLength ? 'hidden' : ''}`}>
         <Link to={toNextProject()}
-        className={`navbar-projects-link--next link color-bg--${isNextHover ? mainColor : ''} color--${isNextHover ? 'white--0' : mainColor}`}
-        onClick={() => {nextIndex()}}
-        onMouseEnter={handleNextOnMouseEnter}
-        onMouseLeave={handleNextOnMouseLeave}>
+        className={`navbar-projects-link--next link `}
+        onClick={() => {nextIndex()}}>
             <p>NEXT</p>
         </Link>
     </div>
