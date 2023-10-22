@@ -1,0 +1,17 @@
+// UNIT
+$unit: 1.2rem;
+
+// PADDING
+$padding--mobile: $unit;
+$padding--desktop: $unit*2;
+
+// GAP
+$gap--mobile: $unit;
+$gap--desktop: $unit*2;
+
+// FONTS
+$fs--xs: clamp(1.6rem, 3vw, 3.2rem);
+$fs--s: clamp(2rem, 3vw, 4rem);
+$fs--m: clamp(2.4rem, 3vw, 4.8rem);
+$fs--l: clamp(3.2rem, 3vw, 6.4rem);
+$fs--xl: clamp(8rem, 8vw, 12rem);

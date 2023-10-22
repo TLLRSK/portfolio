@@ -1,0 +1,49 @@
+@import '../../../scss/mixins';
+
+.navbar-projects {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    [class^='navbar-projects-link'] {
+        display: flex;
+        width: fit-content;
+        gap: 1.2rem;
+        border: 1px solid;
+        border-radius: 2.4rem;
+        padding: .6rem 1.2rem;
+        color: var(--black);
+        @include mq-720 {
+            padding: 1.2rem 2.4rem;
+            border-radius: 4.8rem;
+        }
+
+        &:hover {
+            color: var(--white);
+            background-color: var(--black);
+        }
+        
+        & p {
+            font-size: 1.6rem;
+            @include mq-720 {
+                font-size: 3.2rem;
+            }
+        }
+    }
+
+    &-item {
+        display: flex;
+        &:nth-child(2) {
+            justify-content: center;
+        }
+        &:nth-child(3) {
+            justify-content: flex-end;
+        }
+        &.hidden {
+            cursor: default;
+            & .link {
+                display: none;
+            }
+        }
+    }
+    
+}

@@ -1,18 +1,23 @@
 import './Hello.scss';
-import HeaderSection from "../../components/headers/headerSection";
-import { useEffect, useState } from 'react';
-import ArrowForward from '../../components/arrows/ArrowForward';
-import ArrowBackward from '../../components/arrows/ArrowBackward';
+import { useState } from 'react';
+import HeaderSection from '../../components/Headers/HeaderSection';
+import ArrowForward from '../../components/Arrows/ArrowForward';
+import ArrowBackward from '../../components/Arrows/ArrowBackward';
 
 
-export default function Hello() {
+export default function Hello(props) {
 
     const [page, setPage] = useState(false);
+    const {toSection, fromSection, sectionStatus, handleSectionNavigation} = props;
 
-    return <section className="hello">
+    return <section className={`hello 
+        ${toSection == 'next' ? 'going-to-next' : toSection == 'prev' ? 'going-to-prev' : ''} 
+        ${fromSection == 'next' ? 'coming-from-next' : fromSection == 'prev' ? 'coming-from-prev' : ''} 
+        ${sectionStatus}`}>
+
         <article className='hello__content'>
 
-            <HeaderSection section={'Hello'} color={'green'}/>
+            <HeaderSection section={'Hello'} color={'green'} handleSectionNavigation={handleSectionNavigation}/>
 
             <main className='hello__main'>
                 <div className='hello__main-page'>
@@ -99,7 +104,7 @@ export default function Hello() {
                                 </div>
 
                                 <div className="hello__tools-grid-item">
-                                    
+                                <p>PHP</p>
                                 </div>
 
                                 <div className="hello__tools-grid-item">
@@ -107,15 +112,15 @@ export default function Hello() {
                                 </div>
 
                                 <div className="hello__tools-grid-item">
-                                    <p>PHP</p>
-                                </div>
-
-                                <div className="hello__tools-grid-item">
-                                    <p>WORDPRESS</p>
-                                </div>
-
-                                <div className="hello__tools-grid-item">
                                     <p>FIGMA</p>
+                                </div>
+                                
+                                <div className="hello__tools-grid-item">
+                                    
+                                </div>
+
+                                <div className="hello__tools-grid-item">
+                                    <p>WORD<br/>PRESS</p>
                                 </div>
                             </div>
                         </div>
@@ -128,13 +133,17 @@ export default function Hello() {
                     <label htmlFor="page-switch" className='hello__page-toggler-block' >
                         {page ?
                             <div className='hello__page-toggler-content'>
-                                <ArrowBackward className={'arrow--hello-page-2'}/>
                                 <span className='hello__page-toggler-number'>(2/2)</span>
+                                <div className='hello__page-toggler-arrow'>
+                                    <ArrowBackward className={'arrow--hello-page-2'}/>
+                                </div>
                             </div>
                         : 
                             <div className='hello__page-toggler-content'>
                                 <span className='hello__page-toggler-number'>(1/2)</span>
-                                <ArrowForward className={'arrow--hello-page-1'}/>
+                                <div className='hello__page-toggler-arrow'>
+                                    <ArrowForward className={'arrow--hello-page-1'}/>
+                                </div>
                             </div>
                             }
                     </label>

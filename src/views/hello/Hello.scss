@@ -1,8 +1,10 @@
 @import '../../scss/mixins';
+@import '../../scss/variables';
 
 .hello {
     display: flex;
     flex-direction: row;
+    transition: transform .3s ease-in-out, opacity .2s ease-in-out;
 
     [class^='hello__main-block'] {
         display: flex;
@@ -18,6 +20,7 @@
             display: flex;
             flex-direction: column;
             position: relative;
+            overflow: hidden;
         }
 
         &--page-1, &--page-2 {
@@ -25,6 +28,7 @@
             display: flex;
             flex-direction: column;
             padding: 1.2rem;
+            transition: all .2s ease-in-out;
 
             @include mq-720 {
                 flex-direction: row;
@@ -34,18 +38,21 @@
         &--page-1 {
             &.hidden {
                 opacity: 0;
+                transform: translateX(-100%);
             }
         }
         &--page-2 {
             position: absolute;
             inset: 0 0 0 0;
+            transform: none;
 
             @include mq-720 {
-                gap: 3.2rem;
+                gap: 2.4rem;
             }
 
             &.hidden {
                 opacity: 0;
+                transform: translateX(100%);
             }
         }
     }
@@ -58,10 +65,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            font-size: 2.4rem;
-            @include mq-720 {
-                font-size: 4rem;
-            }
+            font-size: $fs--m;
         }
         &--1 {
             border-bottom: 1px dashed;
@@ -89,7 +93,7 @@
             }
 
             & p {
-                width: 60%;
+                width: 80%;
                 font-weight: 300;
             }
         }
@@ -98,12 +102,9 @@
 
     &__description {
         &-number--1, &-number--2 {
-            font-size: 2.4rem;
+            font-size: $fs--m;
             font-weight: 600;
             font-style: italic;
-            @include mq-720 {
-                font-size: 4rem;
-            }
         }
     }
    
@@ -112,13 +113,12 @@
         display: flex;
         flex-direction: column;
         &-title {
-            font-size: 2.4rem;
+            font-size: $fs--m;
             font-weight: 600;
             font-style: italic;
             padding-bottom: 1.2rem;
             @include mq-720 {
-                font-size: 4rem;;
-                padding-bottom: 2.4rem;
+                padding-bottom: 1.2rem;
             }
         }
 
@@ -136,21 +136,14 @@
                 flex-direction: row;
                 align-items: center;
                 justify-content: space-between;
-                padding: 1.2rem 1.2rem 1.2rem 0;
+                padding: 1.2rem 0 1.2rem 0;
                 border-top: 1px dashed;
-                font-size: 2rem;
-                @include mq-720 {
-                    padding: 2.4rem 2.4rem 2.4rem 0;
-                    font-size: 4rem;
-                    font-weight: 300
-                }
+                font-size: $fs--m;
+                font-weight: 300;
     
                 & span {
-                    font-size: 1.4rem;
+                    font-size: $fs--xs;
                     font-weight: 300;
-                    @include mq-720 {
-                        font-size: 2rem;
-                    }
                 }
             }
         }
@@ -161,14 +154,10 @@
         display: flex;
         flex-direction: column;
         &-title {
-            font-size: 2.4rem;
+            font-size: $fs--m;
             font-weight: 600;
             font-style: italic;
             padding-bottom: 1.2rem;
-            @include mq-720 {
-                font-size: 4rem;
-                padding-bottom: 2.4rem;
-            }
         }
 
         &-grid {
@@ -179,14 +168,17 @@
             border: 1px dashed;
             padding: 1.2rem;
 
+            @include mq-720 {
+                padding: 2.4rem;
+            }
+
             &-item {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                font-size: 2rem;
+                font-size: $fs--m;
 
                 @include mq-720 {
-                    font-size: 4rem;
                     font-weight: 300;
                 }
 
@@ -212,15 +204,6 @@
 
     &__page-switch {
         appearance: none;
-
-        &:checked {
-            & ~ label {
-                & .hello__page-toggler-arrow {
-                    border-left: none;
-                    border-right: 1px solid;
-                }
-            }
-        }
     }
 
     &__page-toggler {
@@ -232,12 +215,6 @@
             display: flex;
             flex-direction: row;
         }
-        &-number {
-            font-size: 2rem;
-            @include mq-720 {
-                font-size: 3.2rem;
-            }
-        }
 
         &-content {
             flex: 1;
@@ -246,14 +223,22 @@
             justify-content: space-between;
             min-height: 4.8rem;
             border-radius: 4.8rem;
-            padding: 0 1.2rem;
             gap: 1.2rem;
-            font-size: 2rem;
             font-weight: 300;
+            padding-left: 1.2rem;
+            @include mq-720 {
+                padding-left: 2.4rem;
+            }
+        }
+        &-number {
+            font-size: $fs--s;
+        }
+        &-arrow {
+            padding: 1.2rem;
+            border-left: 1px solid;
             @include mq-720 {
                 padding: 2.4rem;
             }
         }
     }
 }
-

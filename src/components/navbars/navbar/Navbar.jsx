@@ -2,75 +2,97 @@ import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 export default function Navbar(props) {
+
+  const {handleSectionNavigation} = props;
+  
+  // Nav Links
+  const navLinks = [
+    {index: 0, path: '/hello', title: 'Hello'},
+    {index: 1, path: '/work', title: 'Work'},
+    {index: 2, path: '/contact', title: 'Contact'}
+  ]
     
-    // Managing location
-    let location = useLocation();
+  // Location
+  let location = useLocation();
 
-    // Setting nav visibility by location
-    const [hidden, setHidden] = useState(false)
+  // Nav visibility by location
+  const [hidden, setHidden] = useState(false)
 
-    // Setting nav color by location
-    const [color, setColor] = useState('');
+  // Color by location
+  const [color, setColor] = useState('');
 
-    // Checking location & reseting nav if we are home
-    useEffect(() => {
-      location.pathname == '/' ? setLink('') : '';
-      locationColor(location.pathname);
-    })
+  // Path
+  const [path, setPath] = useState();
 
-    // Calling back useState
-    let locationColor = (path) => {
-      if (path === '/') {
-          setColor('white');
-          // hidden ? setHidden(false) : '';
-      } else if (path === '/hello') {
-          setColor('green');
-          // hidden ? setHidden(false) : '';
-      } else if (path === '/work') {
-          setColor('black');
-          // hidden ? setHidden(false) : '';
-      } else if (path === '/contact') {
-          setColor('white');
-          // hidden ? setHidden(false) : '';
-      } else if (path === '/work/project/aboutme') {
-          setColor('green');
-        // setHidden(true);
-      } else if (path === '/work/project/todoapp') {
-          setColor('blue');
-      } else if (path === '/work/project/quoteapp') {
-        setColor('black')
-      } else if (path === '/work/project/robbertas') {
-        setColor('red')
-      }
+  // Index
+  const [currentIndex, setCurrentIndex] = useState();
+
+  // Finding index
+  const setIndex = () => {
+    if (navLinks.find((e) => e.path === path)) {
+      //if we are not home
+      return setCurrentIndex(navLinks.find((e) => e.path === path).index);
+    } else {
+      //home index
+      return setCurrentIndex(-1)
     }
+  }
 
-    // Managing active link
-    const [link, setLink] = useState();
-    
-    return <nav className={`nav color--${color} ${hidden ? 'hidden' : ''}`}>
-        <Link 
-          to={'hello'} 
-          className={`link nav-item color--${color} ${link === 'hello' ? 'active' : ''}`} 
-          onClick={() => setLink('hello')}>
-          
-          <p className="nav-item__title">Hello</p>
+  // Setting color by location
+  const locationColor = (path) => {
+    if (path === '/') {
+        setColor('white');
+        // hidden ? setHidden(false) : '';
+    } else if (path === '/hello') {
+        setColor('green');
+        // hidden ? setHidden(false) : '';
+    } else if (path === '/work') {
+        setColor('black');
+        // hidden ? setHidden(false) : '';
+    } else if (path === '/contact') {
+        setColor('white');
+        // hidden ? setHidden(false) : '';
+    } else if (path === '/work/project/aboutme') {
+        setColor('green');
+      // setHidden(true);
+    } else if (path === '/work/project/todoapp') {
+        setColor('blue');
+    } else if (path === '/work/project/quoteapp') {
+      setColor('black')
+    } else if (path === '/work/project/robbertas') {
+      setColor('red')
+    }
+  }
+  
+  // Handling link click
+  const handleLinkClick = (e,path,index) => {
+    e.preventDefault();
+    setCurrentIndex(index)
+    currentIndex > index 
+      ? handleSectionNavigation(e,path,'prev') 
+      : handleSectionNavigation(e,path,'next');
+    setTimeout(() => {
+      setPath(path)
+    },400)
+  }
 
-        </Link>
+  // Setting path and color by location
+  useEffect(() => {
+    setPath(location.pathname);
+    locationColor(location.pathname);
+    setIndex();
+  })
 
-        <Link 
-          to={'work'} 
-          className={`link nav-item color--${color} ${link === 'work' ? 'active' : ''}`} 
-          onClick={() => setLink('work')}>
-          
-          <p className="nav-item__title">Work</p>
-        </Link>
-        
-        <Link 
-          to={'contact'}
-          className={`link nav-item color--${color} ${link === 'contact' ? 'active' : ''}`}
-          onClick={() => setLink('contact')}>
-            
-            <p className="nav-item__title">Contact</p>
-        </Link>
-    </nav>
+  return <nav className={`nav color--${color} ${hidden ? 'hidden' : ''}`}>
+    {navLinks.map((el) => (
+      <Link
+      key={el.index}
+      to={el.path} 
+      className={`link nav-item color--${color} ${path === el.path ? 'active' : ''}`} 
+      onClick={(e) => handleLinkClick(e, el.path, el.index)}>
+      
+      <p className="nav-item__title">{el.title}</p>
+    </Link>
+    ))}
+  </nav>
 }

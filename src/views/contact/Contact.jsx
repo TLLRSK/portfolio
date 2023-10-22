@@ -3,7 +3,8 @@ import HeaderSection from "../../components/headers/headerSection";
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
-export default function Contact() {
+export default function Contact(props) {
+    const {toSection, fromSection, sectionStatus, handleSectionNavigation} = props;
 
     // HANDLING WINDOW SIZE
     // media queries
@@ -29,9 +30,12 @@ export default function Contact() {
         console.log(windowWidth) 
     }, [windowWidth]);
     
-    return <section className="contact">
+    return <section className={`contact 
+        ${toSection == 'next' ? 'going-to-next' : toSection == 'prev' ? 'going-to-prev' : ''} 
+        ${fromSection == 'next' ? 'coming-from-next' : fromSection == 'prev' ? 'coming-from-prev' : ''} 
+        ${sectionStatus}`}>
         <article className='contact__content'>
-            <HeaderSection section={'Contact'} color={'color--white--200'}/>
+            <HeaderSection section={'Contact'} color={'color--white--200'} handleSectionNavigation={handleSectionNavigation}/>
             <main className='contact__main'>
                 <div className='contact__subtitle'>
                     <p>Get</p>
@@ -41,7 +45,7 @@ export default function Contact() {
 
                 <div className='contact__mail'>
                     <Link to='mailto:' className='link--contact-mail link'>
-                        {windowWidth <= mediaQueryMobile ? <p>HI@<br/>PEDRO<br/>JGIL<br/>.COM</p> : <p>HI@PEDROJGIL.COM</p>}
+                        {windowWidth <= mediaQueryMobile ? <p>HI@<br/>PEDRO<br/>JGIL<br/>.COM</p> : windowWidth <= mediaQueryDesktop ? <p>HI@<br/>PEDROJGIL.COM</p> : <p>HI@PEDROJGIL.COM</p>}
                     </Link>
                 </div>
                 

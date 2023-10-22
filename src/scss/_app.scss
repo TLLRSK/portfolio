@@ -6,8 +6,36 @@
     flex-direction: column;
     padding: 1.2rem;
     gap: 2.4rem;
+    background-color: var(--white);
     transition: all .2s ease-in-out;
+    z-index: 3;
+    position: relative;
+    overflow: hidden;
     @include mq-720 {
       padding: 3.2rem;
+    }
+    &::before, &::after {
+      position: absolute;
+      content: '';
+      transition-delay: 1s;
+      transition: inset .2s ease-out;
+    }
+    &::before {
+      inset: 0 100% 0 0;
+      background-color: var(--green);
+    }
+    &::after {
+      inset: 0 0 0 100%;
+      background-color: var(--black);
+    }
+    &.on-home.active {
+      &::before {
+        inset: 0 0 0 0;
+      }
+    }
+    &.on-contact.active {
+      &::after {
+        inset: 0 0 0 0;
+      }
     }
   }

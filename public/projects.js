@@ -39,7 +39,7 @@ export const PROJECTS = [
     },
     {
         index: 3,
-        title: 'Robberta´s',
+        title: "Robberta's",
         path: '/robbertas',
         mainColor: 'red',
         component: Robbertas,

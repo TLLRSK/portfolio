@@ -1,6 +1,10 @@
 @import '../../scss/mixins';
+@import '../../scss/variables';
 
 .work {
+    flex-direction: row;
+    transition: transform .3s ease-in-out, opacity .2s ease-in-out;
+    
     &__main {
         gap: 0;
         
@@ -13,11 +17,8 @@
             }
 
             & p {
-                font-size: 2.4rem;
-                font-weight: 200;
-                @include mq-720 {
-                    font-size: 4rem;
-                }
+                font-size: $fs--m;
+                font-weight: 300;
             }
         }
     }
@@ -36,34 +37,36 @@
             gap: 1.2rem;
             color: var(--black);
             padding: 1.2rem;
-            font-size: 2.4rem;
+            font-size: $fs--s;
             font-style: italic;
             text-transform: uppercase;
+            overflow: hidden;
             position: relative;
             @include mq-720 {
                 padding: 2.4rem;
-                font-size: 4.8rem;
+                font-size: $fs--m;
                 font-weight: 300;
-            }
-            & > .arrow > .work__projects-grid-arrow {
-                transition: all .2s ease-in-out;
             }
 
             &:hover {
                 color: var(--white);
-                font-size: 4.8rem;
-
-                & span {
-                    display: none;
+                & .work__projects-grid-item-number {
+                    opacity: 0;
+                    transform: translateY(-4rem);
                 }
-                & p {
-                    text-align: left;
-                    font-size: 6.4rem;
+                & .work__projects-grid-item-title {
+                    top: -4rem;
+                    opacity: 0;
                 }
-                & > .arrow > .work__projects-grid-arrow {
+                & .work__projects-grid-item-arrow {
                     height: 6.4rem;
                     width: 6.4rem;
                     color: var(--white); 
+                }
+                & .work__projects-grid-item-title--hover {
+                    opacity: 1;
+                    color: var(--white);
+                    transform: none;
                 }
                 &::after {
                     inset: 0 0 0 0; 
@@ -71,21 +74,59 @@
             }
             &::after {
                 position: absolute;
-                inset: 0  0 0 100%;
+                inset: 100%  0 0 0;
                 content: '';
                 background-color: var(--black);
-                transition: inset .2s ease-in-out;
+                transition: inset .3s ease-in-out;
             }
 
-            & span, & p, & .arrow {
+            &-number, &-title, &-title--hover, &-arrow {
                 z-index: 1;
             }
 
-            & span {
+            &-number {
+                flex: 1;
+                opacity: 1;
+                font-weight: 600;
+                transition: all .24s ease-in-out;
                 @include mq-720 {
                     font-size: 3.2rem;
                 }
             }
+
+            &-title {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                font-size: $fs--s;
+                font-weight: 300;
+                transform: translate(-50%, -50%);
+                transition: all .2s ease-in-out;
+                @include mq-720 {
+                    font-size: $fs--l;
+                }
+            }
+            &-title--hover {
+                display: none;
+                opacity: 0;
+                position: absolute;
+                bottom: 2.4rem;
+                left: 2.4rem;
+                font-size: $fs--xl;
+                font-weight: 100;
+                transform: translateY(100%);
+                transition: all .2s ease-in-out;
+                @include mq-720 {
+                    display: block;
+                }
+            }
+
+            &-arrow {
+                width: 2.4rem;
+                height: 2.4rem;
+                transition: all .2s ease-in-out;
+            }
+
             & p {
                 text-align: center;
             }
@@ -95,11 +136,6 @@
             &:nth-child(1), &:nth-child(3) {
                 border-right: 1px solid;
             }
-        }
-        
-        &-arrow {
-            width: 2.4rem;
-            height: 2.4rem;
         }
     }
 }
