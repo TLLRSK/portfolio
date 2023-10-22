@@ -1,13 +1,14 @@
 @import '../../scss/mixins';
+@import '../../scss/variables';
 .contact {
-
+    transition: transform .3s ease-in-out, opacity .2s ease-in-out;
+    
     &__subtitle {
         display: flex;
         justify-content: space-between;
-        font-size: 1.4rem;
+        font-size: clamp(1.4rem, 3vw, 2rem);
         padding: 1.2rem;
         @include mq-720 {
-            font-size: 2rem;
             padding: 2.4rem;
         }
     }
@@ -30,9 +31,6 @@
             flex: 1;
             border-right: 1px solid;
             position: relative;
-            @include mq-720 {
-                font-size: 2rem;
-            }
 
             &:nth-last-child(1) {
                 border: none;

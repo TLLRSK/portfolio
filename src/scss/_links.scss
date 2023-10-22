@@ -1,12 +1,16 @@
 @import '../scss/mixins';
+@import '../scss/variables';
+
 .link {
     text-decoration: none;
 
-    &--project-to-home {
-        font-size: 2.4rem;
+    &--to-home {
+        font-size: $fs--m;
         color: var(--black);
-        @include mq-720 {
-            font-size: 3.2rem;
+        position: relative;
+        &:hover {
+            font-style: italic;
+            text-decoration: line-through;
         }
     }
 
@@ -16,11 +20,8 @@
         justify-content: flex-end;
         gap: 1.2rem;
         color: var(--black);
-        font-size: 3.2rem;
+        font-size: $fs--l;
         font-weight: 300;
-        @include mq-720 {
-            font-size: 4rem;
-        }
 
         &:hover {
             & > .link--project-visit-text {
@@ -41,13 +42,10 @@
     }
 
     &--contact-mail {
-        font-size: 8rem;
+        font-size: $fs--xl;
         font-weight: 300;
         text-align: left;
         position: relative;
-        @include mq-720 {
-            font-size: 12rem;
-        }
         &::after {
             position: absolute;
             inset: calc(50% - .2rem) 100% calc(50% - .2rem) 0;
@@ -68,7 +66,7 @@
         align-items: center;
         justify-content: center;
         padding: 1.2rem;
-        font-size: 1.6rem;
+        font-size: clamp(1.4rem, 3vw, 2rem);
         text-align: center;
         @include mq-720 {
             padding: 2.4rem;
@@ -88,6 +86,13 @@
                 content: '';
                 background-color: var(--white);
             }
+        }
+        &::before {
+            position: absolute;
+            inset: 0 0 100% 0;
+            content: '';
+            background-color: var(--white);
+            transition: inset .2s ease-in-out;
         }
     }
 }

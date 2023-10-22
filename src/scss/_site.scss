@@ -32,6 +32,7 @@ section, article, main {
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
+    z-index: 1;
     @include mq-720 {
       gap: 2.4rem;
     }

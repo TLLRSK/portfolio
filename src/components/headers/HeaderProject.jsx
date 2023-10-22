@@ -15,7 +15,7 @@ export default function HeaderProject(props) {
 
         <div className='project__header-block--right'>
             <div className="project__header-block--right">
-                <Link to='/' className={`link link--project-to-home`}>
+                <Link to='/' className={`link link--to-home`}>
                     <p>pj</p>
                 </Link>
             </div>

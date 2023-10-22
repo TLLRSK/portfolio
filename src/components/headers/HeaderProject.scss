@@ -17,11 +17,11 @@
         }
     }
     &-square {
-        width: 2.4rem;
-        height: 2.4rem;
+        width: 1.2rem;
+        height: 1.2rem;
         @include mq-720 {
-            width: 4rem;
-            height: 4rem;
+            width: 2.4rem;
+            height: 2.4rem;
         }
     }
     &-title {

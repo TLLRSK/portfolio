@@ -1,27 +1,22 @@
 @import '../../../scss/mixins';
+@import '../../../scss/variables';
 .project {
-    gap: 2.4rem;
-    
     &__main {
-        font-size: 2.4rem;
+        font-size: $fs--m;
         font-weight: 300;
         gap: 0;
-        @include mq-720 {
-            font-size: 4rem;
-        }
     }
     &__description {
         flex: 1;
         padding: 1.2rem;
         display: flex;
         flex-direction: column;
-        gap: 1.2rem;
+        gap: 2.4rem;
         @include mq-720 {
             padding: 2.4rem;
-            gap: 2.4rem;
         }
 
-        & p:nth-child(1) {
+        & p {
             width: 75%;
             @include mq-720 {
                 width: 35%;
@@ -54,13 +49,12 @@
         display: flex;
         flex-direction: column;
         width: 75%;
-        gap: 1.2rem;
+        gap: .6rem;
         padding: 1.2rem;
+        font-size: $fs--xs;
+        font-weight: 400;
         & p {
             width: fit-content;
-        }
-        & p:nth-child(1) {
-            border-bottom: 1px solid;
         }
         & p:nth-child(2) {
             text-transform: lowercase;
@@ -69,17 +63,7 @@
             flex-direction: row;
             width: 100%;
             padding: 2.4rem;
-            gap: 2.4rem;
-        }
-
-        &-roles, &-techs {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: .6rem;
-            @include mq-720 {
-                flex-direction: column;
-            }
+            gap: 1.2rem;
         }
     }
     &__footer { 

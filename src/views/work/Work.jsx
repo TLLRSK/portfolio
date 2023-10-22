@@ -1,25 +1,20 @@
-import { useEffect, useState } from "react";
-import ArrowDownRight from "../../components/arrows/ArrowDownRight";
-import HeaderSection from "../../components/headers/headerSection";
-import './Work.scss';
-import { Link } from "react-router-dom";
 import { PROJECTS } from "../../../public/projects";
+import { Link } from "react-router-dom";
+import ArrowDownRight from "../../components/Arrows/ArrowDownRight";
+import HeaderSection from "../../components/Headers/HeaderSection";
+import './Work.scss';
 
-export default function Work() {
+export default function Work(props) {
+    const {toSection, fromSection, sectionStatus, handleSectionNavigation} = props;
     const projects = PROJECTS;
-
-    //setting selected filter
-    const[filter, setFilter] = useState();
-
-    // filtering all by default
-    useEffect(()=> {
-        setFilter('all');
-    },[])
     
-    return <section className="work">
+    return <section className={`work 
+        ${toSection == 'next' ? 'going-to-next' : toSection == 'prev' ? 'going-to-prev' : ''} 
+        ${fromSection == 'next' ? 'coming-from-next' : fromSection == 'prev' ? 'coming-from-prev' : ''} 
+        ${sectionStatus}`}>
         <article className="work__content">
 
-            <HeaderSection section={'Work'} color={'black'}/>
+            <HeaderSection section={'Work'} color={'black'} handleSectionNavigation={handleSectionNavigation}/>
             
             <main className="work__main">
                 <div className="work__main-block--top">
@@ -30,9 +25,15 @@ export default function Work() {
 
                     {projects.map( (project,index) => (
                         <Link to={`project${project.path}`} key={index} className="work__projects-grid-item link">
-                            <span>{project.index}</span>
-                            <p className="work__project-title">{project.title}</p>
-                            <ArrowDownRight className={"work__projects-grid-arrow"}/>
+                            <span className="work__projects-grid-item-number">{project.index}</span>
+
+                            <h3 className="work__projects-grid-item-title">{project.title}</h3>
+
+                            <ArrowDownRight className={"work__projects-grid-item-arrow"}/>
+
+                            <div className="work__projects-grid-item-title--hover">
+                                <p>{project.title}</p>
+                            </div>
                         </Link>
                         )
                     )}
