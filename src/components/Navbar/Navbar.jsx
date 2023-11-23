@@ -7,16 +7,13 @@ export default function Navbar(props) {
   
   // Nav Links
   const navLinks = [
-    {index: 0, path: '/hello', title: 'Hello'},
-    {index: 1, path: '/work', title: 'Work'},
-    {index: 2, path: '/contact', title: 'Contact'}
+    {index: 'a', path: '/hello', title: 'Hello'},
+    {index: 'b', path: '/work', title: 'Work'},
+    {index: 'c', path: '/contact', title: 'Contact'}
   ]
     
   // Location
   let location = useLocation();
-
-  // Nav visibility by location
-  const [hidden, setHidden] = useState(false)
 
   // Color by location
   const [color, setColor] = useState('');
@@ -43,24 +40,8 @@ export default function Navbar(props) {
     if (path === '/') {
         setColor('white');
         // hidden ? setHidden(false) : '';
-    } else if (path === '/hello') {
-        setColor('green');
-        // hidden ? setHidden(false) : '';
-    } else if (path === '/work') {
+    } else {
         setColor('black');
-        // hidden ? setHidden(false) : '';
-    } else if (path === '/contact') {
-        setColor('white');
-        // hidden ? setHidden(false) : '';
-    } else if (path === '/work/project/aboutme') {
-        setColor('green');
-      // setHidden(true);
-    } else if (path === '/work/project/todoapp') {
-        setColor('blue');
-    } else if (path === '/work/project/quoteapp') {
-      setColor('black')
-    } else if (path === '/work/project/robbertas') {
-      setColor('red')
     }
   }
   
@@ -71,8 +52,9 @@ export default function Navbar(props) {
     currentIndex > index 
       ? handleSectionNavigation(e,path,'prev') 
       : handleSectionNavigation(e,path,'next');
+    
     setTimeout(() => {
-      setPath(path)
+      
     },400)
   }
 
@@ -83,7 +65,7 @@ export default function Navbar(props) {
     setIndex();
   })
 
-  return <nav className={`nav color--${color} ${hidden ? 'hidden' : ''}`}>
+  return <nav className={`nav color--${color}`}>
     {navLinks.map((el) => (
       <Link
       key={el.index}
@@ -91,7 +73,14 @@ export default function Navbar(props) {
       className={`link nav-item color--${color} ${path === el.path ? 'active' : ''}`} 
       onClick={(e) => handleLinkClick(e, el.path, el.index)}>
       
-      <p className="nav-item__title">{el.title}</p>
+      <div className="nav-item__text-box">
+        <span className="nav-item__index">{`${el.index})`}</span>
+        <span className="nav-item__title">{el.title}</span>
+      </div>
+      <div className="nav-item__text-box--active">
+        <span className="nav-item__index--active">{`${el.index})`}</span>
+        <span className="nav-item__title--active">{el.title}</span>
+      </div>
     </Link>
     ))}
   </nav>

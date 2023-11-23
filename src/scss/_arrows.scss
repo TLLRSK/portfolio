@@ -3,7 +3,20 @@
 .arrow {
     display: flex;
     justify-content: flex-end;
-    &--hello-page-1, &--hello-page-2 {
+
+    &--hello-page-toggler {
+        z-index: 1;
+        width: clamp(2.4rem, 3vw, 4rem);
+        height: clamp(2.4rem, 3vw, 4rem);
+        transition: all .2s ease-in-out;
+        @include mq-720 {
+            cursor: pointer;
+            width: 4rem;
+            height: 4rem;
+        }
+    }
+    
+    &--projects {
         width: 2.4rem;
         height: 2.4rem;
         transition: all .1s ease-in-out;
@@ -11,21 +24,6 @@
             cursor: pointer;
             width: 4rem;
             height: 4rem;
-        }
-    }
-    &--hello-page-1:hover {
-        transform: translateX(1.2rem);
-    }
-    &--hello-page-2:hover {
-        transform: translateX(-1.2rem);
-    }
-
-    &--up-right {
-        width: 4.8rem;
-        height: 4.8rem;
-        @include mq-720 {
-            width: 6.8rem;
-            height: 6.8rem;
         }
     }
 }

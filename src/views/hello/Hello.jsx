@@ -1,154 +1,169 @@
 import './Hello.scss';
-import { useState } from 'react';
-import HeaderSection from '../../components/Headers/HeaderSection';
+import HeaderSection from '../../components/Headers/HeaderSection/HeaderSection';
 import ArrowForward from '../../components/Arrows/ArrowForward';
+import { useEffect, useState } from 'react';
 import ArrowBackward from '../../components/Arrows/ArrowBackward';
 
 
 export default function Hello(props) {
 
-    const [page, setPage] = useState(false);
     const {toSection, fromSection, sectionStatus, handleSectionNavigation} = props;
+    const [pageNumber, setPageNumber] = useState(0);
+    useEffect(() => {
+        setTimeout(() => {
+            setPageNumber(1)
+        },100)
+    },[])
 
     return <section className={`hello 
         ${toSection == 'next' ? 'going-to-next' : toSection == 'prev' ? 'going-to-prev' : ''} 
         ${fromSection == 'next' ? 'coming-from-next' : fromSection == 'prev' ? 'coming-from-prev' : ''} 
-        ${sectionStatus}`}>
+        ${sectionStatus}
+        on-page--${pageNumber === 1 ? '1' : pageNumber === 2 ? '2' : '0'}`}>
 
-        <article className='hello__content'>
+        <HeaderSection section={'h'} color={'black'} handleSectionNavigation={handleSectionNavigation}/>
 
-            <HeaderSection section={'Hello'} color={'green'} handleSectionNavigation={handleSectionNavigation}/>
+        <main className={`hello__main`}>
+            <div className="hello__slider">
 
-            <main className='hello__main'>
-                <div className='hello__main-page'>
-                    <div className={`hello__main--page-1 ${page == true ? 'hidden' : 'visible'}`}>
-
-                        <div className="hello__description-block--1">
-                            <div>
-                                <span className='hello__description-number--1'>01)</span>
-                                <p>I’M PEDRO J. GIL</p>
-                            </div>
-                            <div>
-                                <span className='hello__description-number--1'>02)</span>
-                                <p>VISUAL DEV, FRONTEND DEV & UX/UI ENGINEER</p>
-                            </div>
-                            
-                        </div>
-
-                        <div className="hello__description-block--2">
-                            <div>
-                                <span className='hello__description-number--1'>03)</span>
-                                <p>CRAFTING CUTIE DIGITAL EXPERIENCES</p>
-                            </div>
-                            <div>
-                                <span className='hello__description-number--1'>04)</span>
-                                <p>BASED IN VALENCIA (SPAIN)</p>
-                            </div>
-                        </div>
+                <div className={`hello__page hello__page--1 ${pageNumber === 1 ? 'visible' : 'hidden'}`}>
+                    <div className="hello__title">
+                        <h3 className="hello__title-text hello__description-header transition-delay--200">HI</h3>
                     </div>
 
-                    <div className={`hello__main--page-2 ${page == true ? 'visible' : 'hidden'}`}>
-
-                        <div className="hello__fields">
-                            <p className='hello__fields-title'>
-                                FIELDS:
-                            </p>
-
-                            <ul className="hello__fields-list">
-                                <li className='hello__fields-list-item'>
-                                    <span>a:</span>
-                                    <p>ILLUSTRATION</p>
-                                </li>
-
-                                <li className='hello__fields-list-item'>
-                                    <span>b:</span>
-                                    <p>WEB DEVELOPMENT</p>
-                                </li>
-
-                                <li className='hello__fields-list-item'>
-                                    <span>c:</span>
-                                    <p>UX/UI DESIGN</p>
-                                </li>
-
-                                <li className='hello__fields-list-item'>
-                                    <span>d:</span>
-                                    <p>ANIMATION</p>
-                                </li>
-
-                                <li className='hello__fields-list-item'>
-                                    <span>e:</span>
-                                    <p>ART DIRECTION</p>
-                                </li>
-                            </ul>
+                    <div className="hello__description">
+                        <div className="hello__text-block hello__text-block--border">
+                            <div className="overflow--hidden">
+                                <p className="hello__description-paragraph transition-delay--400">I&apos;m Pedro<br/>UX/UI Designer<br/>& Frontend Dev <br/>based in Valencia.</p>
+                            </div>
+                            <div className="overflow--hidden">
+                                <p className="hello__description-paragraph transition-delay--400">Working as freelance Visual Artist for +10 years.</p>
+                            </div>
                         </div>
 
-                        <div className="hello__tools">
-                            <p className='hello__tools-title'>
-                                TOOLS:
-                            </p>
-                            <div className='hello__tools-grid'>
-                                <div className="hello__tools-grid-item">
-                                    <p>HTML</p>
-                                </div>
-
-                                <div className="hello__tools-grid-item">
-                                    <p>CSS</p>
-                                </div>
-
-                                <div className="hello__tools-grid-item">
-                                    <p>SASS</p>
-                                </div>
-
-                                <div className="hello__tools-grid-item">
-                                    <p>JS</p>
-                                </div>
-
-                                <div className="hello__tools-grid-item">
-                                <p>PHP</p>
-                                </div>
-
-                                <div className="hello__tools-grid-item">
-                                    <p>REACT</p>
-                                </div>
-
-                                <div className="hello__tools-grid-item">
-                                    <p>FIGMA</p>
-                                </div>
-                                
-                                <div className="hello__tools-grid-item">
-                                    
-                                </div>
-
-                                <div className="hello__tools-grid-item">
-                                    <p>WORD<br/>PRESS</p>
-                                </div>
+                        <div className="hello__text-block">
+                            <div className="overflow--hidden">
+                                <p className="hello__description-paragraph transition-delay--600">Crafting* (solo/coop) cutie digital journeys from a useful and creative vision.</p>
+                            </div>
+                            <div className="flex-1 flex ai--end jc--end overflow--hidden">
+                                <p className="hello__description-paragraph ta--right transition-delay--600">*For every<br/>kind of user.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <div className='hello__page-toggler'>
-                    <input type="checkbox" className="hello__page-switch" id="page-switch"  onClick={(e) => setPage(e.target.checked)}/>
 
-                    <label htmlFor="page-switch" className='hello__page-toggler-block' >
-                        {page ?
-                            <div className='hello__page-toggler-content'>
-                                <span className='hello__page-toggler-number'>(2/2)</span>
-                                <div className='hello__page-toggler-arrow'>
-                                    <ArrowBackward className={'arrow--hello-page-2'}/>
-                                </div>
+                <div className={`hello__page hello__page--2 ${pageNumber === 2 ? 'visible' : 'hidden'}`}>
+                    <div className="hello__list-box">
+                        <div className="hello__title overflow--hidden">
+                            <h3 className='hello__title-text hello__list-header transition-delay--200'>Fields</h3>
+                        </div>
+                        
+                        <ul className="hello__list hello__list--border hello__list--fields">
+                            <li className="hello__list-item">
+                                <span className='hello__list-item-character transition-delay--400'>a)</span>
+                                <p className='hello__list-paragraph hello__item-text transition-delay--400'>Illustration</p>
+                            </li>
+                            <li className="hello__list-item">
+                                <span className='hello__list-item-character transition-delay--400'>b)</span>
+                                <p className='hello__list-paragraph hello__item-text transition-delay--400'>Web Development</p>
+                            </li>
+                            <li className="hello__list-item">
+                                <span className='hello__list-item-character transition-delay--400'>c)</span>
+                                <p className='hello__list-paragraph hello__item-text transition-delay--400'>UX/UI Design</p>
+                            </li>
+                            <li className="hello__list-item">
+                                <span className='hello__list-item-character transition-delay--400'>d)</span>
+                                <p className='hello__list-paragraph hello__item-text transition-delay--400'>2D Animation</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div className="hello__list-box">
+                        <div className="hello__title overflow--hidden">
+                            <h3 className='hello__title-text hello__list-header transition-delay--600'>Tools</h3>
+                        </div>
+
+                        <ul className="hello__list hello__list--tools">
+                            <div className="hello__list-row">
+                                <li className="hello__list-item flex-1">
+                                    <p className='hello__list-paragraph transition-delay--700'>Html</p>
+                                </li>
+                                <li className="hello__list-item flex-1 jc--center">
+                                    <p className='hello__list-paragraph transition-delay--700'>Css</p>
+                                </li>
+                                <li className="hello__list-item flex-1 jc--end">
+                                    <p className='hello__list-paragraph transition-delay--700'>Js</p>
+                                </li>
                             </div>
-                        : 
-                            <div className='hello__page-toggler-content'>
-                                <span className='hello__page-toggler-number'>(1/2)</span>
-                                <div className='hello__page-toggler-arrow'>
-                                    <ArrowForward className={'arrow--hello-page-1'}/>
-                                </div>
+
+                            <div className="hello__list-row">
+                                <li className="hello__list-item flex-1">
+                                    <p className='hello__list-paragraph transition-delay--700'>React</p>
+                                </li>
+                                <li className="hello__list-item flex-1 jc--end">
+                                    <p className='hello__list-paragraph transition-delay--700'>Php</p>
+                                </li>
                             </div>
-                            }
-                    </label>
+
+                            <div className="hello__list-row">
+                                <li className="hello__list-item flex-1">
+                                    <p className='hello__list-paragraph transition-delay--700'>Figma</p>
+                                </li>
+                                <li className="hello__list-item">
+                                    <p className='hello__list-paragraph transition-delay--700'>Wordpress</p>
+                                </li>
+                            </div>
+                        </ul>
+                    </div>
                 </div>
-            </main>
-        </article>
+            </div>
+
+
+            <button className="btn--hello-page-toggler color--black" onClick={() => pageNumber === 1 ? setPageNumber(2) : setPageNumber(1)}>
+                    <div className={`hello__page-toggler-content tx--left ${pageNumber === 1 ? 'visible' : pageNumber === 0 ? 'visible' : 'hidden'}`}>
+                        <div className="hello__current-page">
+                            <span>1/2</span>
+                        </div>
+                        <div className="hello__next-page">
+                            <span className="hello__next-page-title">FIELDS/TOOLS</span>
+                            <ArrowForward className={"arrow--hello-page-toggler"}/>
+                        </div>
+                    </div>
+
+                    <div className={`hello__page-toggler-content tx--right ${pageNumber === 2 ? 'visible' : 'hidden'}`}>
+                        <div className="hello__next-page">
+                            <ArrowBackward className={"arrow--hello-page-toggler"}/>
+                            <span className="hello__next-page-title">HI</span>
+                        </div>
+                        <div className="hello__current-page">
+                            <span>2/2</span>
+                        </div>
+                    </div>
+             
+            </button>
+            {/* <button className="btn--hello-page-toggler color--black" onClick={() => pageNumber === 1 ? setPageNumber(2) : setPageNumber(1)}>
+                {pageNumber === 1 ? 
+                    <div className="hello__page-toggler-content">
+                        <div className="hello__current-page">
+                            <span>1/2</span>
+                        </div>
+                        <div className="hello__next-page">
+                            <span className="hello__next-page-title">FIELDS/TOOLS</span>
+                            <ArrowForward className={"arrow--hello-page-toggler"}/>
+                        </div>
+                    </div>
+                : 
+                    <div className="hello__page-toggler-content">
+                        <div className="hello__next-page">
+                            <ArrowBackward className={"arrow--hello-page-toggler"}/>
+                            <span className="hello__next-page-title">HI</span>
+                        </div>
+                        <div className="hello__current-page">
+                            <span>2/2</span>
+                        </div>
+                </div>
+                }
+            </button> */}
+        </main>
     </section>
 }

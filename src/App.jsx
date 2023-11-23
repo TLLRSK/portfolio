@@ -4,32 +4,20 @@ import Home from './views/home/Home'
 import Hello from './views/hello/Hello'
 import Work from './views/work/Work'
 import Contact from './views/contact/Contact'
-import ProjectTemplate from './views/projects/projectTemplate/ProjectTemplate'
 import { useEffect, useState } from 'react'
-import Navbar from './components/navbars/Navbar/Navbar'
+import Navbar from './components/Navbar/Navbar'
 
 function App() {
   // Managing location
   let location = useLocation();
 
   // Setting style by location
-  let [color, setColor] = useState('');
+  let [color, setColor] = useState(true);
 
   // Calling back setBgColor
   let locationColor = (path) => {
-    if (path === '/') {
-        setColor('color--white');
-    } else if (path === '/hello') {
-        setColor('color--green');
-    } else if (path === '/work') {
-      setColor('color--black');
-    } else if (path.startsWith('/work/project/')) {
-      setColor('color--black');
-    } else if (path === '/contact') {
-        setColor('color--white');
-    }
+    path === '/' ? setColor('white') : setColor('black');
   }
-  
 
   // Handling navigation
   const [toSection, setToSection] = useState('');
@@ -50,38 +38,40 @@ function App() {
       navigate(path)
       handleFromSection(toSection);
       setToSection('')
-    },300)
+    },200)
   }
 
   // Checking location
   useEffect(() => {
-    console.log(`coming from ${fromSection}`)
     // setFromSection('')
     setTimeout(() => {
       setFromSection('')
-      console.log('active')
-      setSectionStatus('active')
     },100)
+    setTimeout(() => {
+      setSectionStatus('active')
+    },300)
     return locationColor(location.pathname);
   },[location])
 
   return (
     <div 
-      className={`app ${color} 
-        ${location.pathname == '/' ? 'on-home' 
-        : location.pathname == '/contact' ? 'on-contact' 
+      className={`app color--${color} 
+      color-bg--${location.pathname == '/' ? 'black' 
+        : location.pathname == '/hello' ? 'grey--100' 
+        : location.pathname == '/work' ? 'grey' 
+        : location.pathname == '/contact' ? 'white' 
         : ''}
+      
         ${sectionStatus}`}>
 
       <Routes>
         <Route path='/' element={<Home toSection={toSection} fromSection={fromSection} sectionStatus={sectionStatus}/>}></Route>
         <Route path='/hello' element={<Hello toSection={toSection} fromSection={fromSection} sectionStatus={sectionStatus} handleSectionNavigation={handleSectionNavigation}/>}></Route>
         <Route path='/work' element={<Work toSection={toSection} fromSection={fromSection} sectionStatus={sectionStatus} handleSectionNavigation={handleSectionNavigation}/>}></Route>
-        <Route path='/work/project/*' element={<ProjectTemplate/>} />
         <Route path='/contact' element={<Contact toSection={toSection} fromSection={fromSection} sectionStatus={sectionStatus} handleSectionNavigation={handleSectionNavigation}/>}></Route>
       </Routes>
 
-      {location.pathname.includes('/work/project/') ? '' : <Navbar setToSection={setToSection} handleSectionNavigation={handleSectionNavigation}/>}
+      <Navbar setToSection={setToSection} handleSectionNavigation={handleSectionNavigation}/>
 
     </div>
   )

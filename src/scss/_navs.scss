@@ -8,12 +8,14 @@
     border-left: .1rem solid;
     border-radius: 4.8rem;
     padding: 0 2.4rem;
+    color: var(--white);
     gap: 1.2rem;
     z-index: 1;
 
     @include mq-720 {
         padding: 0 4rem;
         gap: 4.8rem;
+        border-width: 2px;
     }
 
     &.hidden {
@@ -23,42 +25,35 @@
     &-item {
         flex: 1;
         display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
         border-bottom: 1px dashed;
-        padding: .6rem 0;
         text-transform: uppercase;
         position: relative;
-
-        @include mq-720 {
-            padding: 1.2rem 2.4rem;
-        }
+        color: var(--white);
 
         &::after {
             position: absolute;
             opacity: 0;
             inset: calc(100% - 1px) 100% 0 0;
-            transition: all .1s ease-in-out;
+            transition: all .3s ease-in-out;
             transform: translateY(1px);
             content: '';
-        }
-        &.color--black::after {
-            background-color: var(--black);
         }
         &.color--white::after {
             background-color: var(--white);
         }
-        &.color--green::after {
-            background-color: var(--green);
+        &.color--black::after {
+            background-color: var(--black);
         }
         &:hover {
             &::after {
                 opacity: 1;
                 inset: calc(100% - 1px) 0 0 0;
+                @include mq-720 {
+                    inset: calc(100% - 1px) 0 -1px 0;
+                }
             }
-            & > .nav-item__title {
-                transform: none;
+            & .nav-item__title, .nav-item__index {
+                transform: translateY(-.6rem);
             }
         }
 
@@ -66,16 +61,22 @@
             &::after {
                 opacity: 1;
                 inset: calc(100% - 2px) 0 0 0;
+                @include mq-720 {
+                    inset: calc(100% - 1px) 0 -1px 0;
+                }
             }
             
-            @include mq-720 {
+            & .nav-item__title, & .nav-item__index {
+                opacity: 0;
+                transform: translateY(-180%);
+
+                &--active {
+                    opacity: 1;
+                    transform: none;
+                }
             }
-            & > .nav-item__pusher {
-                width: 100%;
-            }
-            
-            & > .nav-item__title {
-                font-weight: 600;
+            & .nav-item__title--active {
+                opacity: 1;
                 transform: none;
             }
         }
@@ -84,16 +85,88 @@
             display: flex;
             flex-direction: row;
         }
+        &__text-box {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 1.2rem;
+            overflow: hidden;
+            transition: all .3s ease-in-out;
+            transform: translateY(.4rem);
+            @include mq-720 {
+                align-items: center;
+                justify-content: space-between;
+                padding: 1.2rem;
+            }
+            &--active {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                inset: 0 0 0 0;
+                overflow: hidden;
+                @include mq-720 {
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 1.2rem;
+                }
+            }
+        }
+        &__index {
+            display: none;
+            font-size: $fs--xs;
+            font-weight: 200;
+            transition: opacity .3s ease-in-out, transform .2s ease-in-out;
+            @include mq-720 {
+                font-size: $fs--xs-desktop;
+                display: flex;
+            }
+            @include mq-1280 {
+                font-size: $fs--xs-desktop-1280;
+            }
+            &--active {
+                opacity: 0;
+                display: none;
+                font-weight: 500;
+                transform: translateY(180%);
+                transition: opacity .3s ease-in-out, transform .2s ease-in-out;
+                @include mq-720 {
+                    font-size: $fs--xs-desktop;
+                    display: flex;
+                }
+                @include mq-1280 {
+                    font-size: $fs--xs-desktop-1280;
+                }
+            }
+        }
 
         &__title {
             font-size: $fs--xs;
             font-weight: 400;
-            transition: all .1s ease-in-out;
-            transform: translateY(.4rem);
+            transition: opacity .3s ease-in-out, transform .2s ease-in-out;
             @include mq-720 {
+                font-size: $fs--xs-desktop;
                 font-weight: 200;
-                transform: translateY(.8rem);
+            }
+            @include mq-1280 {
+                font-size: $fs--xs-desktop-1280;
+            }
+            
+            &--active {
+                opacity: 0;
+                font-size: $fs--xs;
+                font-weight: 600;
+                transform: translateY(180%);
+                transition: opacity .3s ease-in-out, transform .2s ease-in-out;
+                @include mq-720 {
+                    font-size: $fs--xs-desktop;
                 }
+                @include mq-1280 {
+                    font-size: $fs--xs-desktop-1280;
+                }
+            }
         }
     }
 }
