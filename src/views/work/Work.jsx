@@ -1,8 +1,8 @@
 import { PROJECTS } from "../../../public/projects";
 import { Link } from "react-router-dom";
 import ArrowDownRight from "../../components/Arrows/ArrowDownRight";
-import HeaderSection from "../../components/Headers/HeaderSection";
 import './Work.scss';
+import HeaderSection from "../../components/Headers/HeaderSection/HeaderSection";
 
 export default function Work(props) {
     const {toSection, fromSection, sectionStatus, handleSectionNavigation} = props;
@@ -14,22 +14,28 @@ export default function Work(props) {
         ${sectionStatus}`}>
         <article className="work__content">
 
-            <HeaderSection section={'Work'} color={'black'} handleSectionNavigation={handleSectionNavigation}/>
+            <HeaderSection section={'w'} color={'black'} handleSectionNavigation={handleSectionNavigation}/>
             
             <main className="work__main">
-                <div className="work__main-block--top">
-                    <p>PICK A PROJECT</p>
+                <div className="work__subtitle">
+                    <p className="work__subtitle-text transition-delay--100">Select a project</p>
                 </div>
 
                 <div className="work__projects-grid">
 
                     {projects.map( (project,index) => (
-                        <Link to={`project${project.path}`} key={index} className="work__projects-grid-item link">
-                            <span className="work__projects-grid-item-number">{project.index}</span>
+                        <Link to={project.link} key={index} className={`work__projects-grid-item link after--${project.mainColor}`} target="_blank">
+                            <div className="work__projects-grid-item-number">
+                                <span className="work__projects-grid-item-number-text ff--literata transition-delay--200">{project.index}</span>
+                            </div>
 
-                            <h3 className="work__projects-grid-item-title">{project.title}</h3>
+                            <div className="work__projects-grid-item-title">
+                                <h3 className="work__projects-grid-item-title-text transition-delay--400">{project.title}</h3>
+                            </div>
 
-                            <ArrowDownRight className={"work__projects-grid-item-arrow"}/>
+                            <div className="work__projects-grid-item-arrow">
+                                <ArrowDownRight className={"arrow--projects"}/>
+                            </div>
 
                             <div className="work__projects-grid-item-title--hover">
                                 <p>{project.title}</p>
@@ -37,9 +43,7 @@ export default function Work(props) {
                         </Link>
                         )
                     )}
-                    
                 </div>
-
             </main>
         </article>
     </section>

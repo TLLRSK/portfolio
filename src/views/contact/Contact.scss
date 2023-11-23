@@ -4,12 +4,49 @@
     transition: transform .3s ease-in-out, opacity .2s ease-in-out;
     
     &__subtitle {
-        display: flex;
-        justify-content: space-between;
-        font-size: clamp(1.4rem, 3vw, 2rem);
-        padding: 1.2rem;
-        @include mq-720 {
-            padding: 2.4rem;
+        &--top, &--bottom {
+            display: flex;
+            overflow: hidden;
+        }
+        &--top {
+            padding: 1.2rem 1.2rem 0 1.2rem;
+            @include mq-720 {
+                padding: 2.4rem 2.4rem 0 2.4rem;
+            }
+            & .contact__subtitle-text {
+                &:nth-child(2) {
+                    text-align: center;
+                }
+                &:nth-child(3) {
+                    text-align: right;
+                }
+            }
+        }
+        &--bottom {
+            padding: 0 1.2rem 1.2rem 1.2rem;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.2rem;
+            @include mq-720 {
+                padding: 0 2.4rem 2.4rem 2.4rem;
+            }
+            & .contact__subtitle-text {
+                flex: none;
+                &:nth-child(2) {
+                    font-style: normal;
+                }
+            }
+        }
+        &-text {
+            opacity: 0;
+            flex: 1;
+            transform: translateY(-4.8rem);
+            font-size: $fs--s;
+            font-weight: 300;
+            font-style: italic;
+            @include mq-720 {
+                font-size: $fs--xs-desktop;
+            }
         }
     }
 
@@ -18,12 +55,68 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        position: relative;
+
+        &::after {
+            position: absolute;
+            inset: 4.8rem 50% 100% 0;
+            content: '';
+            border-right: 1px dashed;
+            @include mq-720 {
+                inset: 2.4rem 50% 100% 0;
+            }
+        }
+        &::before {
+            position: absolute;
+            inset: 50% 50% 0 50%;
+            content: '';
+            border-top: 1px dashed;
+            @include mq-720 {
+                inset: 50% 50% 0 50%;
+            }
+        }
+
+        &-span-aligned--right {
+            display: flex;
+            width: 100%;
+            justify-content: flex-end;
+        }
+
+        &-link {
+            z-index: 1;
+            font-size: $fs--xl-contact;
+            font-weight: 300;
+            text-align: left;
+            position: relative;
+            color: var(--black);
+            opacity: 0;
+            transform: translateY(-8rem);
+
+            @include mq-720 {
+                font-size: $fs--xl-contact-desktop;
+            }
+
+            &::after {
+                position: absolute;
+                inset: calc(50% - .2rem) 100% calc(50% - .2rem) 0;
+                content: '';
+                background: var(--black);
+                transition: inset .2s ease-in-out;
+            }
+            &:hover {
+                &::after {
+                    inset: calc(50% - .2rem) 0 calc(50% - .2rem) 0;
+                }
+                
+            }
+        }
     }
 
     &__sublinks-list {
         display: flex;
         justify-content: space-between;
         border-top: 1px solid;
+
         &-item {
             display: flex;
             align-items: center;
@@ -31,13 +124,100 @@
             flex: 1;
             border-right: 1px solid;
             position: relative;
-
             &:nth-last-child(1) {
                 border: none;
             }
         }
     }
-    & a {
-        color: var(--white)
+
+    &__sublink {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1.2rem;
+        font-size: $fs--xs;
+        font-weight: 300;
+        text-align: center;
+        color: var(--black);
+        position: relative;
+        overflow: hidden;
+        @include mq-720 {
+            // padding: 2.4rem;
+            font-size: $fs--xs-desktop;
+        }
+        &--idle, &--on-hover {
+            z-index: 1;
+            transition: transform .2s, opacity .2s;
+        }
+        &--idle {
+            color: var(--black);
+            opacity: 0;
+            transform: translateY(-5rem);
+        }
+        &--on-hover {
+            opacity: 0;
+            position: absolute;
+            transform: translateY(-5rem);
+            color: var(--white);
+        }
+        &:hover {
+            .contact__sublink--on-hover {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            &::before {
+                position: absolute;
+                inset: 0 0 0 0;
+                content: '';
+                background-color: var(--black);
+            }
+        }
+
+        &::before {
+            position: absolute;
+            inset: 0 0 100% 0;
+            content: '';
+            background-color: var(--black);
+            transition: inset .2s ease-in-out;
+        }
+    }
+    
+    &.active {
+        .contact__subtitle-text {
+            opacity: 1;
+            transform: none;
+        }
+        .contact__mail {
+            &::after {
+                inset: 4.8rem 50% 4.8rem 0;
+                transition: inset .6s .3s;
+                @include mq-720 {
+                    inset: 2.4rem 50% 2.4rem 0;
+                }
+                @include mq-1280 {
+                    inset: 2.4rem 50% 2.4rem 0;
+                }
+            }  
+            &::before {
+                inset: 50% 8% 0 8%;
+                transition: inset .6s .3s;
+                @include mq-720 {
+                    inset: 50% 3.2rem 0 3.2rem;
+                }
+            }  
+            &-link {
+                opacity: 1;
+                transform: translateY(0);
+                transition: opacity .3s .9s, transform .3s .9s;
+            }
+        }
+        .contact__sublink--idle {
+            opacity: 1;
+            color: var(--black);
+            transform: translateY(0);
+            transition: transform .4s 1.2s;
+        }
     }
 }

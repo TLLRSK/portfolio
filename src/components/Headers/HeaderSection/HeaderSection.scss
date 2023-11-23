@@ -1,0 +1,24 @@
+@import '../../../scss/mixins';
+@import '../../../scss/variables';
+
+.section__header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 1.2rem;
+    border-bottom: 1px solid;
+    @include mq-720 {
+        padding-left: 2.4rem;
+    }
+
+    &-title {
+        flex: 1;
+        font-size: $fs--s;
+        font-weight: 300;
+        text-transform: lowercase;
+        @include mq-720 {
+            font-size: $fs--s-desktop;
+        }
+    }
+    
+}

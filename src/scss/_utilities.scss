@@ -4,28 +4,40 @@
 .color--white {
     color: var(--white);
 }
+.color--grey {
+    color: var(--grey);
+}
+.color--grey--100 {
+    color: var(--grey--100);
+}
 .color--black {
     color: var(--black);
 }
-.color--blue {
-    color: var(--blue);
-}
-.color--green {
-    color: var(--green);
-}
-.color--green--100 {
-    color: var(--green--100);
-}
 .color--red {
     color: var(--red);
+}
+.color--yellow {
+    color: var(--yellow);
+}
+.color--blue {
+    color: var(--blue);
 }
 
 // background
 .color-bg--white {
     background-color: var(--white);
 }
+.color-bg--grey {
+    background-color: var(--grey);
+}
+.color-bg--grey--100 {
+    background-color: var(--grey--100);
+}
 .color-bg--black {
     background-color: var(--black);
+}
+.color-bg--red {
+    background-color: var(--red);
 }
 .color-bg--yellow {
     background-color: var(--yellow);
@@ -33,18 +45,138 @@
 .color-bg--blue {
     background-color: var(--blue);
 }
-.color-bg--green {
-    background-color: var(--green);
+
+// Border
+.border-bottom--s {
+    border-bottom: 1px solid;
 }
-.color-bg--green--100 {
-    background-color: var(--green--100);
-}
-.color-bg--red {
-    background-color: var(--red);
+.border-bottom--d {
+    border-bottom: 1px dashed;
 }
 
+// Size
+.max-w--80 {
+    max-width: 80%;
+}
+.max-w--90 {
+    max-width: 90%;
+}
+// Display
+.flex-1 {
+    flex: 1;
+}
+.flex {
+    display: flex;
+}
+.flex--row {
+    display: flex;
+    flex-direction: row;
+}
+.flex--column {
+    display: flex;
+    flex-direction: column;
+}
+.ai--center {
+    align-items: center;
+}
+.ai--start {
+    align-items: flex-start;
+}
+.ai--end {
+    align-items: flex-end;
+}
+.jc--center {
+    justify-content: center;
+}
+.jc--start {
+    justify-content: flex-start;
+}
+.jc--end {
+    justify-content: flex-end;
+}
+.jc--between {
+    justify-content: space-between;
+}
+.overflow--hidden {
+    overflow: hidden;
+}
 
 // Fonts
+.ff--literata {
+    font-family: 'Literata', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
 .underline {
     text-decoration: underline;
+}
+
+.ta--right {
+    text-align: right;
+}
+.ta--center {
+    text-align: center;
+}
+.ta--left {
+    text-align: left;
+}
+
+.f-weight--thin {
+    font-weight: 100;
+}
+.f-weight--extralight {
+    font-weight: 200;
+}
+.f-weight--light {
+    font-weight: 300;
+}
+.f-weight--regular {
+    font-weight: 400;
+}
+.f-weight--medium {
+    font-weight: 500;
+}
+.f-style--italic {
+    font-style: italic;
+}
+.f-style--normal {
+    font-style: normal;
+}
+
+// Transition Delay
+.transition-delay {
+    &--100 {
+        transition: opacity .3s .3s, transform .3s .3s;
+    }
+    &--200 {
+        transition: opacity .3s .6s, transform .3s .6s;
+    }
+    &--300 {
+        transition: opacity .3s .8s, transform .3s .8s;
+    }
+    &--400 {
+        transition: opacity .3s 1.1s, transform .3s 1.1s;
+    }
+    &--500 {
+        transition: opacity .3s 1.4s, transform .3s 1.4s;
+    }
+    &--600 {
+        transition: opacity .3s 1.7s, transform .3s 1.7s;
+    }
+    &--700 {
+        transition: opacity .3s 2s, transform .3s 2s;
+    }
+    &--800 {
+        transition: opacity .3s 2.3s, transform .3s 2.3s;
+    }
+    &--900 {
+        transition: opacity .3s 2.6s, transform .3s 2.6s;
+    }
+    &--1000 {
+        transition: opacity .3s 2.9s, transform .3s 2.9s;
+    }
+    &--1100 {
+        transition: opacity .3s 3.2s, transform .3s 3.2s;
+    }
+    &--1200 {
+        transition: opacity .3s 3.5s, transform .3s 3.5s;
+    }
 }

@@ -2,64 +2,217 @@
 @import '../../scss/variables';
 
 .home {
-    border: 1px solid;
-    color: var(--white);
-    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 1.2rem;
     transition: transform .3s ease-in-out, opacity .2s ease-in-out;
+    color: var(--white);
+    position: relative;
 
     &__header {
+        flex: 1;
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        border-bottom: 1px solid;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: relative;
+        z-index: 3;
+
+        &-title {
+            position: absolute;
+            inset: 0 50% auto 0;
+            overflow: hidden;
+
+            @include mq-720 {
+                inset: 50% 0 auto 0;
+                transform: translateY(-50%);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            &-text {
+                opacity: 0;
+                font-size: $fs--xl-home;
+                font-weight: 500;
+                transform: translateY(-4.8rem);
+
+                @include mq-720 {
+                    font-size: $fs--xl-home-desktop;
+                    font-weight: 300;
+                }
+            }
+        }
+
+        &-subtitle {
+            position: absolute;
+            display: flex;
+            justify-content: space-between;
+            inset: auto 0 0 0;
+
+            &-box {
+                overflow: hidden;
+                &:nth-child(2) {
+                    text-align: right;
+                }
+            }
+
+            &-text {
+                font-size: $fs--m;
+                font-weight: 500;
+                font-style: italic;
+                opacity: 0;
+                transform: translateY(-4.8rem);
+
+                & span {
+                    font-weight: 200;
+                }
+            }
+        }
+
+        &-ellipse {
+            display: none;
+            position: absolute;
+            width: 4.8rem;
+            height: 4.8rem;
+            border-top: 1px solid;
+            border-radius: 50%;
+            @include mq-720 {
+                display: flex;
+            }
+        }
+
+        &-copyright {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: .6rem 1.2rem;
+            top: 0;
+            right: 0;
+            border: 1px solid;
+            border-radius: 2.4rem;
+            overflow: hidden;
+
+            &-text {
+                opacity: 0;
+                font-size: 1.2rem;
+                font-weight: 300;
+                transform: translateY(-2.4rem);
+                @include mq-720 {
+                    font-size: 1.6rem;
+                }
+            }
+        }
     }
     &__main {
-        flex: 1;
+        position: absolute;
         display: flex;
-        padding: 16%; 
-        border: none;
-        @include mq-720 {
-            padding: 8%;
-        }
-    }
-    &__description {
-        font-size: $fs--s;
-        font-weight: 300;
-        text-transform: lowercase;
-        text-align: center;
-    }
-    &-title {
-        flex: 1;
-        padding: 1.2rem;
-        font-size: $fs--m;
-        font-weight: 400;
-        border-right: 1px solid;
-    }
-    &-subtitle {
-        flex: 1;
-        display: flex;
-        justify-content: flex-end;
-        padding: 1.2rem;
-        text-align: right;
-        & h2 {
-            font-size: $fs--xs;
-            font-weight: 300;
-        }
-    }
-    &-ellipse {
-        flex: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: 1px solid;
-        border-radius: 500rem;
-        @include mq-720 {
-            padding: 2.4rem;
-        }
-    }
+        padding: 12rem 6.4rem;
+        inset: 0 0 0 0;
 
+        @include mq-720 {
+            padding: 8rem 8rem;
+        }
+
+        &-round-box {
+            flex: 1;
+            display: flex;
+            border: 1px dashed;
+            border-radius: 12rem;
+            position: relative;
+            
+            @include mq-720 {
+                border-radius: 24rem;
+            }
+
+            @include mq-1280 {
+                border-radius: 32rem;
+            }
+
+            &:before,&:after {
+                position: absolute;
+                content: '';
+            }
+            &:before {
+                top: 50%;
+                right: 50%;
+                bottom: 50%;
+                left: 0;
+                border-right: 1px dashed;
+                @include mq-720 {
+                    inset: 50% 50% 50% 0;
+                }
+            }
+            &:after {
+                top: 50%;
+                right: 50%;
+                bottom: 0;
+                left: 50%;
+                border-top: 1px dashed;
+                @include mq-720 {
+                    top: 50%;
+                    right: 50%;
+                    bottom: 0;
+                    left: 50%;
+                }
+            }
+        }
+    }
+    
     &.going-to-next {
         transform: translateX(-120%);
         opacity: 0;
+    }
+    &.active {
+        .home {
+            &__header {
+                &-title-text {
+                    opacity: 1;
+                    transform: none;
+                    transition: all .4s .4s;
+                }
+                &-subtitle-text {
+                    opacity: 1;
+                    transform: none;
+                    transition: all .4s .8s;
+                }
+                &-copyright-text {
+                    opacity: 1;
+                    transform: none;
+                    transition: all .4s .8s;
+                }
+            }
+            &__main {
+                &-round-box {
+                    &:before {
+                        top: 35%;
+                        right: 50%;
+                        bottom: 35%;
+                        left: 0;
+                        transition: top .4s .1s, right .4s .1s, bottom .4s .1s, left .4s .1s;
+                        @include mq-720 {
+                            top: 12%;
+                            right: 50%;
+                            bottom: 12%;
+                            left: 0;
+                        }
+                    }
+                    &:after {
+                        top: 50%;
+                        right: 20%;
+                        bottom: 0;
+                        left: 20%;
+                        transition: top .4s .1s, right .4s .1s, bottom .4s .1s, left .4s .1s;
+                        @include mq-720 {
+                            top: 50%;
+                            right: 12%;
+                            bottom: 0;
+                            left: 12%;
+                        }
+                    }
+                }
+            }
+        }
     }
 }

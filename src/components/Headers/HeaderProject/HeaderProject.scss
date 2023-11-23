@@ -1,4 +1,4 @@
-@import '../../scss/mixins';
+@import '../../../scss/mixins';
 
 [class^='project__header-block'] {
     display: flex;
@@ -8,6 +8,10 @@
 .project__header {
     display: flex;
     justify-content: space-between;
+    border-top: 1px solid;
+    border-right: 1px solid;
+    border-left: 1px solid;
+
     &-block {
         &--left {
             gap: 1.2rem;

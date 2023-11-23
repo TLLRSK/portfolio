@@ -1,11 +1,11 @@
 export default function ArrowUpRight({className}) {
-    return <div className={`arrow--up-right ${className}`}> 
+    return <> 
         <svg version="1.1"
         id="Layer_1"
         viewBox="0 0 48 48"
         className={className}>
-        <path d="M8.3,8.3h31.5v31.4h-2V11.9L10,39.6L8.4,38l27.8-27.8H8.3L8.3,8.3z"
+        <path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"
         fill="currentColor"/>
         </svg>
-    </div>
+    </>
 }

@@ -1,55 +1,15 @@
 @import '../scss/variables';
 
 .btn {
-    &--hello-dropdown {
-        border: 1px solid var(--blue--0);
-        border-bottom: none;
-        border-radius: 2.4rem 2.4rem 0 0;
-        padding: .6rem 1.2rem;
-        &-toggler {
-            display: none;
-        }
-        
-        &-label {
-            font-size: $fs--xs;
-            font-family: 'Poppins';
-        }
-
-        &.active {
-            color: var(--white--0);
-            background-color: var(--blue--0);
-        }
-    }
-    &--quoteapp-toggler {
-        position: relative;
+    &--hello-page-toggler {
+        display: flex;
+        appearance: none;
         cursor: pointer;
-        max-width: 66%;
-        border-color: var(--white--300);
-        color: var(--white--300);
-        transition: all .2s ease-in-out;
-        overflow: hidden;
-
-        &::before {
-            position: absolute;
-            inset: 100% 0 0 0;
-            content: '';
-            background-color: var(--white--300);
-            transition: all .2s ease-in-out;
-        }
-
-        &:hover {
-            border-color: var(--white--300);
-            color: var(--grey--300);
-            &::before {
-                position: absolute;
-                inset: 0 0 0 0;
-                content: '';
-                background-color: var(--white--300);
-            }
-        }
-
-        & p {
-            z-index: 1;
-        }
+        border: none;
+        outline: none;
+        border-top: 1px solid;
+        margin: 0;
+        padding: 0;
+        background-color: transparent;
     }
 }
