@@ -17,6 +17,13 @@ $fs--l: clamp(3.2rem, 8vw, 6.4rem);
 $fs--xl-home: clamp(4rem, 8vw, 12.8rem);
 $fs--xl-contact: clamp(7.2rem, 12vw, 8rem);
 
+$fs--xs-h720: clamp(1.4rem, 4vh, 1.6rem);
+$fs--s-h720: clamp(1.8rem, 2vh, 2.4rem);
+$fs--m-h720: clamp(2.4rem, 4vh, 3.2rem);
+$fs--l-h720: clamp(3.2rem, 8vh, 6.4rem);
+$fs--xl-home-h720: clamp(4rem, 8vh, 12.8rem);
+$fs--xl-contact-h720: clamp(7.2rem, 12vh, 8rem);
+
 $fs--xs-desktop: clamp(2rem, 3vw, 2.4rem);
 $fs--s-desktop: clamp(2.8rem, 4vw, 3.2rem);
 $fs--m-desktop: clamp(3.2rem, 4vw, 4rem);

@@ -9,8 +9,8 @@
     transition: transform .3s ease-in-out, opacity .2s ease-in-out;
     overflow: hidden;
     @include mq-720 {
-        border-bottom-right-radius: 4.8rem;
-        border-bottom-left-radius: 4.8rem;
+        border-bottom-right-radius: 3.2rem;
+        border-bottom-left-radius: 3.2rem;
     }
 
     &__main {
@@ -25,6 +25,10 @@
         }
         @include mq-1280 {
             font-size: $fs--m-desktop-1280;
+        }
+
+        @include mqh-720 {
+            font-size: $fs--m-h720;
         }
     }
 
@@ -65,7 +69,7 @@
         border-bottom: 1px solid;
         overflow: hidden;
         @include mq-720 {
-            padding: 2.4rem;
+            padding: 1.2rem 2.4rem;
         }
         &-text {
             font-weight: 200;
@@ -165,6 +169,9 @@
                     padding-left: 1.2rem;
                 }
             }
+        }
+        @include mq-1280 {
+            
         }
         &.tx--right {
             &.visible {
