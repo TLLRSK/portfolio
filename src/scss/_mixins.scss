@@ -4,3 +4,6 @@
 @mixin mq-1280 {
     @media all and (min-width: 1280px) { @content; }
 }
+@mixin mqh-720 {
+    @media all and (max-height: 720px) { @content; }
+}

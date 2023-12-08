@@ -6,9 +6,8 @@
 
     &--to-home {
         display: flex;
-        border-left: 1px solid;
-        width: clamp(4.8rem, 3vw, 7.2rem);
-        height: clamp(4.8rem, 3vw, 7.2rem);
+        // width: clamp(4.8rem, 3vw, 7.2rem);
+        // height: clamp(4.8rem, 3vw, 7.2rem);
         padding: 1.2rem;
         color: var(--black);
         position: relative;
@@ -25,29 +24,11 @@
                 font-size: $fs--s-desktop;
             }
         }
-        &::before {
-            position: absolute;
-            inset: 0 100% 0 0;
-            content: '';
-            transition: inset .1s ease-in-out;
-        }
-        &.color--blue::before {
-            background-color: var(--blue);
-        }
-        &.color--black::before {
-            background-color: var(--black);
-        }
-        &.color--white::before {
-            background-color: var(--white);
-        }
+ 
         &:hover {
             & p {
-                color: var(--white);
                 font-style: italic;
                 text-decoration: line-through;
-            }
-            &::before {
-                inset: 0 0 0 0;
             }
         }
         &.color--white:hover {
