@@ -13,24 +13,25 @@
         display: flex;
         align-items: center;
         padding: 1.2rem;
+        
         overflow: hidden;
         @include mq-720 {
             padding: 2.4rem;
         }
 
         &-text {
-            opacity: 0;
             flex: 1;
+            opacity: 0;
             transform: translateY(-4.8rem);
             font-size: $fs--m;
             font-weight: 200;
             text-align: center;
-            border-left: 1px solid;
-            border-right: 1px solid;
-            border-radius: 2.4rem;
             
             @include mq-720 {
                 font-size: $fs--m-desktop;
+            }
+            @include mq-1280 {
+                font-size: $fs--m-desktop-1280;
             }
         }
     }
@@ -74,18 +75,21 @@
             &-number {
                 display: flex;
                 transition: all .3s ease-in-out;
-                
-                @include mq-720 {
-                    font-size: $fs--xs-desktop;
-                }
 
                 &-text {
                     opacity: 0;
                     font-size: $fs--s;
                     font-family: $ff--literata;
-                    font-weight: 200;
+                    font-weight: 300;
                     transform: translateY(-15rem);
+                    @include mq-720 {
+                        font-size: $fs--xs-desktop;
+                    }
+                    @include mq-1280 {
+                        font-size: $fs--xs-desktop-1280;
+                    }
                 }
+
             }
 
             &-title {
@@ -95,6 +99,7 @@
                 left: 50%;
                 transform: translate(-50%,-50%);
                 transition: opacity .2s ease-in-out, transform .3s ease-in-out;
+                text-transform: uppercase;
                 overflow: hidden;
 
                 &-text {
@@ -103,9 +108,6 @@
                     font-size: $fs--l;
                     font-weight: 200;
                     transform: translateY(-4.8rem);
-                    @include mqh-720 {
-                        font-size: $fs--m;
-                    }
                     @include mq-720 {
                         font-size: $fs--m-desktop;
                     }
@@ -126,15 +128,15 @@
                 position: absolute;
                 bottom: 2.4rem;
                 left: 2.4rem;
-                font-size: $fs--l;
+                font-size: $fs--m;
                 font-weight: 300;
                 transform: translateY(100%);
                 transition: all .2s ease-in-out;
-                @include mqh-720 {
-                    font-size: $fs--m;
-                }
                 @include mq-720 {
                     display: block;
+                }
+                @include mq-1280 {
+                    font-size: $fs--m-desktop-1280;
                 }
             }
 
@@ -188,14 +190,14 @@
                 }
                 .work__projects-grid-item-arrow > .arrow--projects {
                     @include mq-720 {
-                        color: var(--white);
+                        color: var(--grey-200);
                         width: 6.4rem;
                         height: 6.4rem;
                     }
                 }
                 .work__projects-grid-item-title--hover {
                     opacity: 1;
-                    color: var(--white);
+                    color: var(--grey-200);
                     transform: none;
                 }
                 &::after {

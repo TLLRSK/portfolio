@@ -7,8 +7,11 @@
     gap: 1.2rem;
     padding: 1.2rem;
     transition: transform .3s ease-in-out, opacity .2s ease-in-out;
-    color: var(--white);
+    color: var(--white-0);
     position: relative;
+    @include mq-720 {
+        padding: 2.4rem;
+    }
 
     &__header {
         flex: 1;
@@ -41,6 +44,9 @@
                     font-size: $fs--xl-home-desktop;
                     font-weight: 300;
                 }
+                @include mq-1280 {
+                    font-size: $fs--xl-home-desktop-1280;
+                }
             }
         }
 
@@ -51,7 +57,6 @@
             inset: auto 0 0 0;
 
             &-box {
-                overflow: hidden;
                 &:nth-child(2) {
                     text-align: right;
                 }
@@ -59,11 +64,12 @@
 
             &-text {
                 font-size: $fs--m;
-                font-weight: 500;
-                font-style: italic;
+                font-weight: 200;
                 opacity: 0;
                 transform: translateY(-4.8rem);
-
+                @include mq-1280 {
+                    font-size: $fs--m-desktop-1280;
+                }
                 & span {
                     font-weight: 200;
                 }
@@ -114,6 +120,9 @@
         @include mq-720 {
             padding: 8rem 8rem;
         }
+        @include mq-1280 {
+            padding: 12rem 12rem;
+        }
 
         &-round-box {
             flex: 1;
@@ -127,7 +136,7 @@
             }
 
             @include mq-1280 {
-                border-radius: 32rem;
+                border-radius: 48rem;
             }
 
             &:before,&:after {

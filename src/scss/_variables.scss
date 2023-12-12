@@ -9,20 +9,18 @@ $padding--desktop: $unit*2;
 $gap--mobile: $unit;
 $gap--desktop: $unit*2;
 
+// SIZES
+$size--s: clamp(1.4rem, 4vw, 1.6rem);
+$size--m: clamp(2.8rem, 6vw, 4rem);
+$size--l: clamp(3.2rem, 8vw, 6.4rem);
+
 // FONTS
-$fs--xs: clamp(1.4rem, 4vw, 1.6rem);
-$fs--s: clamp(1.8rem, 2vw, 2.4rem);
+$fs--xs: clamp(1.4rem, 6vw, 1.6rem);
+$fs--s: clamp(1.8rem, 4vw, 2.4rem);
 $fs--m: clamp(2.8rem, 6vw, 4rem);
 $fs--l: clamp(3.2rem, 8vw, 6.4rem);
 $fs--xl-home: clamp(4rem, 8vw, 12.8rem);
 $fs--xl-contact: clamp(7.2rem, 12vw, 8rem);
-
-$fs--xs-h720: clamp(1.4rem, 4vh, 1.6rem);
-$fs--s-h720: clamp(1.8rem, 2vh, 2.4rem);
-$fs--m-h720: clamp(2.4rem, 4vh, 3.2rem);
-$fs--l-h720: clamp(3.2rem, 8vh, 6.4rem);
-$fs--xl-home-h720: clamp(4rem, 8vh, 12.8rem);
-$fs--xl-contact-h720: clamp(7.2rem, 12vh, 8rem);
 
 $fs--xs-desktop: clamp(2rem, 3vw, 2.4rem);
 $fs--s-desktop: clamp(2.8rem, 4vw, 3.2rem);
@@ -31,8 +29,8 @@ $fs--l-desktop: clamp(6.4rem, 8vw, 8rem);
 $fs--xl-home-desktop: clamp(8rem, 8vw, 12em);
 $fs--xl-contact-desktop: clamp(9.6rem, 8vw, 12rem);
 
-$fs--xs-desktop-1280: clamp(2.4rem, 3vw, 3.2rem);
-$fs--s-desktop-1280: clamp(3.2rem, 4vw, 4rem);
+$fs--xs-desktop-1280: clamp(2.4rem, 6vw, 3.2rem);
+$fs--s-desktop-1280: clamp(3.2rem, 2vw, 4em);
 $fs--m-desktop-1280: clamp(4rem, 3vw, 6.4rem);
 $fs--l-desktop-1280: clamp(8rem, 8vw, 12rem);
 $fs--xl-home-desktop-1280: clamp(12rem, 8vw, 18rem);

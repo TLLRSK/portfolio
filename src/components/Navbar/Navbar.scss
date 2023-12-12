@@ -1,7 +1,7 @@
-@import './mixins';
-@import './variables';
+@import '../../scss/mixins';
+@import '../../scss/variables';
 
-.nav {
+.navbar {
     display: flex;
     flex-direction: row;
     border-right: .1rem solid;
@@ -52,7 +52,7 @@
                     inset: calc(100% - 1px) 0 -1px 0;
                 }
             }
-            & .nav-item__title, .nav-item__index {
+            & .navbar-item__title, .navbar-item__index {
                 transform: translateY(-.6rem);
             }
         }
@@ -66,7 +66,7 @@
                 }
             }
             
-            & .nav-item__title, & .nav-item__index {
+            & .navbar-item__title, & .navbar-item__index {
                 opacity: 0;
                 transform: translateY(-180%);
 
@@ -75,7 +75,7 @@
                     transform: none;
                 }
             }
-            & .nav-item__title--active {
+            & .navbar-item__title--active {
                 opacity: 1;
                 transform: none;
             }

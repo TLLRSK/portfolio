@@ -16,7 +16,7 @@ function App() {
 
   // Calling back setBgColor
   let locationColor = (path) => {
-    path === '/' ? setColor('white') : setColor('black');
+    path === '/' ? setColor('grey-200') : setColor('black');
   }
 
   // Handling navigation
@@ -57,9 +57,9 @@ function App() {
     <div 
       className={`app color--${color} 
       color-bg--${location.pathname == '/' ? 'black' 
-        : location.pathname == '/hello' ? 'grey--100' 
-        : location.pathname == '/work' ? 'grey' 
-        : location.pathname == '/contact' ? 'white' 
+        : location.pathname == '/hello' ? 'grey-0' 
+        : location.pathname == '/work' ? 'grey-100' 
+        : location.pathname == '/contact' ? 'grey-200' 
         : ''}
       
         ${sectionStatus}`}>

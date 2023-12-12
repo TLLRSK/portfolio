@@ -9,17 +9,6 @@
     padding: 1.2rem;
     border-bottom: 1px solid;
     @include mq-720 {
-        padding: 1.2rem 2.4rem;
+        padding: 2.4rem;
     }
-
-    &-title {
-        flex: 1;
-        font-size: $fs--s;
-        font-weight: 300;
-        text-transform: lowercase;
-        @include mq-720 {
-            font-size: $fs--s-desktop;
-        }
-    }
-    
 }
