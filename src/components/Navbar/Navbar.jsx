@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
+import './Navbar.scss';
 
 export default function Navbar(props) {
 
@@ -38,7 +39,7 @@ export default function Navbar(props) {
   // Setting color by location
   const locationColor = (path) => {
     if (path === '/') {
-        setColor('white');
+        setColor('white-0');
         // hidden ? setHidden(false) : '';
     } else {
         setColor('black');
@@ -65,21 +66,21 @@ export default function Navbar(props) {
     setIndex();
   })
 
-  return <nav className={`nav color--${color}`}>
+  return <nav className={`navbar color--${color}`}>
     {navLinks.map((el) => (
       <Link
       key={el.index}
       to={el.path} 
-      className={`link nav-item color--${color} ${path === el.path ? 'active' : ''}`} 
+      className={`link navbar-item color--${color} ${path === el.path ? 'active' : ''}`} 
       onClick={(e) => handleLinkClick(e, el.path, el.index)}>
       
-      <div className="nav-item__text-box">
-        <span className="nav-item__index">{`${el.index})`}</span>
-        <span className="nav-item__title">{el.title}</span>
+      <div className="navbar-item__text-box">
+        <span className="navbar-item__index">{`${el.index})`}</span>
+        <span className="navbar-item__title">{el.title}</span>
       </div>
-      <div className="nav-item__text-box--active">
-        <span className="nav-item__index--active">{`${el.index})`}</span>
-        <span className="nav-item__title--active">{el.title}</span>
+      <div className="navbar-item__text-box--active">
+        <span className="navbar-item__index--active">{`${el.index})`}</span>
+        <span className="navbar-item__title--active">{el.title}</span>
       </div>
     </Link>
     ))}

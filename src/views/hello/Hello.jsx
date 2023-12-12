@@ -28,26 +28,19 @@ export default function Hello(props) {
 
                 <div className={`hello__page hello__page--1 ${pageNumber === 1 ? 'visible' : 'hidden'}`}>
                     <div className="hello__title">
+                        <span className="hello__title-text hello__description-header transition-delay--200">1.</span>
                         <h3 className="hello__title-text hello__description-header transition-delay--200">HI</h3>
                     </div>
 
                     <div className="hello__description">
-                        <div className="hello__text-block hello__text-block--border">
-                            <div className="overflow--hidden">
-                                <p className="hello__description-paragraph transition-delay--400">I&apos;m Pedro<br/>UX/UI Designer<br/>& Frontend Dev <br/>based in Valencia.</p>
-                            </div>
-                            <div className="overflow--hidden">
-                                <p className="hello__description-paragraph transition-delay--400">Working as freelance Visual Artist for +10 years.</p>
-                            </div>
-                        </div>
-
-                        <div className="hello__text-block">
-                            <div className="overflow--hidden">
-                                <p className="hello__description-paragraph transition-delay--600">Crafting* (solo/coop) cutie digital journeys from a useful and creative vision.</p>
-                            </div>
-                            <div className="flex-1 flex ai--end jc--end overflow--hidden">
-                                <p className="hello__description-paragraph ta--right transition-delay--600">*For every<br/>kind of user.</p>
-                            </div>
+                        <div className="hello__text-block hello__text-block--border overflow--hidden">
+                            <p className="hello__description-paragraph transition-delay--400">
+                                I&apos;m Pedro, UX/UI DESIGNER & FRONTEND DEV based in Valencia. 
+                                Working as freelance VISUAL ARTIST for +10 years.
+                            </p>
+                            <p className="hello__description-paragraph transition-delay--600">
+                                Crafting cutie digital journeys from a useful and creative vision for every kind of user.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -55,10 +48,11 @@ export default function Hello(props) {
                 <div className={`hello__page hello__page--2 ${pageNumber === 2 ? 'visible' : 'hidden'}`}>
                     <div className="hello__list-box">
                         <div className="hello__title overflow--hidden">
+                            <span className="hello__title-text transition-delay--200">2.</span>
                             <h3 className='hello__title-text hello__list-header transition-delay--200'>Fields</h3>
                         </div>
                         
-                        <ul className="hello__list hello__list--border hello__list--fields">
+                        <ul className="hello__list hello__list--fields">
                             <li className="hello__list-item">
                                 <span className='hello__list-item-character transition-delay--400'>a)</span>
                                 <p className='hello__list-paragraph hello__item-text transition-delay--400'>Illustration</p>
@@ -80,6 +74,7 @@ export default function Hello(props) {
 
                     <div className="hello__list-box">
                         <div className="hello__title overflow--hidden">
+                            <span className="hello__title-text transition-delay--200">3.</span>
                             <h3 className='hello__title-text hello__list-header transition-delay--600'>Tools</h3>
                         </div>
 
@@ -118,52 +113,29 @@ export default function Hello(props) {
                 </div>
             </div>
 
+            <div className={`hello__page-toggler ${pageNumber === 1 ? "jc--end" : "jc--start"}`}>
+                <button className={`btn--hello-page-toggler hello__page-toggler-btn color--black tx--left ${pageNumber === 1 ? 'visible' : pageNumber === 0 ? 'visible' : 'hidden'}`}
+                    onClick={() => pageNumber === 1 ? setPageNumber(2) : ''}>
+                    <div className="hello__next-page">
+                        <span className="hello__next-page-title">FIELDS/TOOLS</span>
+                        <div className='hello__page-toggler-arrow'>
+                            <ArrowForward className={"arrow--hello-page-toggler--forward"}/>
+                            <ArrowForward className={"arrow--hello-page-toggler--forward-hover"}/>
+                        </div>
+                    </div>
+                </button>
 
-            <button className="btn--hello-page-toggler color--black" onClick={() => pageNumber === 1 ? setPageNumber(2) : setPageNumber(1)}>
-                    <div className={`hello__page-toggler-content tx--left ${pageNumber === 1 ? 'visible' : pageNumber === 0 ? 'visible' : 'hidden'}`}>
-                        <div className="hello__current-page">
-                            <span>1/2</span>
+                <button className={`btn--hello-page-toggler hello__page-toggler-btn color--black tx--right ${pageNumber === 2 ? 'visible' : 'hidden'}`}
+                    onClick={() => pageNumber === 2 ? setPageNumber(1) : ''}>
+                    <div className="hello__next-page">
+                        <div className='hello__page-toggler-arrow'>
+                            <ArrowBackward className={"arrow--hello-page-toggler--backward"}/>
+                            <ArrowBackward className={"arrow--hello-page-toggler--backward-hover"}/>
                         </div>
-                        <div className="hello__next-page">
-                            <span className="hello__next-page-title">FIELDS/TOOLS</span>
-                            <ArrowForward className={"arrow--hello-page-toggler"}/>
-                        </div>
+                        <span className="hello__next-page-title">HI</span>
                     </div>
-
-                    <div className={`hello__page-toggler-content tx--right ${pageNumber === 2 ? 'visible' : 'hidden'}`}>
-                        <div className="hello__next-page">
-                            <ArrowBackward className={"arrow--hello-page-toggler"}/>
-                            <span className="hello__next-page-title">HI</span>
-                        </div>
-                        <div className="hello__current-page">
-                            <span>2/2</span>
-                        </div>
-                    </div>
-             
-            </button>
-            {/* <button className="btn--hello-page-toggler color--black" onClick={() => pageNumber === 1 ? setPageNumber(2) : setPageNumber(1)}>
-                {pageNumber === 1 ? 
-                    <div className="hello__page-toggler-content">
-                        <div className="hello__current-page">
-                            <span>1/2</span>
-                        </div>
-                        <div className="hello__next-page">
-                            <span className="hello__next-page-title">FIELDS/TOOLS</span>
-                            <ArrowForward className={"arrow--hello-page-toggler"}/>
-                        </div>
-                    </div>
-                : 
-                    <div className="hello__page-toggler-content">
-                        <div className="hello__next-page">
-                            <ArrowBackward className={"arrow--hello-page-toggler"}/>
-                            <span className="hello__next-page-title">HI</span>
-                        </div>
-                        <div className="hello__current-page">
-                            <span>2/2</span>
-                        </div>
-                </div>
-                }
-            </button> */}
+                </button>
+            </div>
         </main>
     </section>
 }

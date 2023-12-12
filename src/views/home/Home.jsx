@@ -15,11 +15,11 @@ export default function Home(props) {
 
             <div className="home__header-subtitle">
                 <div className="home__header-subtitle-box">
-                    <h2 className='home__header-subtitle-text'>FRONTEND <span className='f-style--normal'>DEV</span></h2>
+                    <h2 className='home__header-subtitle-text'>Frontend <span className='f-style--italic'>Dev</span></h2>
                 </div>
             
                 <div className="home__header-subtitle-box">
-                    <h2 className='home__header-subtitle-text'>UX/UI <span className='f-style--normal'>DESIGNER</span></h2>
+                    <h2 className='home__header-subtitle-text'>UX/UI <span className='f-style--italic'>Designer</span></h2>
                 </div>
             </div>
 

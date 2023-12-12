@@ -26,10 +26,6 @@
         @include mq-1280 {
             font-size: $fs--m-desktop-1280;
         }
-
-        @include mqh-720 {
-            font-size: $fs--m-h720;
-        }
     }
 
     &__slider {
@@ -38,13 +34,19 @@
     }
 
     &__page {
-        position: absolute;
-        inset: 0 0 0 0;
-        opacity: 1;
-        transform: none;
         display: flex;
         flex-direction: column;
+        position: absolute;
+        inset: 0 0 0 0;
+        padding: 1.2rem;
+        gap: 1.2rem;
+        opacity: 1;
+        transform: none;
         transition: opacity .3s ease-in-out, transform .3s ease-in-out;
+
+        @include mq-720 {
+            padding: 2.4rem;
+        }
 
         &--1 {
             &.hidden {
@@ -59,23 +61,35 @@
             }
             @include mq-720 {
                 flex-direction: row;
+                gap: 4.8rem;
             }
         }
     }
 
     
     &__title {
-        padding: 1.2rem;
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 1.2rem;
         border-bottom: 1px solid;
-        overflow: hidden;
+        overflow: hidden;;
         @include mq-720 {
-            padding: 1.2rem 2.4rem;
+            padding-bottom: 2.4rem;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 2.4rem;
         }
         &-text {
-            font-weight: 200;
+            font-size: $fs--m;
+            font-weight: 300;
             text-transform: uppercase;
+            font-family: 'Literata';
             @include mq-720 {
                 text-align: center;
+                font-size: $fs--m-desktop;
+            }
+            @include mq-1280 {
+                font-size: $fs--m-desktop-1280;
             }
         }
     }
@@ -94,17 +108,11 @@
         display: flex;
         flex-direction: column;
         gap: 2.4rem;
-        padding: 1.2rem;
+    }
+    &__text-block {
+        max-width: 85%;
         @include mq-720 {
-            justify-content: space-between;
-            padding: 2.4rem;
-        }
-        &--border {
-            border-bottom: 1px dashed;
-            @include mq-720 {
-                border-bottom: none;
-                border-right: 1px dashed;
-            }
+            max-width: 75%;
         }
     }
 
@@ -122,6 +130,7 @@
             flex: 1;
             display: flex;
             flex-direction: column;
+            gap: 1.2rem;
             @include mq-720 {
                 flex: 1;
             }
@@ -137,87 +146,95 @@
                 @include mq-720 {
                     font-size: $fs--s-desktop;
                 }
+                @include mq-1280 {
+                    font-size: $fs--s-desktop-1280;
+                }
             }
         }
         &-row {
             display: flex;
             justify-content: space-between;
         }
-        &--tools {
-            justify-content: space-between;
-            @include mq-720 {
-                flex: 1;
-                
-            }
-        }
     }
-    &__page-toggler-content {
-        opacity: 1;
-        flex: 1;
+    &__page-toggler {
         display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        padding: 1.2rem;
-        transition: transform .3s ease-in-out, opacity .3s ease-in-out;
+        padding: 0 1.2rem 1.2rem 1.2rem;
         @include mq-720 {
-            padding: 2.4rem;
+            padding: 0 2.4rem 2.4rem 2.4rem;
+        }
+        &-btn {
+            opacity: 1;
+            transition: transform .3s ease-in-out, opacity .3s ease-in-out;
+
             &:hover {
                 .hello__next-page {
                     gap: 2.4rem;
-                    padding-right: 1.2rem;
-                    padding-left: 1.2rem;
+                }
+                .arrow--hello-page-toggler--forward {
+                    opacity: 0;
+                    transform: translateX(100%);
+                }
+                .arrow--hello-page-toggler--forward-hover {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+                .arrow--hello-page-toggler--backward {
+                    opacity: 0;
+                    transform: translateX(-100%);
+                }
+                .arrow--hello-page-toggler--backward-hover {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+
+            &.tx--right {
+                &.visible {
+                    transform: none;
+                }
+                &.hidden {
+                    opacity: 0;
+                    max-width: 0;
+                    padding: 0;
+                    transform: translateX(100%);
+                    overflow: hidden;
+                }
+            }
+            &.tx--left {
+                justify-content: flex-end;
+                &.visible {
+                    transform: none;
+                }
+                &.hidden {
+                    opacity: 0;
+                    max-width: 0;
+                    padding: 0;
+                    transform: translateX(-100%);
+                    overflow: hidden;
                 }
             }
         }
-        @include mq-1280 {
-            
-        }
-        &.tx--right {
-            &.visible {
-                transform: none;
+        &-arrow {
+            display: flex;
+            flex-direction: row;
+            width: $size--m;
+            height: $size--m;
+            border: 1px solid;
+            border-radius: 50%;
+            overflow: hidden;
+            position: relative;
+            @include mq-720 {
+               
             }
-            &.hidden {
-                opacity: 0;
-                max-width: 0;
-                padding: 0;
-                transform: translateX(100%);
-                overflow: hidden;
-            }
-        }
-        &.tx--left {
-            &.visible {
-                transform: none;
-            }
-            &.hidden {
-                opacity: 0;
-                max-width: 0;
-                padding: 0;
-                transform: translateX(-100%);
-                overflow: hidden;
-            }
-        }
-    }
-    &__current-page {
-        padding: .6rem 1.2rem;
-        border: 1px solid;
-        border-radius: 4.8rem;
-        font-size: $fs--xs;
-        font-weight: 300;
-        overflow: hidden;
-        position: relative;
-        @include mq-720 {
-            padding: .6rem 2.4rem;
         }
     }
     &__next-page {
+        z-index: 1;
         display: flex;
         align-items: center;
         gap: 1.2rem;
+        transition: gap .3s ease-in-out;
         font-weight: 200;
-        @include mq-720 {
-            transition: gap .4s ease-in-out, padding-right .4s ease-in-out, padding-left .4s ease-in-out;
-        }
     }
 
     &.on-page--1 {

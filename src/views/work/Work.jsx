@@ -26,7 +26,7 @@ export default function Work(props) {
                     {projects.map( (project,index) => (
                         <Link to={project.link} key={index} className={`work__projects-grid-item link after--${project.mainColor}`} target="_blank">
                             <div className="work__projects-grid-item-number">
-                                <span className="work__projects-grid-item-number-text ff--literata transition-delay--200">{project.index}</span>
+                                <span className="work__projects-grid-item-number-text ff--literata transition-delay--200">{project.index}.</span>
                             </div>
 
                             <div className="work__projects-grid-item-title">

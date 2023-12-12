@@ -47,6 +47,9 @@
             @include mq-720 {
                 font-size: $fs--xs-desktop;
             }
+            @include mq-1280 {
+                font-size: $fs--xs-desktop-1280;
+            }
         }
     }
 
@@ -94,6 +97,9 @@
 
             @include mq-720 {
                 font-size: $fs--xl-contact-desktop;
+            }
+            @include mq-1280 {
+                font-size: $fs--xl-contact-desktop-1280;
             }
 
             &::after {
@@ -143,8 +149,10 @@
         position: relative;
         overflow: hidden;
         @include mq-720 {
-            // padding: 2.4rem;
             font-size: $fs--xs-desktop;
+        }
+        @include mq-1280 {
+            font-size: $fs--xs-desktop-1280;
         }
         &--idle, &--on-hover {
             z-index: 1;
@@ -159,7 +167,7 @@
             opacity: 0;
             position: absolute;
             transform: translateY(-5rem);
-            color: var(--white);
+            color: var(--grey-200);
         }
         &:hover {
             .contact__sublink--on-hover {

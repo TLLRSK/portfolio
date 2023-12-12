@@ -6,22 +6,18 @@
 
     &--to-home {
         display: flex;
-        // width: clamp(4.8rem, 3vw, 7.2rem);
-        // height: clamp(4.8rem, 3vw, 7.2rem);
-        padding: 1.2rem;
         color: var(--black);
         position: relative;
 
         & p {
-            position: absolute;
-            top: 50%;
-            left: 50%;
             font-size: $fs--m;
             font-weight: 300;
-            transform: translate(-50%, -50%);
             z-index: 1;
             @include mq-720 {
-                font-size: $fs--s-desktop;
+                font-size: $fs--m-desktop;
+            }
+            @include mq-1280 {
+                font-size: $fs--m-desktop-1280;
             }
         }
  
@@ -59,7 +55,7 @@
         }
         & .arrow {
             border-left: 1px solid var(--black);
-            background-color: var(--white);
+            background-color: var(--grey-0);
             color: var(--black);
             z-index: 1;
         }
