@@ -55,9 +55,13 @@
             max-height: 100%;
             transition: max-height .4s .3s;
         }
-        .work__projects-grid-item-number-text, .work__projects-grid-item-title-text, .work__subtitle-text {
+        .work__subtitle-text {
             opacity: 1;
-            transform: none;
+            transform: translateY(0);
+        }
+        .work__project-title-text, .work__project-number-text {
+            opacity: 1;
+            transform: translateY(0);
         }
     }
 }

@@ -116,7 +116,7 @@
         }
     }
 
-    &__description-header, &__list-header, &__description-paragraph, &__list-item-character, &__list-paragraph {
+    &__title-text, &__description-paragraph, &__list-item-character, &__list-paragraph {
         opacity: 0;
         transform: translateY(-4.8rem);
     }
@@ -239,17 +239,17 @@
 
     &.on-page--1 {
         .hello {
-            &__description-header, &__description-paragraph {
+            &__title-text--page-1, &__description-paragraph {
                 opacity: 1;
-                transform: none;
+                transform: translateY(0);
             }
         }
     }
     &.on-page--2 {
         .hello {
-            &__list-header, &__list-item-character, &__list-paragraph {
+            &__title-text--page-2, &__list-item-character, &__list-paragraph {
                 opacity: 1;
-                transform: none;
+                transform: translateY(0);
             }
         }
     }

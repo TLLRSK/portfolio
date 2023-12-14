@@ -28,8 +28,8 @@ export default function Hello(props) {
 
                 <div className={`hello__page hello__page--1 ${pageNumber === 1 ? 'visible' : 'hidden'}`}>
                     <div className="hello__title">
-                        <span className="hello__title-text hello__description-header transition-delay--200">1.</span>
-                        <h3 className="hello__title-text hello__description-header transition-delay--200">HI</h3>
+                        <span className="hello__title-text hello__title-text--page-1 transition-delay--200">1.</span>
+                        <h3 className="hello__title-text hello__title-text--page-1 transition-delay--200">HI</h3>
                     </div>
 
                     <div className="hello__description">
@@ -48,8 +48,8 @@ export default function Hello(props) {
                 <div className={`hello__page hello__page--2 ${pageNumber === 2 ? 'visible' : 'hidden'}`}>
                     <div className="hello__list-box">
                         <div className="hello__title overflow--hidden">
-                            <span className="hello__title-text transition-delay--200">2.</span>
-                            <h3 className='hello__title-text hello__list-header transition-delay--200'>Fields</h3>
+                            <span className="hello__title-text hello__title-text--page-2 transition-delay--200">2.</span>
+                            <h3 className='hello__title-text hello__title-text--page-2 transition-delay--200'>Fields</h3>
                         </div>
                         
                         <ul className="hello__list hello__list--fields">
@@ -74,38 +74,38 @@ export default function Hello(props) {
 
                     <div className="hello__list-box">
                         <div className="hello__title overflow--hidden">
-                            <span className="hello__title-text transition-delay--200">3.</span>
-                            <h3 className='hello__title-text hello__list-header transition-delay--600'>Tools</h3>
+                            <span className="hello__title-text hello__title-text--page-2 transition-delay--600">3.</span>
+                            <h3 className='hello__title-text hello__title-text--page-2 transition-delay--600'>Tools</h3>
                         </div>
 
                         <ul className="hello__list hello__list--tools">
                             <div className="hello__list-row">
                                 <li className="hello__list-item flex-1">
-                                    <p className='hello__list-paragraph transition-delay--700'>Html</p>
+                                    <p className='hello__list-paragraph transition-delay--800'>Html</p>
                                 </li>
                                 <li className="hello__list-item flex-1 jc--center">
-                                    <p className='hello__list-paragraph transition-delay--700'>Css</p>
+                                    <p className='hello__list-paragraph transition-delay--800'>Css</p>
                                 </li>
                                 <li className="hello__list-item flex-1 jc--end">
-                                    <p className='hello__list-paragraph transition-delay--700'>Js</p>
+                                    <p className='hello__list-paragraph transition-delay--800'>Js</p>
                                 </li>
                             </div>
 
                             <div className="hello__list-row">
                                 <li className="hello__list-item flex-1">
-                                    <p className='hello__list-paragraph transition-delay--700'>React</p>
+                                    <p className='hello__list-paragraph transition-delay--800'>React</p>
                                 </li>
                                 <li className="hello__list-item flex-1 jc--end">
-                                    <p className='hello__list-paragraph transition-delay--700'>Php</p>
+                                    <p className='hello__list-paragraph transition-delay--800'>Php</p>
                                 </li>
                             </div>
 
                             <div className="hello__list-row">
                                 <li className="hello__list-item flex-1">
-                                    <p className='hello__list-paragraph transition-delay--700'>Figma</p>
+                                    <p className='hello__list-paragraph transition-delay--800'>Figma</p>
                                 </li>
                                 <li className="hello__list-item">
-                                    <p className='hello__list-paragraph transition-delay--700'>Wordpress</p>
+                                    <p className='hello__list-paragraph transition-delay--800'>Wordpress</p>
                                 </li>
                             </div>
                         </ul>
