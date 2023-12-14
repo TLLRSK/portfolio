@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import ArrowDownRight from "../../components/Arrows/ArrowDownRight";
 import './Work.scss';
 import HeaderSection from "../../components/Headers/HeaderSection/HeaderSection";
+import Project from "../../components/Project/Project";
 
 export default function Work(props) {
     const {toSection, fromSection, sectionStatus, handleSectionNavigation} = props;
@@ -23,24 +24,8 @@ export default function Work(props) {
 
                 <div className="work__projects-grid">
 
-                    {projects.map( (project,index) => (
-                        <Link to={project.link} key={index} className={`work__projects-grid-item link after--${project.mainColor}`} target="_blank">
-                            <div className="work__projects-grid-item-number">
-                                <span className="work__projects-grid-item-number-text ff--literata transition-delay--200">{project.index}.</span>
-                            </div>
-
-                            <div className="work__projects-grid-item-title">
-                                <h3 className="work__projects-grid-item-title-text transition-delay--400">{project.title}</h3>
-                            </div>
-
-                            <div className="work__projects-grid-item-arrow">
-                                <ArrowDownRight className={"arrow--projects"}/>
-                            </div>
-
-                            <div className="work__projects-grid-item-title--hover">
-                                <p>{project.title}</p>
-                            </div>
-                        </Link>
+                    {projects.map( (project) => (
+                        <Project key={project.title} title={project.title} description={project.description}/>
                         )
                     )}
                 </div>
