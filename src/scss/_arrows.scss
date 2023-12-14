@@ -26,8 +26,8 @@
     }
     
     &--project {
-        width: 2.4rem;
-        height: 2.4rem;
+        width: clamp(2rem, 3vw, 2.4rem);
+        height: clamp(2rem, 3vw, 2.4rem);
         transition: all .1s ease-in-out;
         @include mq-720 {
             cursor: pointer;

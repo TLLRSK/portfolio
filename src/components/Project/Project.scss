@@ -1,0 +1,110 @@
+@import '../../scss/mixins';
+@import '../../scss/variables';
+
+.work__project {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-bottom: 1px solid;
+    &:nth-last-child(1) {
+        border-bottom: none;
+    }
+    overflow: hidden;
+
+    &-cover, &-info {
+        padding: 1.2rem;
+        @include mq-720 {
+            padding: 2.4rem;
+        }
+    }
+    &-cover {
+        height: 100%;
+        position: relative;
+        display: none;
+    }
+    &-number {
+        &-text {
+            font-size: $fs--s;
+            font-weight: 300;
+        }
+        @include mq-720 {
+            font-size: $fs--s-desktop;
+        }
+    }
+    &-title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        
+        &-text {
+            font-size: $fs--m;
+            font-weight: 200;
+        }
+    }
+    &-info {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        inset: 0 0 0 0;
+        background-color: var(--black);
+        color: var(--grey-0);
+        font-size: $fs--xs;
+        font-weight: 300;
+        @include mq-720 {
+            font-size: $fs--xs-desktop;
+        }
+
+        &-row {
+            display: flex;
+            flex-direction: row;
+            gap: 2.4rem;
+            @include mq-720 {
+                gap: 4.8rem;
+            }
+
+            &-item {
+                flex: 1;
+                display: flex;
+                gap: 1.2rem;
+                &--column {
+                    flex-direction: column;
+                }
+            }
+        }
+
+        &-title-text {
+            font-weight: 300;
+            text-transform: uppercase;
+            padding-bottom: 1.2rem;
+            border-bottom: 1px solid;
+        }
+    }
+    &-link {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: fit-content;
+        color: var(--grey-0);
+        gap: .6rem;
+        position: relative;
+
+        @include mq-720 {
+            &::before {
+                position: absolute;
+                inset: calc(100% - 1px) 100% 0 0;
+                content: '';
+                background: var(--grey-0);
+                transition: inset .2s ease-in-out;
+            }
+    
+            &:hover {
+                &::before {
+                    inset: calc(100% - 1px) 0 0 0;
+                }
+            }
+        }
+    }
+}

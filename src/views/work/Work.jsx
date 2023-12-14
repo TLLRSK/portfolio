@@ -25,7 +25,7 @@ export default function Work(props) {
                 <div className="work__projects-grid">
 
                     {projects.map( (project) => (
-                        <Project key={project.title} title={project.title} description={project.description}/>
+                        <Project key={project.title} {...project} />
                         )
                     )}
                 </div>

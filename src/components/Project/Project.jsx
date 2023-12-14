@@ -5,39 +5,39 @@ import ArrowUpRight from "../Arrows/ArrowUpRight";
 export default function Project(props) {
     const {index, title, description, techList, linkGithub, linkVisitProject} = props;
     return <>
-        <div className="work__projects-grid-item work__project">
+        <div className="work__project">
             <div className="work__project-cover">
-                <div className="work__projects-grid-item-number">
-                    <span className="work__projects-grid-item-number-text ff--literata transition-delay--200">{index}.</span>
+                <div className="work__project-number">
+                    <span className="work__project-number-text ff--literata transition-delay--200">{index}.</span>
                 </div>
 
-                <div className="work__projects-grid-item-title">
-                    <h3 className="work__projects-grid-item-title-text transition-delay--400">{title}</h3>
+                <div className="work__project-title">
+                    <h3 className="work__project-title-text transition-delay--400">{title}</h3>
                 </div>
             </div>
 
-            <div className="work__project-description">
-                <div className="work__project-details">
-                    <div className="work__project-title">
-                        <h4>{title}</h4>
+            <div className="work__project-info">
+                <div className="work__project-info-row">
+                    <div className="work__project-info-row-item work__project-info-row-item--column">
+                        <h4 className='work__project-info-title-text'>{title}</h4>
                         <p>{description}</p>
                     </div>
-                    <div className="work__project-techs">
-                        <h4>Techs</h4>
+                    <div className="work__project-info-row-item work__project-info-row-item--column">
+                        <h4 className='work__project-info-title-text'>Techs</h4>
                         <p>{techList}</p>
                     </div>
                 </div>
-                <ul className="work__project-links">
-                    <li className="project-link">
-                        <Link to={linkGithub}>
+                <ul className="work__project-info-row">
+                    <li className="work__project-info-row-item work__project-info-row-item--row">
+                        <Link to={linkGithub} className='link work__project-link'>
                             <span>Github</span>
-                            <ArrowUpRight className={'arrow--project color--black'}/>
+                            <ArrowUpRight className={'arrow--project color--grey-0'}/>
                         </Link>
                     </li>
-                    <li className="project-link">
-                        <Link to={linkVisitProject}>
-                            <span>Visti project</span>
-                            <ArrowUpRight className={'arrow--project color--black'}/>
+                    <li className="work__project-info-row-item work__project-info-row-item--row jc--end">
+                        <Link to={linkVisitProject} className='link work__project-link'>
+                            <span>Visit project</span>
+                            <ArrowUpRight className={'arrow--project color--grey-0'}/>
                         </Link>
                     </li>
                 </ul>
