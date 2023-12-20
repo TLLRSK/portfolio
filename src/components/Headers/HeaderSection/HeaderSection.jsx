@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import './HeaderSection.scss';
 
-export default function HeaderSection(handleSectionNavigation) {
+export default function HeaderSection(props) {
+    let {handleSectionNavigation} = props;
    
     return <header className="section__header">
         <Link 
