@@ -180,3 +180,16 @@
         transition: opacity .3s 3.5s, transform .3s 3.5s;
     }
 }
+
+/* Navigation */
+.active {
+    opacity: 1;
+}
+.going-to-next, .coming-from-next  {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+.going-to-prev, .coming-from-prev {
+    transform: translateX(100%);
+    opacity: 0;
+}

@@ -15,7 +15,7 @@ export default function Work(props) {
         ${sectionStatus}`}>
         <article className="work__content">
 
-            <HeaderSection section={'w'} color={'black'} handleSectionNavigation={handleSectionNavigation}/>
+            <HeaderSection handleSectionNavigation={handleSectionNavigation}/>
             
             <main className="work__main">
                 <div className="work__subtitle">

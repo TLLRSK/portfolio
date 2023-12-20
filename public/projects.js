@@ -4,7 +4,7 @@ export const PROJECTS = [
         title: 'Aboutme',
         description: 'One page project',
         techList: 'HTML, CSS, JS',
-        linkGithub: '',
+        linkGithub: 'https://github.com/TLLRSK/Project-Alpha--ID3',
         linkVisitProject:  'https://aboutme-pjgv.netlify.app/'
     },
     {
@@ -12,7 +12,7 @@ export const PROJECTS = [
         title: 'Todoapp',
         description: 'Add, check & delete any task',
         techList: 'HTML, SASS, JS',
-        linkGithub: 'Add, check & delete any task with this Todolist',
+        linkGithub: 'https://github.com/TLLRSK/TodoApp',
         linkVisitProject:  'https://todoapp-pjgv.netlify.app/'
     },
     {
@@ -20,7 +20,7 @@ export const PROJECTS = [
         title: 'Quoteapp',
         description: 'Generate random quotes using an API',
         techList: 'HTML, SASS, JS',
-        linkGithub: '',
+        linkGithub: 'https://github.com/TLLRSK/QuoteApp',
         linkVisitProject:  'https://quoteapp-pjgv.netlify.app/'
     },
     {
@@ -28,7 +28,7 @@ export const PROJECTS = [
         title: "Robberta's",
         description: 'E-commerce setted up on Wordpress',
         techList: 'HTML, SASS, JS, PHP',
-        linkGithub: '',
-        linkVisitProject:  'https://pedrojgil.com/robbertas'
+        linkGithub: 'https://github.com/TLLRSK/Robbertas',
+        linkVisitProject:  'https://pedrojgil.com/robbertas/'
     },
 ];

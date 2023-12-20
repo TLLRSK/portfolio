@@ -60,6 +60,8 @@
         justify-content: center;
         position: relative;
 
+        /* Dashed lines*/
+
         &::after {
             position: absolute;
             inset: 4.8rem 50% 100% 0;
@@ -104,14 +106,19 @@
 
             &::after {
                 position: absolute;
-                inset: calc(50% - .2rem) 100% calc(50% - .2rem) 0;
                 content: '';
-                background: var(--black);
-                transition: inset .2s ease-in-out;
+                width: 100%;
+                height: 6px;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%) scaleX(0);
+                background-color: var(--black);
+                transition: transform .2s ease-in-out;
+                transform-origin: center;
             }
             &:hover {
                 &::after {
-                    inset: calc(50% - .2rem) 0 calc(50% - .2rem) 0;
+                    transform: translateY(-50%) scaleX(1);;
                 }
                 
             }

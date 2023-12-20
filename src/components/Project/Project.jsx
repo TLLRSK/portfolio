@@ -14,7 +14,7 @@ export default function Project(props) {
                 </div>
 
                 <div className="work__project-title">
-                    <h3 className="work__project-title-text transition-delay--400">{title}</h3>
+                    <h3 className="work__project-title-text transition-delay--300">{title}</h3>
                 </div>
 
                 <div className="work__project-expand">
@@ -38,14 +38,14 @@ export default function Project(props) {
 
                 <ul className="work__project-info-row">
                     <li className="work__project-info-row-item work__project-info-row-item--row">
-                        <Link to={linkGithub} className='link work__project-link'>
+                        <Link to={linkGithub} className='link work__project-link' target='_blank'>
                             <span>Github</span>
                             <ArrowUpRight className={'arrow--project color--black'}/>
                         </Link>
                     </li>
                     
                     <li className="work__project-info-row-item work__project-info-row-item--row jc--end">
-                        <Link to={linkVisitProject} className='link work__project-link'>
+                        <Link to={linkVisitProject} className='link work__project-link' target='_blank'>
                             <span>Visit project</span>
                             <ArrowUpRight className={'arrow--project color--black'}/>
                         </Link>

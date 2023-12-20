@@ -21,7 +21,7 @@ export default function Hello(props) {
         ${sectionStatus}
         on-page--${pageNumber === 1 ? '1' : pageNumber === 2 ? '2' : '0'}`}>
 
-        <HeaderSection section={'h'} color={'black'} handleSectionNavigation={handleSectionNavigation}/>
+        <HeaderSection handleSectionNavigation={handleSectionNavigation}/>
 
         <main className={`hello__main`}>
             <div className="hello__slider">

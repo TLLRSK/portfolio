@@ -8,32 +8,39 @@
         display: flex;
         color: var(--black);
         position: relative;
-
-        & p {
+        .link--to-home-paragraph {
             font-size: $fs--m;
             font-weight: 300;
             z-index: 1;
+            position: relative;
             @include mq-720 {
                 font-size: $fs--m-desktop;
             }
             @include mq-1280 {
                 font-size: $fs--m-desktop-1280;
             }
-        }
- 
-        &:hover {
-            & p {
-                font-style: italic;
-                text-decoration: line-through;
+            &::after {
+                position: absolute;
+                content: '';
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                transform: scaleX(0);
+                background-color: var(--black);
+                transform-origin: left;
+                transition: transform .2s ease-in-out;
             }
         }
-        &.color--white:hover {
-            & p {
-                color: var(--black);
+        &:hover {
+            .link--to-home-paragraph {
+                font-style: italic;
+                &::after {
+                    transform: scaleX(1);
+                }
             }
         }
     }
-
     &--project-visit {
         display: flex;
         align-items: center;
@@ -44,16 +51,15 @@
         font-weight: 300;
 
         &:hover {
-            & > .link--project-visit-text {
+            .link--project-visit-text {
                 transform: translateX(-1.2rem);
             }
         }
-    
         &-text {
             z-index: 1;
             transition: color .15s ease-in-out;
         }
-        & .arrow {
+        .arrow {
             border-left: 1px solid var(--black);
             background-color: var(--grey-0);
             color: var(--black);

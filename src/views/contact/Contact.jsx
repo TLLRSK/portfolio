@@ -30,7 +30,7 @@ export default function Contact(props) {
         ${fromSection == 'next' ? 'coming-from-next' : fromSection == 'prev' ? 'coming-from-prev' : ''} 
         ${sectionStatus}`}>
         <article className='contact__content'>
-            <HeaderSection section={'c'} color={'black'} handleSectionNavigation={handleSectionNavigation}/>
+            <HeaderSection handleSectionNavigation={handleSectionNavigation}/>
             <main className='contact__main'>
                 <div className='contact__subtitle--top'>
                     <span className='contact__subtitle-text transition-delay--200'>Get</span>

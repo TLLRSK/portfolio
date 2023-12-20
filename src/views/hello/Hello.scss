@@ -107,7 +107,10 @@
         flex: 1;
         display: flex;
         flex-direction: column;
-        gap: 2.4rem;
+        gap: 1.2rem;
+        @include mq-720 {
+            gap: 2.4rem;
+        }
     }
     &__text-block {
         max-width: 85%;
