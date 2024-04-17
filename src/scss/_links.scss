@@ -10,15 +10,13 @@
         position: relative;
         .link--to-home-paragraph {
             font-size: $fs--m;
-            font-weight: 300;
+            // font-weight: 300;
             z-index: 1;
             position: relative;
             @include mq-720 {
-                font-size: $fs--m-desktop;
+                font-size: $fs--m;
             }
-            @include mq-1280 {
-                font-size: $fs--m-desktop-1280;
-            }
+          
             &::after {
                 position: absolute;
                 content: '';
@@ -48,7 +46,7 @@
         gap: 1.2rem;
         color: var(--black);
         font-size: $fs--l;
-        font-weight: 300;
+        // font-weight: 300;
 
         &:hover {
             .link--project-visit-text {
@@ -61,7 +59,7 @@
         }
         .arrow {
             border-left: 1px solid var(--black);
-            background-color: var(--grey-0);
+            background-color: var(--white);
             color: var(--black);
             z-index: 1;
         }

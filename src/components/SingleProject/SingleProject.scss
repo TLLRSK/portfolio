@@ -1,0 +1,88 @@
+@import '../../scss/mixins';
+@import '../../scss/variables';
+
+.single-project {
+    position: absolute;
+    inset: 0 0 0 0;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    background-color: var(--white);
+    z-index: -1;
+    opacity: 1;
+    font-size: $fs--m;
+
+    @include mq-1024 {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+    }
+    
+
+    .single-project-image, .single-project-main {
+        padding: $padding--m;
+
+        @include mq-720 {
+            padding: $padding--l;
+        }
+    }
+
+    .single-project-image {
+        // border-bottom: 1px solid var(--black);
+        max-height: 100%;
+
+        .img--project {
+            width: 100%;
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    }
+    .single-project-title {
+    }
+    .single-project-attribute {
+        text-transform: uppercase;
+    }
+    .single-project-main {
+        gap: $gap--l;
+       
+    }
+    
+    .single-project-grid--2, .grid-item--row, .grid-item--column {
+        display: grid;
+    }
+    .single-project-grid--2, .grid-item--row {
+        grid-template-columns: repeat(2, 1fr);
+        gap: $gap--m;
+    }
+    .grid-item--column {
+        grid-template-columns: 1fr;
+        gap: $gap--m;
+        @include mq-720 {
+            gap: $gap--m;
+        }
+    }
+    .single-project-grid--2 {
+        gap: $gap--m;
+    }
+    @include mq-720 {
+        .single-project-grid--2, .grid-item--row {
+            gap: $gap--l;
+        }
+    }
+    .single-project-description {
+        // width: calc(50% + $gap--m*.5);
+    }
+    
+    .single-close-project {
+        position: absolute;
+        right: $padding--m;
+        bottom: $padding--m;
+
+        
+    }
+    .single-project-links {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: $gap--m;
+    }
+}

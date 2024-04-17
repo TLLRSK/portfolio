@@ -5,8 +5,21 @@ $unit: 1.2rem;
 $padding--mobile: $unit;
 $padding--desktop: $unit*2;
 
+// padding
+$padding--s: $unit;
+$padding--m: $unit+.4;
+$padding--l: ($unit+.4)*2;
+$padding--xl: ($unit + .4) * 3;
+$padding--xxl: ($unit + .4) * 4;
+$padding--desktop: $unit*2;
 // GAP
 $gap--mobile: $unit;
+$gap--desktop: $unit*2;
+$gap--s: $unit;
+$gap--m: $unit+.4;
+$gap--l: ($unit+.4)*2;
+$gap--xl: ($unit + .4) * 3;
+$gap--xxl: ($unit + .4) * 4;
 $gap--desktop: $unit*2;
 
 // SIZES
@@ -15,10 +28,10 @@ $size--m: clamp(2.8rem, 6vw, 4rem);
 $size--l: clamp(3.2rem, 8vw, 6.4rem);
 
 // FONTS
-$fs--xs: clamp(1.4rem, 6vw, 1.6rem);
-$fs--s: clamp(1.8rem, 4vw, 2.4rem);
-$fs--m: clamp(2.8rem, 6vw, 4rem);
-$fs--l: clamp(3.2rem, 8vw, 6.4rem);
+$fs--xs: clamp(1.2rem, 3vw, 1.6rem);
+$fs--s: clamp(1.2rem, 4vw, 2rem);
+$fs--m: clamp(2rem, 4vw, 3.2rem);
+$fs--l: clamp(2.4rem, 6vw, 3.2rem);
 $fs--xl-home: clamp(4rem, 8vw, 12.8rem);
 $fs--xl-contact: clamp(7.2rem, 12vw, 8rem);
 
@@ -29,11 +42,11 @@ $fs--l-desktop: clamp(6.4rem, 8vw, 8rem);
 $fs--xl-home-desktop: clamp(8rem, 8vw, 12em);
 $fs--xl-contact-desktop: clamp(9.6rem, 8vw, 12rem);
 
-$fs--xs-desktop-1280: clamp(2.4rem, 6vw, 3.2rem);
-$fs--s-desktop-1280: clamp(3.2rem, 2vw, 4em);
-$fs--m-desktop-1280: clamp(4rem, 3vw, 6.4rem);
-$fs--l-desktop-1280: clamp(8rem, 8vw, 12rem);
-$fs--xl-home-desktop-1280: clamp(12rem, 8vw, 18rem);
-$fs--xl-contact-desktop-1280: clamp(9.6rem, 8vw, 12rem);
+$fs--xs-desktop-1024: clamp(2.4rem, 6vw, 3.2rem);
+$fs--s-desktop-1024: clamp(3.2rem, 2vw, 4em);
+$fs--m-desktop-1024: clamp(4rem, 3vw, 6.4rem);
+$fs--l-desktop-1024: clamp(8rem, 8vw, 12rem);
+$fs--xl-home-desktop-1024: clamp(12rem, 8vw, 18rem);
+$fs--xl-contact-desktop-1024: clamp(9.6rem, 8vw, 12rem);
 
 $ff--literata: 'Literata', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;

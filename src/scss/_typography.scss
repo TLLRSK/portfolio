@@ -1,4 +1,12 @@
 h1, h2, h3, h4, h5, p, span {
-    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    font-family: "nunito", Arial, Helvetica, sans-serif;
     line-height: 100%;
+    font-weight: 300;
 }
+
+@font-face {
+    font-family: "nunito";
+    src: url("../../public/fonts/Nunito-VariableFont_wght.ttf") format('truetype');
+    font-style: normal;
+    font-weight: light;
+  }

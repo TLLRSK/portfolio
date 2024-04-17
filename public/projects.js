@@ -1,34 +1,78 @@
 export const PROJECTS = [
     {
-        index: 0,
+        index: "01",
         title: 'Aboutme',
+        date: "2023",
+        type: "web",
         description: 'One page project',
-        techList: 'HTML, CSS, JS',
-        linkGithub: 'https://github.com/TLLRSK/Project-Alpha--ID3',
-        linkVisitProject:  'https://aboutme-pjgv.netlify.app/'
+        techs: 'HTML, CSS, JS',
+        roles: 'Frontend Dev, UX/UI Designer',
+        links: [
+            {
+                name: "Github",
+                url: "https://github.com/TLLRSK/Project-Alpha--ID3"
+            },
+            {
+                name: "Live",
+                url: "https://aboutme-pjgv.netlify.app/"
+            }
+        ]
     },
     {
-        index: 1,
+        index: "02",
         title: 'Todoapp',
+        date: "2023",
+        type: "web",
         description: 'Add, check & delete any task',
-        techList: 'HTML, SASS, JS',
-        linkGithub: 'https://github.com/TLLRSK/TodoApp',
-        linkVisitProject:  'https://todoapp-pjgv.netlify.app/'
+        techs: 'HTML, SASS, JS',
+        roles: 'Frontend Dev, UX/UI Designer',
+        links: [
+            {
+                name: "Github",
+                url: "https://github.com/TLLRSK/TodoApp"
+            },
+            {
+                name: "Live",
+                url: "https://todoapp-pjgv.netlify.app/"
+            }
+        ]
     },
     {
-        index: 2,
-        title: 'Quoteapp',
-        description: 'Generate random quotes using an API',
-        techList: 'HTML, SASS, JS',
-        linkGithub: 'https://github.com/TLLRSK/QuoteApp',
-        linkVisitProject:  'https://quoteapp-pjgv.netlify.app/'
+        index: "03",
+        title: 'Blanca Amorós',
+        date: "2023",
+        type: "web",
+        description: 'Headless React Web and e-Commerce on Wordpress',
+        techs: 'HTML, SASS, JS',
+        roles: 'Frontend Dev, UX/UI Designer',
+        links: [
+            {
+                name: "Github",
+                url: "https://github.com/TLLRSK/QuoteApp"
+            },
+            {
+                name: "Live",
+                url: "https:/www.blancaamoros.com"
+            }
+        ]
     },
     {
-        index: 3,
+        index: "04",
         title: "Robberta's",
+        date: "2023",
+        type: "web",
         description: 'E-commerce setted up on Wordpress',
-        techList: 'HTML, SASS, JS, PHP',
-        linkGithub: 'https://github.com/TLLRSK/Robbertas',
-        linkVisitProject:  'https://pedrojgil.com/robbertas/'
-    },
+        techs: 'HTML, SASS, JS, PHP',
+        roles: 'Frontend Dev, UX/UI Designer',
+        links: [
+            {
+                name: "Github",
+                url: "https://github.com/TLLRSK/Robbertas"
+            },
+            {
+                name: "Live",
+                url: "https://pedrojgil.com/robbertas/"
+            }
+        ]
+    }
 ];

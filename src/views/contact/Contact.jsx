@@ -9,7 +9,7 @@ export default function Contact(props) {
     // HANDLING WINDOW SIZE
     // media queries
     const mediaQueryMobile = 720;
-    const mediaQueryDesktop = 1280;
+    const mediaQueryDesktop = 1024;
 
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 

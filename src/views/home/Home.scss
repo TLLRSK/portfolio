@@ -4,8 +4,8 @@
 .home {
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
-    padding: 1.2rem;
+    gap: $gap--s;
+    padding: $padding--m;
     transition: transform .3s ease-in-out, opacity .2s ease-in-out;
     color: var(--white-0);
     position: relative;
@@ -23,7 +23,12 @@
 
         &-title {
             position: absolute;
-            inset: 0 50% auto 0;
+            top: 50%;
+            left: 50%;
+            display: flex;
+            justify-content: center;
+            transform: translate(-50%, -50%);
+            text-align: center;
             overflow: hidden;
 
             @include mq-720 {
@@ -36,16 +41,18 @@
 
             &-text {
                 opacity: 0;
+                width: 65%;
                 font-size: $fs--xl-home;
-                font-weight: 500;
+                font-size: $fs--m;
+                font-weight: 600;
                 transform: translateY(-4.8rem);
 
                 @include mq-720 {
                     font-size: $fs--xl-home-desktop;
                     font-weight: 300;
                 }
-                @include mq-1280 {
-                    font-size: $fs--xl-home-desktop-1280;
+                @include mq-1024 {
+                    font-size: $fs--xl-home-desktop-1024;
                 }
             }
         }
@@ -63,50 +70,34 @@
             }
 
             &-text {
-                font-size: $fs--m;
-                font-weight: 200;
+                font-size: $fs--s;
+                
                 opacity: 0;
                 transform: translateY(-4.8rem);
-                @include mq-1280 {
-                    font-size: $fs--m-desktop-1280;
-                }
-                & span {
+                @include mq-1024 {
+                    font-size: $fs--m;
                     font-weight: 200;
                 }
             }
         }
-
-        &-ellipse {
-            display: none;
-            position: absolute;
-            width: 4.8rem;
-            height: 4.8rem;
-            border-top: 1px solid;
-            border-radius: 50%;
-            @include mq-720 {
-                display: flex;
-            }
-        }
-
+    
         &-copyright {
             position: absolute;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: .6rem 1.2rem;
             top: 0;
             right: 0;
-            border: 1px solid;
-            border-radius: 2.4rem;
             overflow: hidden;
 
             &-text {
                 opacity: 0;
                 font-size: 1.2rem;
-                font-weight: 300;
+                font-weight: 500;
                 transform: translateY(-2.4rem);
                 @include mq-720 {
-                    font-size: 1.6rem;
+                    font-size: $fs--s;
+                    font-weight: 300;
                 }
             }
         }
@@ -114,13 +105,13 @@
     &__main {
         position: absolute;
         display: flex;
-        padding: 12rem 6.4rem;
+        padding: 40% 20%;
         inset: 0 0 0 0;
 
         @include mq-720 {
-            padding: 8rem 8rem;
+            padding: 15% 15%;
         }
-        @include mq-1280 {
+        @include mq-1024 {
             padding: 12rem 12rem;
         }
 
@@ -132,10 +123,10 @@
             position: relative;
             
             @include mq-720 {
-                border-radius: 24rem;
+                border-radius: 32rem;
             }
 
-            @include mq-1280 {
+            @include mq-1024 {
                 border-radius: 48rem;
             }
 
@@ -144,6 +135,7 @@
                 content: '';
             }
             &:before {
+                // display: none;
                 top: 50%;
                 right: 50%;
                 bottom: 50%;
@@ -154,6 +146,7 @@
                 }
             }
             &:after {
+                // display: none;
                 top: 50%;
                 right: 50%;
                 bottom: 0;
@@ -195,9 +188,9 @@
             &__main {
                 &-round-box {
                     &:before {
-                        top: 35%;
+                        top: 25%;
                         right: 50%;
-                        bottom: 35%;
+                        bottom: 25%;
                         left: 0;
                         transition: top .4s .1s, right .4s .1s, bottom .4s .1s, left .4s .1s;
                         @include mq-720 {

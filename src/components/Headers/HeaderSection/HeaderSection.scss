@@ -6,7 +6,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 1.2rem;
+    padding: $padding--m;
     border-bottom: 1px solid;
     @include mq-720 {
         padding: 2.4rem;

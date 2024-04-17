@@ -1,5 +1,6 @@
-@import '../scss/mixins';
-:root {
+@import './variables';
+
+html {
     font-size: 62.5%;
 }
 
@@ -35,7 +36,7 @@ section, article, main {
 }
 section {
   border: 1px solid;
-  border-radius: 2.4rem;
+  border-radius: $unit*2;
   overflow: hidden;
 }
 

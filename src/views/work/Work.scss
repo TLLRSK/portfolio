@@ -7,6 +7,7 @@
     
     &__main {
         gap: 0;
+        position: relative;
     }
 
     &__subtitle {
@@ -24,14 +25,13 @@
             opacity: 0;
             transform: translateY(-4.8rem);
             font-size: $fs--m;
-            font-weight: 200;
             text-align: center;
             
             @include mq-720 {
-                font-size: $fs--m-desktop;
+                font-size: $fs--m;
             }
-            @include mq-1280 {
-                font-size: $fs--m-desktop-1280;
+            @include mq-1024 {
+                font-size: $fs--m;
             }
         }
     }
@@ -41,7 +41,6 @@
         display: grid;
         grid-template-rows: repeat(4, 1fr);
         max-height: 0;
-        border-top: 1px solid;
         overflow: hidden;
 
         @include mq-720 {

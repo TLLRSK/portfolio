@@ -12,12 +12,12 @@ function App() {
   let location = useLocation();
 
   // Setting style by location
-  let [color, setColor] = useState(true);
+  // let [color, setColor] = useState(true);
 
   // Calling back setBgColor
-  let locationColor = (path) => {
-    path === '/' ? setColor('grey-200') : setColor('black');
-  }
+  // let locationColor = (path) => {
+  //   path === '/' ? setColor('grey-200') : setColor('black');
+  // }
 
   // Handling navigation
   const [toSection, setToSection] = useState('');
@@ -50,19 +50,12 @@ function App() {
     setTimeout(() => {
       setSectionStatus('active')
     },300)
-    return locationColor(location.pathname);
+    // return locationColor(location.pathname);
   },[location])
 
   return (
     <div 
-      className={`app color--${color} 
-      color-bg--${location.pathname == '/' ? 'black' 
-        : location.pathname == '/hello' ? 'grey-0' 
-        : location.pathname == '/work' ? 'grey-100' 
-        : location.pathname == '/contact' ? 'grey-200' 
-        : ''}
-      
-        ${sectionStatus}`}>
+      className={`app ${sectionStatus}`}>
 
       <Routes>
         <Route path='/' element={<Home toSection={toSection} fromSection={fromSection} sectionStatus={sectionStatus}/>}></Route>

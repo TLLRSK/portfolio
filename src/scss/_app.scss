@@ -1,17 +1,19 @@
 @import '../scss/mixins';
+@import '../scss/variables';
 
 .app {
     display: flex;
     height: 100dvh;
     flex-direction: column;
-    padding: 1.2rem;
-    gap: 2.4rem;
+    padding: $padding--m;
+    gap: $gap--m;
     background-color: var(--white);
     transition: background-color .3s ease-in-out;
     z-index: 3;
     position: relative;
     overflow: hidden;
     @include mq-720 {
-      padding: 3.2rem;
+      padding: $padding--l;
+      gap: $gap--l;
     }
   }

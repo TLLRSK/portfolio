@@ -10,20 +10,14 @@ export default function Home(props) {
             
         <header className="home__header">
             <div className="home__header-title">
-                <h1 className='home__header-title-text'>PEDRO <span className='f-weight--extralight f-style--italic'>J.</span> GIL</h1>
+                <h1 className='home__header-title-text'>PEDRO J. GIL</h1>
             </div>
 
             <div className="home__header-subtitle">
                 <div className="home__header-subtitle-box">
-                    <h2 className='home__header-subtitle-text'>Frontend <span className='f-style--italic'>Dev</span></h2>
-                </div>
-            
-                <div className="home__header-subtitle-box">
-                    <h2 className='home__header-subtitle-text'>UX/UI <span className='f-style--italic'>Designer</span></h2>
+                    <h2 className='home__header-subtitle-text'>Frontend Dev</h2>
                 </div>
             </div>
-
-            <div className='home__header-ellipse'></div>
 
             <div className="home__header-copyright">
                 <span className='home__header-copyright-text'>©2023</span>

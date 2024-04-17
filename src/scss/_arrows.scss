@@ -9,19 +9,28 @@
 .arrow {
     display: flex;
     justify-content: flex-end;
+    width: $fs--s;
+    height: $fs--s;
 
     &--hello-page-toggler {
-        &--forward, &--backgward {
+        &--up, &--down, &--up-hover, &--down-hover {
             opacity: 1;
-            transform: translateX(0);
+            transform: translateY(0);
+            transition: transform .15s ease-in-out, opacity .15s ease-in-out;
         }
-        &--forward-hover {
+        &--up-hover {
+            position: absolute;
             opacity: 0;
-            transform: translateX(-100%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 100%);
         }
-        &--backward-hover {
+        &--down-hover {
+            position: absolute;
+            top: 50%;
+            left: 50%;
             opacity: 0;
-            transform: translateX(100%);
+            transform: translate(-50%, -100%);
         }
     }
     

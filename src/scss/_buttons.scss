@@ -1,17 +1,47 @@
 @import '../scss/variables';
 
 .btn {
+    appearance: none;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    width: fit-content;
+    height: fit-content;
+    background-color: transparent;
+
     &--hello-page-toggler {
         display: flex;
         flex-direction: row;
         align-items: center;
-        appearance: none;
-        cursor: pointer;
-        border: none;
-        outline: none;
-        margin: 0;
-        padding: 0;
-        width: fit-content;
-        background-color: transparent;
+        padding: $padding--s*.5;
+        border: 1px solid var(--black);
+        border-radius: 50%;
+        position: relative;
+        overflow: hidden;
+
+        @include mq-720 {
+            padding: $padding--s;
+        }
+
+        &:hover {
+            .arrow--hello-page-toggler--down {
+                opacity: 0;
+                transform: translateY(100%);
+            }
+            .arrow--hello-page-toggler--down-hover {
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
+            .arrow--hello-page-toggler--up {
+                opacity: 0;
+                transform: translateY(-100%);
+            }
+            .arrow--hello-page-toggler--up-hover {
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
+        }
     }
 }
