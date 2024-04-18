@@ -2,14 +2,12 @@
 @import '../../scss/variables';
 
 .single-project {
-    position: absolute;
-    inset: 0 0 0 0;
+    // display: grid;
     display: grid;
     grid-template-rows: repeat(2, 1fr);
     background-color: var(--white);
-    z-index: -1;
+    z-index: 1;
     opacity: 1;
-    font-size: $fs--m;
 
     @include mq-1024 {
         grid-template-columns: repeat(2, 1fr);
@@ -17,72 +15,106 @@
     }
     
 
-    .single-project-image, .single-project-main {
+    &-header, &-main {
         padding: $padding--m;
 
         @include mq-720 {
             padding: $padding--l;
         }
-    }
-
-    .single-project-image {
-        // border-bottom: 1px solid var(--black);
-        max-height: 100%;
-
-        .img--project {
-            width: 100%;
-            height: 100%;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
+        @include mq-1024 {
+            padding: $padding--xl;
         }
     }
-    .single-project-title {
-    }
-    .single-project-attribute {
-        text-transform: uppercase;
-    }
-    .single-project-main {
-        gap: $gap--l;
+    &-header {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
        
+        @include mq-1024 {
+            border-bottom: none;
+            border-right: 1px solid var(--black);
+        }
+        
     }
-    
-    .single-project-grid--2, .grid-item--row, .grid-item--column {
+    &-title, &-subtitle {
+       display: grid;
+       grid-template-columns: repeat(2, 1fr);
+       gap: $gap--m;
+
+        &-item:nth-child(2) {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        h3, p, span {
+            text-transform: uppercase;
+            height: fit-content;
+        }
+    }
+    &-title {
+        h3 {
+            max-width: 65%;
+        }
+    }
+
+    &-image {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .img--project {
+            width: clamp(16rem, 20vw, 34rem);
+            height: clamp(16rem, 20vw, 34rem);
+        }
+    }
+   
+    &-text {  
+    }
+    &-attributes {
         display: grid;
-    }
-    .single-project-grid--2, .grid-item--row {
         grid-template-columns: repeat(2, 1fr);
         gap: $gap--m;
     }
-    .grid-item--column {
-        grid-template-columns: 1fr;
+    &-attribute {
+        display: flex;
+        flex-direction: column;
         gap: $gap--m;
+        
+        h5 {
+            text-transform: uppercase;
+        }
+    }
+    &-main {
+        display: flex;
+        flex-direction: column;
+        gap: $gap--l;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+    }
+    
+
+    &-description {
         @include mq-720 {
-            gap: $gap--m;
+            width: 50%;
         }
     }
-    .single-project-grid--2 {
-        gap: $gap--m;
-    }
-    @include mq-720 {
-        .single-project-grid--2, .grid-item--row {
-            gap: $gap--l;
+    &-attribute-list {
+        .list-item {
+            display: flex;
+            gap: $gap--s;
         }
-    }
-    .single-project-description {
-        // width: calc(50% + $gap--m*.5);
     }
     
     .single-close-project {
         position: absolute;
         right: $padding--m;
         bottom: $padding--m;
-
-        
     }
-    .single-project-links {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: $gap--m;
+    &-links {
+        display: flex;
+        justify-content: space-between;
+        gap: $fs--m;
     }
 }

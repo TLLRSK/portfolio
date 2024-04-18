@@ -1,19 +1,14 @@
-import { PROJECTS } from "../../../public/projects";
+import { PROJECTS, HeaderSection, SingleProject, SingleProjectLink } from "../../../public/index.js";
+import useSetOnProject from "../../hooks/useSetOnProject.jsx";
 import './Work.scss';
-import HeaderSection from "../../components/Headers/HeaderSection/HeaderSection";
-import ProjectTab from "../../components/ProjectTab/ProjectTab";
-import SingleProject from "../../components/SingleProject/SingleProject";
 import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
 
 export default function Work(props) {
-    const {toSection, fromSection, sectionStatus, handleSectionNavigation} = props;
+    const {toSection, fromSection, sectionStatus, handleSectionNavigation, location} = props;
     const [isSelected, setIsSelected] = useState(false);
+    const {onProject, setOnProject} = useSetOnProject();
     const projects = PROJECTS;
-        
-    const selectProject = () => {
-        setIsSelected(true);
-    }
-
     
     return <section className={`work 
         ${toSection == 'next' ? 'going-to-next' : toSection == 'prev' ? 'going-to-prev' : ''} 
@@ -21,18 +16,29 @@ export default function Work(props) {
         ${sectionStatus}`}>
         <article className="work__content">
 
-            <HeaderSection handleSectionNavigation={handleSectionNavigation}/>
+            <HeaderSection handleSectionNavigation={handleSectionNavigation} location={location}/>
             
             <main className="work__main">
-                <div className="work__projects-grid">
-
+                <div className={`work__projects-grid${onProject ? " hidden" : ""}`}>
                     {projects.map( (project) => (
-                        <ProjectTab key={project.title} setIsSelected={setIsSelected} {...project} />
+                        <SingleProjectLink key={project.title} project={project}/>
                         )
                     )}
                 </div>
-                <SingleProject isSelected={isSelected} project={projects[0]}/>
-                <button>Close</button>
+
+                <div className={`work__single-project${onProject ? "" : " hidden"}`}>
+                    <Routes>
+                        {projects.map((project, i) => {
+                            return (
+                                <Route 
+                                    key={project.title} 
+                                    path={project.slug} 
+                                    element={<SingleProject isSelected={isSelected} project={projects[i]}/>}>
+                                </Route>
+                            )
+                        })}
+                    </Routes>
+                </div>
             </main>
         </article>
     </section>

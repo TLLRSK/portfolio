@@ -13,18 +13,8 @@
         gap: $gap--m;
         overflow: hidden;
 
-        p {
-            font-size: $fs--m;
-            font-weight: 200;
-
-            @include mq-1024 {
-                font-size: $fs--m;
-            }
-        }
-
         @include mq-720 {
             gap: 0;
-            
         }
         @include mq-1024 {
             
@@ -52,7 +42,6 @@
             padding: $padding--l;
         }
         @include mq-1024 {
-            // gap: $gap--xl;
             padding: $padding--xl;
         }
 
@@ -84,29 +73,23 @@
         overflow: hidden;
 
         &-text {
-            font-size: $fs--xs;
-            font-weight: 800;
             text-transform: uppercase;
-            @include mq-720 {
-                font-size: $fs--s;
-            }
-    
         }
     }
-
-    &__description {
+    
+    &__description, &__text-block, &__list {
         flex: 1;
         display: flex;
         flex-direction: column;
+    }
+
+    &__description {
         @include mq-720 {
             flex-direction: row;
         }
     }
 
     &__text-block, &__list {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
         @include mq-720 {
             gap: 2.4rem;
         }
@@ -121,7 +104,6 @@
     }
 
     &__description-paragraph {
-     
         position: absolute;
 
         &:nth-child(1) {
@@ -155,7 +137,6 @@
 
     &__list {
         overflow: hidden;
-        // gap: $gap--m;
 
         @include mq-1024 {
             // gap: $gap--l;

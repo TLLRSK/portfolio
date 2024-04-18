@@ -3,236 +3,37 @@
 .contact {
     transition: transform .3s ease-in-out, opacity .2s ease-in-out;
     
-    &__subtitle {
-        &--top, &--bottom {
-            display: flex;
-            overflow: hidden;
-        }
-        &--top {
-            padding: 1.2rem 1.2rem 0 1.2rem;
-            @include mq-720 {
-                padding: 2.4rem 2.4rem 0 2.4rem;
-            }
-            & .contact__subtitle-text {
-                &:nth-child(2) {
-                    text-align: center;
-                }
-                &:nth-child(3) {
-                    text-align: right;
-                }
-            }
-        }
-        &--bottom {
-            padding: 0 1.2rem 1.2rem 1.2rem;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1.2rem;
-            @include mq-720 {
-                padding: 0 2.4rem 2.4rem 2.4rem;
-            }
-            & .contact__subtitle-text {
-                flex: none;
-                &:nth-child(2) {
-                    font-style: normal;
-                }
-            }
-        }
-        &-text {
-            opacity: 0;
-            flex: 1;
-            transform: translateY(-4.8rem);
-            font-size: $fs--s;
-            // font-weight: 300;
-            font-style: italic;
-            @include mq-720 {
-                font-size: $fs--xs-desktop;
-            }
-            @include mq-1024 {
-                font-size: $fs--xs-desktop-1024;
-            }
-        }
-    }
+    &__main {
+        display: grid;
+        grid-template-rows: 1fr 4fr auto;
+        padding: $padding--m;
 
-    &__mail {
-        flex: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-
-        /* Dashed lines*/
-
-        &::after {
-            position: absolute;
-            inset: 4.8rem 50% 100% 0;
-            content: '';
-            border-right: 1px dashed;
-            @include mq-720 {
-                inset: 2.4rem 50% 100% 0;
-            }
-        }
-        &::before {
-            position: absolute;
-            inset: 50% 50% 0 50%;
-            content: '';
-            border-top: 1px dashed;
-            @include mq-720 {
-                inset: 50% 50% 0 50%;
-            }
-        }
-
-        &-span-aligned--right {
-            display: flex;
-            width: 100%;
-            justify-content: flex-end;
-        }
-
-        &-link {
-            z-index: 1;
-            font-size: $fs--xl-contact;
-            // font-weight: 300;
-            text-align: left;
-            position: relative;
-            color: var(--black);
-            opacity: 0;
-            transform: translateY(-8rem);
-
-            @include mq-720 {
-                font-size: $fs--xl-contact-desktop;
-            }
-            @include mq-1024 {
-                font-size: $fs--xl-contact-desktop-1024;
-            }
-
-            &::after {
-                position: absolute;
-                content: '';
-                width: 100%;
-                height: 6px;
-                top: 50%;
-                left: 0;
-                transform: translateY(-50%) scaleX(0);
-                background-color: var(--black);
-                transition: transform .2s ease-in-out;
-                transform-origin: center;
-            }
-            &:hover {
-                &::after {
-                    transform: translateY(-50%) scaleX(1);;
-                }
-                
-            }
-        }
-    }
-
-    &__sublinks-list {
-        display: flex;
-        justify-content: space-between;
-        border-top: 1px solid;
-
-        &-item {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex: 1;
-            border-right: 1px solid;
-            position: relative;
-            &:nth-last-child(1) {
-                border: none;
-            }
-        }
-    }
-
-    &__sublink {
-        flex: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 1.2rem;
-        font-size: $fs--xs;
-        // font-weight: 300;
-        text-align: center;
-        color: var(--black);
-        position: relative;
-        overflow: hidden;
         @include mq-720 {
-            font-size: $fs--xs-desktop;
+            padding: $padding--l;
         }
         @include mq-1024 {
-            font-size: $fs--xs-desktop-1024;
-        }
-        &--idle, &--on-hover {
-            z-index: 1;
-            transition: transform .2s, opacity .2s;
-        }
-        &--idle {
-            color: var(--black);
-            opacity: 0;
-            transform: translateY(-5rem);
-        }
-        &--on-hover {
-            opacity: 0;
-            position: absolute;
-            transform: translateY(-5rem);
-            color: var(--grey-200);
-        }
-        &:hover {
-            .contact__sublink--on-hover {
-                opacity: 1;
-                transform: translateY(0);
-            }
-
-            &::before {
-                position: absolute;
-                inset: 0 0 0 0;
-                content: '';
-                background-color: var(--black);
-            }
-        }
-
-        &::before {
-            position: absolute;
-            inset: 0 0 100% 0;
-            content: '';
-            background-color: var(--black);
-            transition: inset .2s ease-in-out;
+            padding: $padding--xl;
         }
     }
-    
-    &.active {
-        .contact__subtitle-text {
-            opacity: 1;
-            transform: none;
-        }
-        .contact__mail {
-            &::after {
-                inset: 4.8rem 50% 4.8rem 0;
-                transition: inset .6s .3s;
-                @include mq-720 {
-                    inset: 2.4rem 50% 2.4rem 0;
-                }
-                @include mq-1024 {
-                    inset: 2.4rem 50% 2.4rem 0;
-                }
-            }  
-            &::before {
-                inset: 50% 8% 0 8%;
-                transition: inset .6s .3s;
-                @include mq-720 {
-                    inset: 50% 3.2rem 0 3.2rem;
-                }
-            }  
-            &-link {
-                opacity: 1;
-                transform: translateY(0);
-                transition: opacity .3s .9s, transform .3s .9s;
+    &__subtitle {
+        box-shadow: 0 1px 0 var(--black);
+    }
+    &__links-list {
+        display: grid;
+        grid-template-rows: repeat(4, 1fr);
+
+        &-item {
+            box-shadow: 0 1px 0 var(--black);
+            overflow: hidden;
+
+            p {
+                font-size: $fs--l;
             }
         }
-        .contact__sublink--idle {
-            opacity: 1;
-            color: var(--black);
-            transform: translateY(0);
-            transition: transform .4s 1.2s;
-        }
+    }
+    &__bottom-row {
+        display: flex;
+        justify-content: space-between;
+        margin-top: $unit*3;
     }
 }

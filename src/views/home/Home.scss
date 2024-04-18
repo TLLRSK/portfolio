@@ -42,17 +42,17 @@
             &-text {
                 opacity: 0;
                 width: 65%;
-                font-size: $fs--xl-home;
-                font-size: $fs--m;
-                font-weight: 600;
+                // font-size: $fs--xl-home;
+                // font-size: $fs--m;
+                // font-weight: 600;
                 transform: translateY(-4.8rem);
 
                 @include mq-720 {
-                    font-size: $fs--xl-home-desktop;
+                    // font-size: $fs--xl-home-desktop;
                     font-weight: 300;
                 }
                 @include mq-1024 {
-                    font-size: $fs--xl-home-desktop-1024;
+                    // font-size: $fs--xl-home-desktop-1024;
                 }
             }
         }

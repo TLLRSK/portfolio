@@ -1,7 +1,19 @@
-h1, h2, h3, h4, h5, p, span {
+h1, h2, h3, h4, h5, p, span, a {
     font-family: "nunito", Arial, Helvetica, sans-serif;
     line-height: 100%;
     font-weight: 300;
+}
+
+h1 {
+    font-size: $fs--l;
+    font-weight: 500;
+    @include mq-720 {
+        font-size: $fs--xl;
+    }
+}
+
+h3, h4, h5, p, span, button {
+    font-size: $fs--m;
 }
 
 @font-face {

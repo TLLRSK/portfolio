@@ -10,15 +10,7 @@ import Navbar from './components/Navbar/Navbar'
 function App() {
   // Managing location
   let location = useLocation();
-
-  // Setting style by location
-  // let [color, setColor] = useState(true);
-
-  // Calling back setBgColor
-  // let locationColor = (path) => {
-  //   path === '/' ? setColor('grey-200') : setColor('black');
-  // }
-
+  
   // Handling navigation
   const [toSection, setToSection] = useState('');
   const [fromSection, setFromSection] = useState('');
@@ -50,7 +42,6 @@ function App() {
     setTimeout(() => {
       setSectionStatus('active')
     },300)
-    // return locationColor(location.pathname);
   },[location])
 
   return (
@@ -60,7 +51,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home toSection={toSection} fromSection={fromSection} sectionStatus={sectionStatus}/>}></Route>
         <Route path='/hello' element={<Hello toSection={toSection} fromSection={fromSection} sectionStatus={sectionStatus} handleSectionNavigation={handleSectionNavigation}/>}></Route>
-        <Route path='/work' element={<Work toSection={toSection} fromSection={fromSection} sectionStatus={sectionStatus} handleSectionNavigation={handleSectionNavigation}/>}></Route>
+        <Route path='/work/*' element={<Work toSection={toSection} fromSection={fromSection} sectionStatus={sectionStatus} handleSectionNavigation={handleSectionNavigation} location={location}/>}></Route>
         <Route path='/contact' element={<Contact toSection={toSection} fromSection={fromSection} sectionStatus={sectionStatus} handleSectionNavigation={handleSectionNavigation}/>}></Route>
       </Routes>
 
