@@ -1,0 +1,26 @@
+.sliding {
+    &-main {
+        z-index: 0;
+    }
+    
+    &-page-1, &-page-2 {
+        
+        position: absolute;
+        inset: 0 0 0 0;
+        transform: translateY(0);
+        transition: transform .4s ease-in-out;
+    }
+    &-page {
+        &-1 {
+            &.hidden {
+                transform: translateY(-100%);
+            }
+        }
+        &-2 {
+            z-index: 2;
+            &.hidden {
+                transform: translateY(100%);
+            }
+        }
+    }
+}

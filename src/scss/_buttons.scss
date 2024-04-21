@@ -11,36 +11,146 @@
     height: fit-content;
     background-color: transparent;
 
-    &--hello-page-toggler {
+    &--select-project {
+        position: absolute;
+        inset: 0 0 0 0;
+        width: auto;
+        height: auto;
+    }
+    &--close-project, &--hello-toggler {
+        z-index: 2;
         display: flex;
-        flex-direction: row;
-        align-items: center;
-        padding: $padding--s*.5;
+        position: absolute;
+        right: $padding--m;
+        background-color: var(--white);
         border: 1px solid var(--black);
-        border-radius: 50%;
-        position: relative;
-        overflow: hidden;
+        transform: translateY(0);
+        transition: transform .2s .5s ease-in-out;
 
         @include mq-720 {
-            padding: $padding--s;
+            right: $padding--l;
         }
 
-        &:hover {
-            .arrow--hello-page-toggler--down {
-                opacity: 0;
-                transform: translateY(100%);
+        .btn {
+            display: flex;
+            align-items: center;
+            transition: padding .2s ease-in-out;
+            // padding: $padding--m;
+            // @include mq-720 {
+            //     padding: $padding--l;
+            // }
+        }
+        .burger, .burger::before {
+            width: $fs--m;
+            height: 1px;
+            background-color: var(--black);
+            transition: transform .3s ease-in-out;
+        }
+        .burger {
+            transform: rotate(0);
+        }
+        .burger::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(0);
+        }
+    }
+    &--close-project {
+        top: 0;
+        border-bottom-right-radius: $unit*3;
+        border-bottom-left-radius: $unit*3;
+        border-top: none;
+
+        .btn {
+            padding: $padding--m*1.5 $padding--m $padding--m*1.5 $padding--m;
+            &:hover {
+                padding-top: $padding--l*1.5;
             }
-            .arrow--hello-page-toggler--down-hover {
-                opacity: 1;
-                transform: translate(-50%, -50%);
+            @include mq-720 {
+                padding: $padding--l*1.3 $padding--m $padding--m*1.5 $padding--m;
+
+                &:hover {
+                    padding-top: $padding--xl*1.2;
+                }
             }
-            .arrow--hello-page-toggler--up {
-                opacity: 0;
+        }
+        .burger {
+            transform: rotate(45deg);
+        }
+        .burger::before {
+            transform: translate(-50%, -50%) rotate(90deg);
+        }
+
+        &.hidden {
+            transform: translateY(-100%);
+            transition: transform .2s ease-in-out;
+        }
+        @include mq-720 {
+           .burger.opening {
+            transform: rotate(0);
+           }    
+           .burger::before.opening {
+            transform: translate(-50%, -50%) rotate(0);
+           } 
+        }
+    }
+    &--hello-toggler {
+        .btn {
+            padding: $padding--m;
+        }
+  
+        &.prev {
+            z-index: 3;
+            top: 0;
+            border-top: none;
+            border-bottom-right-radius: $unit*3;
+            border-bottom-left-radius: $unit*3;
+            
+
+            &.hidden {
                 transform: translateY(-100%);
+                transition: transform .2s ease-in-out;
             }
-            .arrow--hello-page-toggler--up-hover {
-                opacity: 1;
-                transform: translate(-50%, -50%);
+
+            .btn {
+                padding: $padding--m*1.5 $padding--m $padding--m*1.5 $padding--m;
+                &:hover {
+                    padding-top: $padding--l*1.2;
+                }
+                @include mq-720 {
+                    padding: $padding--l*1.3 $padding--m $padding--m*1.5 $padding--m;
+    
+                    &:hover {
+                        padding-top: $padding--xl*1.2;
+                    }
+                }
+            }
+            .burger::before {
+                content: none;
+            }
+        }
+        &.next {
+            z-index: 1;
+            bottom: 0;
+            border-bottom: none;
+            border-top-right-radius: $unit*3;
+            border-top-left-radius: $unit*3;
+
+            &.hidden {
+                transform: translateY(100%);
+                transition: transform .2s ease-in-out;
+            }
+            
+            .btn {
+                padding: $padding--m*1.5 $padding--m $padding--m*1.5 $padding--m;
+            }
+            .btn:hover {
+                padding-bottom: $padding--l*1.5;
+            }
+            .burger::before {
+                transform: translate(-50%, -50%) rotate(90deg);
             }
         }
     }

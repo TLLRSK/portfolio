@@ -41,9 +41,36 @@
         border: 1px solid var(--black);
         border-radius: $unit*2;
         padding: $padding--s*.5 $padding--s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        .span, .span--hover {
+            transition: transform .2s ease-in-out, opacity .2s ease-in-out;
+        }
+        .span {
+            transform: translateY(0);
+        }
+        .span--hover {
+            position: absolute;
+            color: var(--white);
+            transform: translateY(calc(100% + $padding--s));
+        }
+        @include mq-720 {
+            &:hover {
+                & .span {
+                    transform: translateY(-100%);
+                }
+                & .span--hover {
+                    transform: translateY(0);
+                }
+            }
+        }
     }
+    
     &--contact {
         position: relative;
+        width: 100%;
         
         &-row {  
             display: grid;

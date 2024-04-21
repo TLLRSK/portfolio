@@ -38,9 +38,9 @@
         
     }
     &-title, &-subtitle {
-       display: grid;
-       grid-template-columns: repeat(2, 1fr);
-       gap: $gap--m;
+        display: flex;
+        justify-content: space-between;
+        gap: $gap--m;
 
         &-item:nth-child(2) {
             display: flex;
@@ -50,11 +50,6 @@
         h3, p, span {
             text-transform: uppercase;
             height: fit-content;
-        }
-    }
-    &-title {
-        h3 {
-            max-width: 65%;
         }
     }
 
@@ -69,48 +64,66 @@
             height: clamp(16rem, 20vw, 34rem);
         }
     }
-   
-    &-text {  
-    }
-    &-attributes {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: $gap--m;
-    }
-    &-attribute {
-        display: flex;
-        flex-direction: column;
-        gap: $gap--m;
-        
-        h5 {
-            text-transform: uppercase;
-        }
-    }
+    
     &-main {
         display: flex;
         flex-direction: column;
         gap: $gap--l;
         display: grid;
         grid-template-rows: auto 1fr auto;
+
+        @include mq-1024 {
+            gap: $gap--xxl;
+        }
     }
     
 
     &-description {
+        width: 50%;
         @include mq-720 {
-            width: 50%;
+            max-width: 50%;
+        }
+    }
+    &-attributes {
+        // display: grid;
+        // grid-template-columns: repeat(2, 1fr);
+        gap: $gap--m;
+        @include mq-1024 {
+            gap: $gap--l;
+        }
+    }
+    &-attribute {
+        display: flex;
+        flex-direction: column;
+        gap: $gap--m;
+
+        @include mq-1024 {
+            gap: $gap--l;
+        }
+        
+        h5 {
+            text-transform: uppercase;
         }
     }
     &-attribute-list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: $gap--m;
+        
         .list-item {
             display: flex;
-            gap: $gap--s;
+            align-items: center;
+            gap: $gap--m;
+
+            @include mq-1024 {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: $gap--l;
+            }
         }
-    }
-    
-    .single-close-project {
-        position: absolute;
-        right: $padding--m;
-        bottom: $padding--m;
+        .span {
+            font-size: $fs--xs;
+        }
     }
     &-links {
         display: flex;

@@ -7,7 +7,6 @@
     gap: $gap--s;
     padding: $padding--m;
     transition: transform .3s ease-in-out, opacity .2s ease-in-out;
-    color: var(--white-0);
     position: relative;
     @include mq-720 {
         padding: 2.4rem;
@@ -20,6 +19,7 @@
         justify-content: flex-start;
         position: relative;
         z-index: 3;
+        
 
         &-title {
             position: absolute;

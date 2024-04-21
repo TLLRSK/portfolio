@@ -1,26 +1,11 @@
 // ** COLORS **
 
 // colors
-.color--grey-0 {
-    color: var(--grey-0);
-}
-.color--grey-100 {
-    color: var(--grey-100);
-}
-.color--grey-200 {
-    color: var(--grey-200);
+.color--white {
+    color: var(--white);
 }
 .color--black {
     color: var(--black);
-}
-.color--red {
-    color: var(--red);
-}
-.color--yellow {
-    color: var(--yellow);
-}
-.color--blue {
-    color: var(--blue);
 }
 
 // background
@@ -139,6 +124,27 @@
 }
 .f-style--normal {
     font-style: normal;
+}
+// Before
+.hover--bg-b {
+    position: relative;
+    overflow: hidden;
+    &::before {
+        position: absolute;
+        content: "";
+        inset: 0 0 0 0;
+        background-color: var(--black);
+        transform: scaleY(0%);
+        transform-origin: bottom;
+        transition: transform .2s ease-in-out;
+    }
+    @include mq-720 {
+        &:hover {
+            &::before {
+                transform: scaleY(100%);
+            }
+        }
+    }
 }
 
 // Transition Delay

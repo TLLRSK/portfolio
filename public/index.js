@@ -107,5 +107,5 @@ export const LINKS = [
 /* Components */
 export {default as HeaderSection } from "../src/components/Headers/HeaderSection/HeaderSection";
 export {default as SingleProject } from "../src/components/SingleProject/SingleProject";
-export {default as SingleProjectLink } from "../src/components/SingleProjectLink/SingleProjectLink";
+export {default as ProjectTab } from "../src/components/ProjectTab/ProjectTab";
 export {default as Navbar } from "../src/components/Navbar/Navbar";

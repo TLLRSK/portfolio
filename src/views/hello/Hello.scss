@@ -10,144 +10,80 @@
     &__main {
         display: flex;
         flex-direction: column;
-        gap: $gap--m;
         overflow: hidden;
-
-        @include mq-720 {
-            gap: 0;
-        }
-        @include mq-1024 {
-            
-        }
-    }
-
-    &__slider {
-        flex: 1;
         position: relative;
     }
+    &__page-1 {
 
-    &__page {
+    }
+    &__page-2 {
         display: flex;
         flex-direction: column;
-        position: absolute;
-        inset: 0 0 0 0;
-        padding: $padding--m;
-        gap: $gap--l;
-        opacity: 1;
-        transform: none;
-        transition: opacity .3s ease-in-out, transform .3s ease-in-out;
-
-        @include mq-720 {
-            gap: $gap--xl;
-            padding: $padding--l;
-        }
+        background-color: var(--white);
+        box-shadow: 0px -1px 0px 0px var(--black);
         @include mq-1024 {
-            padding: $padding--xl;
+            flex-direction: row;
         }
-
-        &--1 {
-            &.hidden {
-                opacity: 0;
-                transform:  translateY(-100%);
-            }
+        &.hidden {
+            box-shadow: inset 0px 1px 0px 0px var(--black);
         }
-        &--2 {
-            &.hidden {
-                opacity: 0;
-                transform:  translateY(100%);
-            }
-            @include mq-720 {
-                gap: $gap--xl;
-            }
-            @include mq-1024 {
-                gap: 0;
-                flex-direction: row;
-            }
-        }
-    }
-
-    
-    &__title {
-        display: flex;
-        justify-content: space-between;
-        overflow: hidden;
-
-        &-text {
-            text-transform: uppercase;
-        }
-    }
-    
-    &__description, &__text-block, &__list {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
     }
 
     &__description {
-        @include mq-720 {
-            flex-direction: row;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        
+        &-grid {
+            display: grid;
+            grid-template-rows: repeat(4, 1fr);
+            height: 100%;
+            @include mq-720 {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(2, 1fr);
+            }
         }
-    }
 
-    &__text-block, &__list {
-        @include mq-720 {
-            gap: 2.4rem;
-        }
-    }
-    &__text-block {
-        position: relative;
-    }
+        &-grid-item {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: $padding--m;
+            // box-shadow: 0px -1px 0px var(--black);
+            border-bottom: 1px dashed var(--black);
 
-    &__title-text, &__description-paragraph, &__list-item-character, &__list-paragraph {
-        opacity: 0;
-        transform: translateY(-4.8rem);
-    }
+            &:nth-last-child(1) {
+                border-bottom: none;
+            }
 
-    &__description-paragraph {
-        position: absolute;
-
-        &:nth-child(1) {
-            top: 0;
-            left: 0;
+            @include mq-720 {
+                padding: $padding--l;
+                // box-shadow: 1px -1px 0px var(--black);
+                &:nth-child(1) {
+                    border-right: 1px dashed var(--black);
+                }
+                &:nth-last-child(2) {
+                    border-right: 1px dashed var(--black);
+                    border-bottom: none;
+                }
+            }
+            @include mq-1024 {
+                padding: $padding--xl;
+                // box-shadow: 1px -1px 0px var(--black);
+            }
+            p:nth-child(3) {
+                text-transform: uppercase;
+            }
         }
-        &:nth-child(2) {
-            top: 0;
-            right: 0;
-            text-align: right;
-        }
-        &:nth-child(4) {
-            bottom: 0;
-            left: 0;
-        }
-        &:nth-child(5) {
-            bottom: 0;
-            right: 0;
-            text-align: right;
-        }
-    }
-
-    &__description-image {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: clamp(12rem, 20vw, 24rem);
-        border-radius: 50%;
     }
 
     &__list {
-        overflow: hidden;
-
-        @include mq-1024 {
-            // gap: $gap--l;
-        }
-
-        &--fields {
+        &--fields, &--tools {
             display: grid;
+            gap: $gap--m;
         }
 
         &--tools {
-            display: grid;
             grid-template-columns: repeat(2, 1fr);
         }
 
@@ -155,57 +91,35 @@
             flex: 1;
             display: flex;
             flex-direction: column;
+            padding: $padding--m;
             gap: $gap--l;
+            box-shadow: 0px 1px 0px var(--black);
+
             @include mq-720 {
-                flex: 1;
-                gap: $gap--xl;
+                padding: $padding--l;
             }
-            &:nth-child(1) {
-                @include mq-1024 {
-                    padding-right: $padding--xl;
-                    border-right: 1px dashed var(--black);
-                }
-            }
-            &:nth-child(2) {
-                @include mq-1024 {
-                    padding-left: $padding--xl;
-                }
+            @include mq-1024 {
+                box-shadow: 1px 0px 0px var(--black);
             }
         }
-        &-row {
+        &-title {
+            text-transform: uppercase;
+        }
+
+        &-item {
             display: flex;
-            justify-content: space-between;
-        }
-    }
-    &__page-toggler {
-        display: flex;
-        padding: 0 $padding--s $padding--s $padding--s;
+            align-items: center;
+            gap: $gap--s;
 
-        @include mq-720 {
-            padding: 0 $padding--m $padding--m $padding--m;
-        }
+            
 
-        &-row {
-            flex: 1;
-            display: flex;
-            justify-content: space-between;
-        }
-    }
-
-    &.on-page--1 {
-        .hello {
-            &__title-text--page-1, &__description-paragraph {
-                opacity: 1;
-                transform: translateY(0);
+            @include mq-1024 {
+                align-items: flex-start;
+                flex-direction: column;
             }
         }
     }
-    &.on-page--2 {
-        .hello {
-            &__title-text--page-2, &__list-item-character, &__list-paragraph {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+    span {
+        font-size: $fs--xs;
     }
 }
