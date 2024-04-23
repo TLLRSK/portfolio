@@ -4,18 +4,22 @@ import ArrowDown from '../Arrows/ArrowDown';
 
 const ProjectTab = ({i, project, selectProject}) => {
     return (
-        <li key={i} className={`work__projects-grid-item hover--bg-b`}>
-            <div className="work__single-project-tab">
-                <span className='work__single-project-index'>{project.index}</span>
-                <h3 className='work__single-project-title'>{project.title}</h3>
-                <p className='work__single-project-date'>{project.date}</p>
-                <p className='work__single-project-type'>{project.type}</p>
+        // <li key={i} className={`work__projects-grid-item project-tab hover--bg-b`}>
+        <li key={i} className={`work__projects-grid-item project-tab`}>
+
+            <div className="project-tab__cover">
+                <span className='project-tab__index index'>{project.index}</span>
+                <h3 className='project-tab__title title'>{project.title}</h3>
+                <p className='project-tab__date date'>{project.date}</p>
+                <p className='project-tab__type type'>{project.type}</p>
             </div> 
-            <div className="work__single-project-tab--hover">
-                <span className='work__single-project-title--hover'>{project.title}</span>
-                <ArrowDown className="arrow color--white"/>
-                <ArrowDown className="arrow color--white"/>
+
+            <div className="project-tab__cover--hover">
+                <span className='project-tab__title--hover title--hover'>{project.title}</span>
+                <ArrowDown className="arrow arrow--project-tab color--black"/>
+                <ArrowDown className="arrow arrow--project-tab color--black"/>
             </div >
+
             <button data-index={i} onClick={e => selectProject(e)} className="btn btn--select-project"/>
     </li>
     )

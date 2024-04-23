@@ -7,36 +7,19 @@ import { LINKS } from '../../../public';
 export default function Contact(props) {
     const {toSection, fromSection, sectionStatus, handleSectionNavigation} = props;
 
-    // HANDLING WINDOW SIZE
-    // media queries
-    const mediaQueryMobile = 720;
-    const mediaQueryDesktop = 1024;
-
-    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
     const links = LINKS;
 
-    useEffect(() => {
-        const handleResize = () => {
-            setWindowWidth(window.innerWidth);
-        };
-        
-        window.addEventListener('resize', handleResize);
-        
-        return () => {
-        window.removeEventListener('resize', handleResize);
-        };
-    }, []);
+    const sectionTransition = `${toSection == 'next' ? 'going-to-next' : toSection == 'prev' ? 'going-to-prev' : ''} 
+    ${fromSection == 'next' ? 'coming-from-next' : fromSection == 'prev' ? 'coming-from-prev' : ''} 
+    ${sectionStatus}`
     
     return <section className={`contact 
-        ${toSection == 'next' ? 'going-to-next' : toSection == 'prev' ? 'going-to-prev' : ''} 
-        ${fromSection == 'next' ? 'coming-from-next' : fromSection == 'prev' ? 'coming-from-prev' : ''} 
-        ${sectionStatus}`}>
+        ${sectionTransition}`}>
         <article className='contact__content'>
-            <HeaderSection handleSectionNavigation={handleSectionNavigation}/>
+            <HeaderSection handleSectionNavigation={handleSectionNavigation}  sectionIndex={"3"} sectionName={"C"}/>
             <main className='contact__main'>
                 <div className='contact__subtitle'>
-                    <p>Let&apos;s</p>
+                    <p className='subtitle'>Let&apos;s</p>
                 </div>
                 <ul className='contact__links-list'>
                     {links.map((link, i) => {
@@ -44,20 +27,20 @@ export default function Contact(props) {
                             <li key={i} className='contact__links-list-item'>
                                 <a href={link.url} className="link link--contact" target="_blank">
 
-                                    <div className='link--contact-row'>
-                                        <span className='link-span'>{link.action}</span>
+                                    <div className='row'>
+                                        <span className='span'>{link.action}</span>
                                         <div className='link-text'>
                                             {link.text.map((p,i) => {
-                                                return <p key={i}>{p}</p>
+                                                return <p className="text" key={i}>{p}</p>
                                             })}
                                         </div>
                                     </div>
 
-                                    <div className='link--contact-row'>
-                                        <span className='link-span'>&gt;</span>
-                                        <div className='link-text'>
+                                    <div className='row row--hover'>
+                                        <span className='span--hover'>&gt;</span>
+                                        <div className='link-text--hover'>
                                             {link.text.map((p,i) => {
-                                                return <p key={i}>{p}</p>
+                                                return <p className="text--hover" key={i}>{p}</p>
                                             })}
                                         </div>
                                     </div>
@@ -67,8 +50,8 @@ export default function Contact(props) {
                     })}
                 </ul>
                 <div className='contact__bottom-row'>
-                    <p>©2024</p>
-                    <p>PJGV</p>
+                    <p className='bottom'>©2024</p>
+                    <p className='bottom'>PJGV</p>
                 </div>
             </main>
         </article>

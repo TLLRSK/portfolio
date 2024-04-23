@@ -25,7 +25,7 @@ export default function Work(props) {
         ${fromSection == 'next' ? 'coming-from-next' : fromSection == 'prev' ? 'coming-from-prev' : ''} 
         ${sectionStatus}`}>
         <article className="work__content">
-            <HeaderSection handleSectionNavigation={handleSectionNavigation} location={location}/>
+            <HeaderSection handleSectionNavigation={handleSectionNavigation} sectionIndex={"2"} sectionName={"W"}/>
             
             <main className="work__main">
                 <ul className={`work__projects-grid${onProject ? " hidden" : ""}`}>

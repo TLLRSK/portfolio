@@ -10,29 +10,9 @@
     &--to-home {
         display: flex;
         position: relative;
-        .link--to-home-paragraph {
-            z-index: 1;
-            position: relative;
-          
-            &::after {
-                position: absolute;
-                content: '';
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                height: 2px;
-                transform: scaleX(0);
-                background-color: var(--black);
-                transform-origin: left;
-                transition: transform .2s ease-in-out;
-            }
-        }
         &:hover {
-            .link--to-home-paragraph {
+            .link-text {
                 font-style: italic;
-                &::after {
-                    transform: scaleX(1);
-                }
             }
         }
     }
@@ -40,28 +20,28 @@
         text-transform: uppercase;
         border: 1px solid var(--black);
         border-radius: $unit*2;
-        padding: $padding--s*.5 $padding--s;
+        padding: $padding--xs $padding--s;
         display: flex;
         align-items: center;
         justify-content: center;
         
-        .span, .span--hover {
+        .link-text, .link-text--hover {
             transition: transform .2s ease-in-out, opacity .2s ease-in-out;
         }
-        .span {
+        .link-text {
             transform: translateY(0);
         }
-        .span--hover {
+        .link-text--hover {
             position: absolute;
             color: var(--white);
             transform: translateY(calc(100% + $padding--s));
         }
         @include mq-720 {
             &:hover {
-                & .span {
+                & .link-text {
                     transform: translateY(-100%);
                 }
-                & .span--hover {
+                & .link-text--hover {
                     transform: translateY(0);
                 }
             }
@@ -71,8 +51,7 @@
     &--contact {
         position: relative;
         width: 100%;
-        
-        &-row {  
+        .row {  
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             width: 100%;
@@ -80,34 +59,35 @@
             padding-top: $padding--m;
             transform: translateY(0);
             transition: transform .2s ease-in-out, opacity .2s ease-in-out;
-
-            &:nth-child(2) {
-                inset: 0 0 0 0;
-                position: absolute;
-                transform: translateY(100%);
-                opacity: 0;
-            }
+        }
+        .row--hover {
+            inset: 0 0 0 0;
+            position: absolute;
+            transform: translateY(100%);
+            opacity: 0;
         }
         
-        .link-text {
+        .link-text, .link-text--hover {
             display: flex;
             flex-direction: column;
             @include mq-720 {
                 flex-direction: row;
             }
+            @include mq-360x720 {
+                flex-direction: row;
+            }
         }
-
         &:hover {
-            .link--contact-row {  
+            .row {  
                 &:nth-child(1) {
                     transform: translateY(-100%);
                     opacity: 0;
                 }
-                &:nth-child(2) {
-                    transform: translateY(0);
-                    opacity: 1;
-                }
             } 
+            .row--hover {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
     }
 }

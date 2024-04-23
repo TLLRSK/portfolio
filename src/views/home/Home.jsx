@@ -1,7 +1,10 @@
+import {useTimer} from '../../../public/hooks.js';
 import './Home.scss';
 
 export default function Home(props) {
     const {toSection, fromSection, sectionStatus} = props;
+
+    const {currentTime} = useTimer();
     
     return <section className={`home 
         ${toSection == 'next' ? 'going-to-next' : toSection == 'prev' ? 'going-to-prev' : ''} 
@@ -10,20 +13,15 @@ export default function Home(props) {
             
         <header className="home__header">
             <div className="home__header-title">
-                {/* <h1 className='home__header-title-text'>PEDRO J. GIL</h1> */}
-                <h1>PEDRO J. GIL</h1>
+                <h1 className='title'>PEDRO J. GIL</h1>
             </div>
 
             <div className="home__header-subtitle">
-                <div className="home__header-subtitle-box">
-                    <h4>Frontend Dev</h4>
-                    {/* <h2 className='home__header-subtitle-text'>Frontend Dev</h2> */}
-                </div>
+                <p className='subtitle'>Front Dev</p>
             </div>
 
-            <div className="home__header-copyright">
-                {/* <span className='home__header-copyright-text'>©2023</span> */}
-                <span>©2023</span>
+            <div className="home__header-timer">
+                <span className='timer'>{currentTime}</span>
             </div>
         </header>
 

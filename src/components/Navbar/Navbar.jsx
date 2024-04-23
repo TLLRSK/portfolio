@@ -61,13 +61,12 @@ export default function Navbar(props) {
       className={`link navbar-item ${path === el.path ? 'active' : ''}`} 
       onClick={(e) => handleLinkClick(e, el.path, el.index)}>
       
-      <div className="navbar-item__text-box">
-        {/* <span className="navbar-item__index">{`${el.index} )`}</span> */}
-        <span className="navbar-item__title">{el.title}</span>
+      <div className="navbar-item__title-container">
+        <h3 className="navbar-item__title title">{el.title}</h3>
       </div>
-      <div className="navbar-item__text-box--active">
-        {/* <span className="navbar-item__index--active">{`${el.index} )`}</span> */}
-        <span className="navbar-item__title--active">{el.title}</span>
+
+      <div className="navbar-item__title-container--active">
+        <h3 className="navbar-item__title--active title--active">{el.title}</h3>
       </div>
     </Link>
     ))}

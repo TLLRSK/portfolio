@@ -13,15 +13,15 @@
         overflow: hidden;
         position: relative;
     }
-    &__page-1 {
-
-    }
     &__page-2 {
         display: flex;
         flex-direction: column;
         background-color: var(--white);
         box-shadow: 0px -1px 0px 0px var(--black);
         @include mq-1024 {
+            flex-direction: row;
+        }
+        @include mq-720x720 {
             flex-direction: row;
         }
         &.hidden {
@@ -38,53 +38,76 @@
             display: grid;
             grid-template-rows: repeat(4, 1fr);
             height: 100%;
+
             @include mq-720 {
                 grid-template-columns: repeat(2, 1fr);
                 grid-template-rows: repeat(2, 1fr);
             }
-        }
-
-        &-grid-item {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: $padding--m;
-            // box-shadow: 0px -1px 0px var(--black);
-            border-bottom: 1px dashed var(--black);
-
-            &:nth-last-child(1) {
-                border-bottom: none;
+            @include mq-360x720 {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(2, 1fr);
             }
-
-            @include mq-720 {
-                padding: $padding--l;
-                // box-shadow: 1px -1px 0px var(--black);
-                &:nth-child(1) {
-                    border-right: 1px dashed var(--black);
-                }
-                &:nth-last-child(2) {
-                    border-right: 1px dashed var(--black);
+            &-item {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                gap: $gap--m;
+                padding: $padding--m;
+                border-bottom: 1px dashed var(--black);
+    
+                &:nth-last-child(1) {
                     border-bottom: none;
                 }
-            }
-            @include mq-1024 {
-                padding: $padding--xl;
-                // box-shadow: 1px -1px 0px var(--black);
-            }
-            p:nth-child(3) {
-                text-transform: uppercase;
+    
+                @include mq-720 {
+                    padding: $padding--l;
+                    &:nth-child(1) {
+                        border-right: 1px dashed var(--black);
+                    }
+                    &:nth-last-child(2) {
+                        border-right: 1px dashed var(--black);
+                        border-bottom: none;
+                    }
+                }
+                // @include mq-1024 {
+                //     padding: $padding--xl;
+                // }
+              
+                @include mq-360x720 {
+                    &:nth-child(1) {
+                        border-right: 1px dashed var(--black);
+                    }
+                    &:nth-last-child(2) {
+                        border-right: 1px dashed var(--black);
+                        border-bottom: none;
+                    }
+                }
             }
         }
     }
-
     &__list {
         &--fields, &--tools {
             display: grid;
-            gap: $gap--m;
+            gap: $gap--l;
+            @include mq-1024 {
+                gap: $gap--l;
+            }
+            @include mq-720v {
+                gap: $gap--s;
+            }
+            @include mq-720x720 {
+                gap: $gap--l;
+            }
         }
-
         &--tools {
             grid-template-columns: repeat(2, 1fr);
+            
+            @include mq-360x720 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            @include mq-720x720 {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         &-box {
@@ -93,33 +116,50 @@
             flex-direction: column;
             padding: $padding--m;
             gap: $gap--l;
-            box-shadow: 0px 1px 0px var(--black);
 
             @include mq-720 {
                 padding: $padding--l;
+                gap: $gap--xl;
             }
-            @include mq-1024 {
-                box-shadow: 1px 0px 0px var(--black);
+            // @include mq-1024 {
+            //     gap: $gap--xl;
+            // }
+            @include mq-720v {
+                padding: $padding--m;
+                gap: $gap--m;
+            }
+            @include mq-720x720 {
+                padding: $padding--l;
+                gap: $gap--xl;
+            }
+            &:nth-child(1) {
+                border-bottom: 1px dashed var(--black);
+
+                @include mq-1024 {
+                    border-right: 1px dashed var(--black);
+                    border-bottom: none;
+                }
+                @include mq-360x720 {
+                    border-right: none;
+                    border-bottom: 1px dashed var(--black);
+                }
+                @include mq-720x720 {
+                    border-right: 1px dashed var(--black);
+                    border-bottom: none;
+                }
+            }
+            .list-item {
+                display: flex;
+                align-items: center;
+                gap: $gap--s;
+        
+                @include mq-1024 {
+                    align-items: center;
+                }
+                @include mq-720v {
+                    gap: $gap--xs;
+                }
             }
         }
-        &-title {
-            text-transform: uppercase;
-        }
-
-        &-item {
-            display: flex;
-            align-items: center;
-            gap: $gap--s;
-
-            
-
-            @include mq-1024 {
-                align-items: flex-start;
-                flex-direction: column;
-            }
-        }
-    }
-    span {
-        font-size: $fs--xs;
     }
 }

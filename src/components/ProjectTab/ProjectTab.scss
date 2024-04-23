@@ -1,56 +1,47 @@
 @import '../../scss/mixins';
 @import '../../scss/variables';
 
-.work__projects-grid-item {
+.project-tab {
     display: flex;
     flex-direction: column;
     box-shadow: 1px 1px 0 var(--black);
     position: relative;
     overflow: hidden;
+    color: var(--black);
 
     @include mq-720 {
         &:hover {
-            .work__single-project {
-                &-tab {
+            .project-tab {
+                &__cover {
                     transform: translateY(-100%);
+                    opacity: 0;
                 }
-                &-tab--hover {
+                &__cover--hover {
                     transform: translateY(0);
                     opacity: 1;
                 }
-                &-index, &-date, &-type, &-title {
-                    opacity: 0;
-                }
-                &-index, &-date, &-type {
-                    transform: translateY(-4rem);
-                    
-                }
-                &-title {
-                    transform: translate(-50%, -4rem);
-    
-                    &--hover {
-                        transform: translateY(0);
-                        opacity: 1;
-                    }
-                } 
             }
         }
     }
     
-    .work__single-project {
-        &-tab {
+    .project-tab {
+        &__cover {
             flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: auto 1fr auto;
             width: 100%;
             max-height: 100%;
+            padding: $padding--m;
             overflow: hidden;
             position: relative;
             transform: translateY(0);
-            transition: transform .4s ease-in-out;
+            transition: transform .3s ease-in-out, opacity .2s ease-in-out;
+            @include mq-720x720 {
+                padding: $padding--l;
+            }
         }
-        &-tab--hover {
+        &__cover--hover {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -58,7 +49,7 @@
             position: absolute;
             inset: 0 0 0 0;
             transform: translateY(100%);
-            transition: transform .3s ease-in-out, opacity .4s ease-in-out;
+            transition: transform .3s ease-in-out, opacity .2s ease-in-out;
             opacity: 0;
 
             .arrow {
@@ -66,49 +57,37 @@
                 &:nth-child(2) {
                     bottom: $padding--m;
                     left: $padding--m;
+                    @include mq-720x720 {
+                        bottom: $padding--l;
+                        left: $padding--l;
+                    }
                 }
                 &:nth-child(3) {
                     bottom: $padding--m;
                     right: $padding--m;
+                    @include mq-720x720 {
+                        bottom: $padding--l;
+                        right: $padding--l;
+                    }
                 }
             }
         }
-
-        &-index, &-title, &-title--hover, &-date, &-type {
-            text-align: center;
-            color: var(--black);
+        &__index, &__title, &__title--hover, &__date, &__type {
             opacity: 1;
             transition: opacity .2s ease-in-out, .2s ease-in-out;
         }
-        &-index, &-title, &-date, &-type {
-            position: absolute;
+        &__index, &__title {
+            grid-column: 2 span;
         }
-        &-index, &-date, &-type {
-            font-size: $fs--xs;
+        &__title {
+            text-align: center;
+            margin: auto auto;
         }
-        &-index {
-            top: $padding--m;
-            left: $padding--m;
+        &__type {
+            text-align: right;
         }
-        &-title {
-            text-transform: uppercase;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-
-            &--hover {
-                color: var(--white);
-                font-size: $fs--xl;
-                font-weight: 100;
-            }
-        }
-        &-date {
-            bottom: $padding--m;
-            left: $padding--m;
-        }
-        &-type {
-            bottom: $padding--m;
-            right: $padding--m;
+        &__title--hover {
+            color: var(--black);
         }
     }
 }

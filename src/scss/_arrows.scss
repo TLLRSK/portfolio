@@ -1,42 +1,8 @@
 @import '../scss/mixins';
-[class^="arrow--hello-page-toggler"] {
-    z-index: 1;
-    position: absolute;
-    inset: clamp(.4rem, 1vw, .6rem);
-    transition: opacity .2s ease-in-out, transform .2s ease-in-out;
-}
 
 .arrow {
     display: flex;
     justify-content: flex-end;
-    width: $fs--s;
-    height: $fs--s;
-
-    &--hello-page-toggler {
-        &--up, &--down, &--up-hover, &--down-hover {
-            opacity: 1;
-            transform: translateY(0);
-            transition: transform .15s ease-in-out, opacity .15s ease-in-out;
-        }
-        &--up-hover {
-            position: absolute;
-            opacity: 0;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, 100%);
-        }
-        &--down-hover {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            opacity: 0;
-            transform: translate(-50%, -100%);
-        }
-    }
-    
-    &--project {
-        width: clamp(2rem, 3vw, 2.4rem);
-        height: clamp(2rem, 3vw, 2.4rem);
-        transition: all .1s ease-in-out;
-    }
+    width: $fs--m;
+    height: $fs--m;
 }

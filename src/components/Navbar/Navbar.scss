@@ -4,153 +4,88 @@
 .navbar {
     display: flex;
     flex-direction: row;
-    color: var(--black);
-    gap: $gap--s;
+    border-radius: $unit*2;
+    overflow: hidden;
 
     @include mq-720 {
-        gap: $gap--l;
-        border-width: 2px;
+        border-radius: $unit*3;
     }
-
-    &.hidden {
-        display: none;
-    }
-
+ 
     &-item {
         flex: 1;
         display: flex;
         text-transform: uppercase;
         position: relative;
         color: var(--black);
-        border-right: 2px solid var(--black);
-        border-left: 2px solid var(--black);
-        border-radius: $unit*2;
-
-        @include mq-720 {
-            padding: 0 $padding--m;
-        }
-        @include mq-1024 {
-            border-radius: $unit*3;
-        }
+        overflow: hidden;
 
         &::after {
+            background-color: var(--black);
+        }
+
+        &:nth-child(1) {
+            background-color: var(--grey-100);
+            &::before {
+                background-color: var(--blue);
+            }
+        }
+        &:nth-child(2) {
+            background-color: var(--grey-200);
+            &::before {
+                background-color: var(--green);
+            }
+        }
+        &:nth-child(3) {
+            background-color: var(--grey-300);
+            &::before {
+                background-color: var(--pink);
+            }
+        }
+
+        &::before, &::after {
             position: absolute;
-            opacity: 0;
-            inset: calc(100% - 1px) 100% 0 0;
-            transition: all .3s ease-in-out;
-            transform: translateY(1px);
+            top: 100%;
+            bottom: 0;
+            width: 100%;
+            transition: top .2s ease-in-out;
             content: '';
         }
-        &.color--white::after {
-            background-color: var(--black);
-        }
-        &.color--black::after {
-            background-color: var(--black);
-        }
-        &:hover {
-            &::after {
-                opacity: 1;
-                inset: calc(100% - 1px) 0 0 0;
-                @include mq-720 {
-                    inset: calc(100% - 1px) 0 -1px 0;
-                }
-            }
-            & .navbar-item__title, .navbar-item__index {
-                transform: translateY(-.6rem);
-            }
-        }
-
-        &.active {
-            &::after {
-                opacity: 1;
-                inset: calc(100% - 2px) 0 0 0;
-                @include mq-720 {
-                    inset: calc(100% - 1px) 0 -1px 0;
-                }
-            }
-            
-            & .navbar-item__title, & .navbar-item__index {
-                opacity: 0;
-                transform: translateY(-180%);
-
-                &--active {
-                    opacity: 1;
-                    transform: none;
-                }
-            }
-            & .navbar-item__title--active {
-                opacity: 1;
-                transform: none;
-            }
-        }
-
-        &__content {
-            display: flex;
-            flex-direction: row;
-        }
-        &__text-box {
+        
+        &__title-container, &__title-container--active {
+            position: relative;
             flex: 1;
             display: flex;
             align-items: center;
             justify-content: center;
-            position: relative;
-            padding: 1.2rem;
+            padding: $padding--s $padding--s;
             overflow: hidden;
-            transition: all .3s ease-in-out;
-            transform: translateY(.4rem);
-
-            @include mq-720 {
-                align-items: center;
-                justify-content: center;
-                padding: 1.2rem;
-            }
-            @include mq-1024 {
-                gap: $gap--l;
-            }
-            &--active {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                position: absolute;
-                inset: 0 0 0 0;
-                overflow: hidden;
-
-                @include mq-720 {
-                    align-items: center;
-                    justify-content: center;
-                    padding: 1.2rem;
-                }
-                @include mq-1024 {
-                    gap: $gap--l;
-                }
-            }
+            transition: transform .2s ease-in-out;
+        }
+        &__title-container--active {
+            z-index: 1;
+            position: absolute;
+            inset: 0 0 0 0;
+            width: 100%;
+            overflow: hidden;
+            transform: translateY(100%);
         }
 
-        &__title {
-            font-size: $fs--xs;
-            font-weight: 600;
-            transition: opacity .3s ease-in-out, transform .2s ease-in-out;
+        /* Navbar item states */
+        &:hover {
+            &::before {
+                top: 0;
+            } 
+        }
 
-            @include mq-720 {
-                font-size: $fs--s;
-                font-weight: 300;
+        &.active {
+            &::after {
+               top: 0;
             }
-            @include mq-1024 {
-                font-size: $fs--m;
-                font-weight: 300;
+            .navbar-item__title-container {
+                transform: translateY(-100%);
             }
-            
-            &--active {
-                opacity: 0;
-                font-size: $fs--s;
-                font-weight: 800;
-                transform: translateY(180%);
-                transition: opacity .3s ease-in-out, transform .2s ease-in-out;
-
-                @include mq-720 {
-                    font-size: $fs--m;
-                }
-         
+            .navbar-item__title-container--active {
+                transform: translateY(0);
             }
         }
     }

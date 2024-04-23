@@ -10,7 +10,6 @@
     width: fit-content;
     height: fit-content;
     background-color: transparent;
-
     &--select-project {
         position: absolute;
         inset: 0 0 0 0;
@@ -26,28 +25,46 @@
         border: 1px solid var(--black);
         transform: translateY(0);
         transition: transform .2s .5s ease-in-out;
-
         @include mq-720 {
             right: $padding--l;
         }
-
         .btn {
             display: flex;
             align-items: center;
             transition: padding .2s ease-in-out;
-            // padding: $padding--m;
-            // @include mq-720 {
-            //     padding: $padding--l;
-            // }
+            padding: $padding--m*1.2 $padding--s $padding--m*1.2 $padding--s;
+            &:hover {
+                padding-top: $padding--xl;
+            }
+            @include mq-360 {
+                padding: $padding--l $padding--s $padding--m*1.2 $padding--s;
+            }
+            @include mq-1024 {
+                padding: $padding--l*1.3 $padding--m $padding--m*1.5 $padding--m;
+                &:hover {
+                    padding-top: $padding--xl*1.5;
+                }
+            }
+            @include mq-720v {
+                padding: $padding--m*1.2 $padding--s $padding--m $padding--s;
+            }
+            @include mq-360x720 {
+                padding: $padding--l $padding--s $padding--m*1.2 $padding--s;
+            }
+            @include mq-720x720 {
+                padding: $padding--l*1.3 $padding--s $padding--m*1.2 $padding--s;
+                &:hover {
+                    padding-top: $padding--xl*1.2;
+                }
+            }
         }
         .burger, .burger::before {
             width: $fs--m;
             height: 1px;
             background-color: var(--black);
-            transition: transform .3s ease-in-out;
-        }
-        .burger {
-            transform: rotate(0);
+            @include mq-720v {
+                width: $fs--s;
+            }
         }
         .burger::before {
             content: "";
@@ -62,73 +79,34 @@
         border-bottom-right-radius: $unit*3;
         border-bottom-left-radius: $unit*3;
         border-top: none;
-
-        .btn {
-            padding: $padding--m*1.5 $padding--m $padding--m*1.5 $padding--m;
-            &:hover {
-                padding-top: $padding--l*1.5;
-            }
-            @include mq-720 {
-                padding: $padding--l*1.3 $padding--m $padding--m*1.5 $padding--m;
-
-                &:hover {
-                    padding-top: $padding--xl*1.2;
-                }
-            }
-        }
-        .burger {
-            transform: rotate(45deg);
-        }
-        .burger::before {
-            transform: translate(-50%, -50%) rotate(90deg);
-        }
-
         &.hidden {
             transform: translateY(-100%);
             transition: transform .2s ease-in-out;
         }
-        @include mq-720 {
-           .burger.opening {
-            transform: rotate(0);
-           }    
-           .burger::before.opening {
-            transform: translate(-50%, -50%) rotate(0);
-           } 
+        .btn {
+            .burger {
+                transform: rotate(45deg);
+            }
+            .burger::before {
+                transform: translate(-50%, -50%) rotate(90deg);
+            }
         }
     }
     &--hello-toggler {
-        .btn {
-            padding: $padding--m;
-        }
-  
         &.prev {
             z-index: 3;
             top: 0;
             border-top: none;
             border-bottom-right-radius: $unit*3;
             border-bottom-left-radius: $unit*3;
-            
-
             &.hidden {
                 transform: translateY(-100%);
                 transition: transform .2s ease-in-out;
             }
-
             .btn {
-                padding: $padding--m*1.5 $padding--m $padding--m*1.5 $padding--m;
-                &:hover {
-                    padding-top: $padding--l*1.2;
+                .burger::before {
+                    content: none;
                 }
-                @include mq-720 {
-                    padding: $padding--l*1.3 $padding--m $padding--m*1.5 $padding--m;
-    
-                    &:hover {
-                        padding-top: $padding--xl*1.2;
-                    }
-                }
-            }
-            .burger::before {
-                content: none;
             }
         }
         &.next {
@@ -137,20 +115,42 @@
             border-bottom: none;
             border-top-right-radius: $unit*3;
             border-top-left-radius: $unit*3;
-
             &.hidden {
                 transform: translateY(100%);
                 transition: transform .2s ease-in-out;
             }
-            
             .btn {
-                padding: $padding--m*1.5 $padding--m $padding--m*1.5 $padding--m;
-            }
-            .btn:hover {
-                padding-bottom: $padding--l*1.5;
-            }
-            .burger::before {
-                transform: translate(-50%, -50%) rotate(90deg);
+                padding: $padding--m*1.2 $padding--s $padding--m*1.2 $padding--s;
+                &:hover {
+                    padding-bottom: $padding--xl;
+                }
+                @include mq-360 {
+                    padding: $padding--m*1.2 $padding--s $padding--l $padding--s;
+                }
+                @include mq-1024 {
+                    padding: $padding--m*1.5 $padding--m $padding--l*1.3 $padding--m;
+                    &:hover {
+                        padding-bottom: $padding--xl*1.5;
+                    }
+                }
+                @include mq-720v {
+                    padding: $padding--m $padding--s $padding--m*1.2 $padding--s;
+                }
+                @include mq-360x720 {
+                    padding: $padding--m*1.2 $padding--s $padding--l $padding--s;
+                }
+                @include mq-720x720 {
+                    padding: $padding--m*1.2 $padding--s $padding--l*1.3 $padding--s;
+                    &:hover {
+                        padding-bottom: $padding--xl*1.2;
+                    }
+                }
+                .burger {
+                    transform: rotate(0);
+                }
+                .burger::before {
+                    transform: translate(-50%, -50%) rotate(90deg);
+                }
             }
         }
     }

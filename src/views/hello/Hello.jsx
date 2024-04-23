@@ -46,7 +46,7 @@ export default function Hello(props) {
             ${sectionStatus}
         `}>
 
-        <HeaderSection handleSectionNavigation={handleSectionNavigation}/>
+        <HeaderSection handleSectionNavigation={handleSectionNavigation}  sectionIndex={"1"} sectionName={"H"}/>
 
         <main className={`hello__main sliding-main`}>
             
@@ -87,9 +87,9 @@ const HelloDescription = ({description}) => {
             {description.map((e,i) => {
                 return (
                     <li key={i} className='hello__description-grid-item'>
-                        <span>{e.char} )</span>
-                        <p >{e.text[0]}</p>
-                        <p>{e.text[1]}</p>
+                        <span className='char'>{`${e.char} )`}</span>
+                        <p className='text'>{e.text[0]}</p>
+                        <p className='text'>{e.text[1]}</p>
                     </li>
                 )
             })}
@@ -99,14 +99,14 @@ const HelloDescription = ({description}) => {
 const HelloListBox = ({list}) => {
     return (
         <div className="hello__list-box">
-            <h3 className="hello__list-title">{list.title} )</h3>
+            <h3 className="list-title">{list.title}</h3>
 
             <ul className={`hello__list hello__list--${list.title}`}>
                 {list.items.map((item, i) => {
                     return (
-                        <li key={i} className="hello__list-item">
-                            <span>{i} .</span>
-                            <p>{item}</p>
+                        <li key={i} className="list-item">
+                            <span className='index'>{`${i}.`}</span>
+                            <p className='text'>{item}</p>
                         </li>
                     )
                 })}

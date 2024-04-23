@@ -2,28 +2,24 @@
 $unit: 1.2rem;
 
 // PADDING
+$padding--xs: $unit*.5;
 $padding--s: $unit;
-$padding--m: $unit+.4;
-$padding--l: ($unit+.4)*2;
-$padding--xl: ($unit + .4) * 3;
-$padding--xxl: ($unit + .4) * 4;
+$padding--m: $unit + .4rem;
+$padding--l: $unit * 2;
+$padding--xl: $unit * 3;
+$padding--xxl: $unit * 4;
 // GAP
-$gap--s: clamp($unit*.5, 2vw, $unit);
-$gap--m: clamp($unit, 2vw, $unit*1.2);
-$gap--l: ($unit+.4)*2;
-$gap--xl: ($unit + .4) * 3;
-$gap--xxl: ($unit + .4) * 4;
-
-// SIZES
-$size--s: clamp(1.4rem, 4vw, 1.6rem);
-$size--m: clamp(2.8rem, 6vw, 4rem);
-$size--l: clamp(3.2rem, 8vw, 6.4rem);
+$gap--xs: $unit*.5;
+$gap--s: $unit;
+$gap--m:  $unit + .4rem;
+$gap--l: $unit * 2;
+$gap--xl: $unit * 3;
 
 // FONTS
-$fs--xs: clamp(1.2rem, 3vw, 1.6rem);
-$fs--s: clamp(1.2rem, 4vw, 2rem);
-$fs--m: clamp(1.8rem, 4vw, 2.4rem);
-$fs--l: clamp(2.4rem, 6vw, 3.2rem);
+$fs--xs: clamp(1rem, 3vw, 1.6rem);
+$fs--s: clamp(1.4rem, 4vw, 2rem);
+$fs--m: clamp(1.6rem, 4vw, 2.4rem);
+$fs--l: clamp(2rem, 6vw, 3.2rem);
 $fs--xl: clamp(3.2rem, 4vw, 4rem);
 $fs--xl-contact: clamp(7.2rem, 12vw, 8rem);
 

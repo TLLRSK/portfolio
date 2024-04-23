@@ -2,13 +2,21 @@
 @import '../../../scss/variables';
 
 .section__header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     padding: $padding--m;
     border-bottom: 1px solid;
-    @include mq-720 {
-        padding: 2.4rem;
+    @include mq-1024 {
+        padding: $padding--l;
     }
+
+    &-item {
+        &:nth-child(2) {
+            text-align: center;
+        }
+        &:nth-child(3) {
+            text-align: right;
+        }
+    }
+
 }

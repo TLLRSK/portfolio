@@ -8,10 +8,10 @@
     padding: $padding--m;
     transition: transform .3s ease-in-out, opacity .2s ease-in-out;
     position: relative;
+
     @include mq-720 {
         padding: 2.4rem;
     }
-
     &__header {
         flex: 1;
         display: flex;
@@ -19,69 +19,29 @@
         justify-content: flex-start;
         position: relative;
         z-index: 3;
-        
 
         &-title {
             position: absolute;
-            top: 50%;
-            left: 50%;
+            top: 0;
+            left: 0;
+            max-width: 40%;
             display: flex;
             justify-content: center;
-            transform: translate(-50%, -50%);
-            text-align: center;
             overflow: hidden;
-
             @include mq-720 {
-                inset: 50% 0 auto 0;
-                transform: translateY(-50%);
-                display: flex;
-                align-items: center;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
                 justify-content: center;
             }
-
-            &-text {
-                opacity: 0;
-                width: 65%;
-                // font-size: $fs--xl-home;
-                // font-size: $fs--m;
-                // font-weight: 600;
-                transform: translateY(-4.8rem);
-
-                @include mq-720 {
-                    // font-size: $fs--xl-home-desktop;
-                    font-weight: 300;
-                }
-                @include mq-1024 {
-                    // font-size: $fs--xl-home-desktop-1024;
-                }
-            }
         }
-
         &-subtitle {
             position: absolute;
             display: flex;
             justify-content: space-between;
             inset: auto 0 0 0;
-
-            &-box {
-                &:nth-child(2) {
-                    text-align: right;
-                }
-            }
-
-            &-text {
-                font-size: $fs--s;
-                
-                opacity: 0;
-                transform: translateY(-4.8rem);
-                @include mq-1024 {
-                    font-size: $fs--m;
-                    font-weight: 200;
-                }
-            }
         }
-    
-        &-copyright {
+        &-timer {
             position: absolute;
             display: flex;
             align-items: center;
@@ -89,17 +49,6 @@
             top: 0;
             right: 0;
             overflow: hidden;
-
-            &-text {
-                opacity: 0;
-                font-size: 1.2rem;
-                font-weight: 500;
-                transform: translateY(-2.4rem);
-                @include mq-720 {
-                    font-size: $fs--s;
-                    font-weight: 300;
-                }
-            }
         }
     }
     &__main {
@@ -114,7 +63,6 @@
         @include mq-1024 {
             padding: 12rem 12rem;
         }
-
         &-round-box {
             flex: 1;
             display: flex;
@@ -135,7 +83,6 @@
                 content: '';
             }
             &:before {
-                // display: none;
                 top: 50%;
                 right: 50%;
                 bottom: 50%;
@@ -146,7 +93,6 @@
                 }
             }
             &:after {
-                // display: none;
                 top: 50%;
                 right: 50%;
                 bottom: 0;
@@ -161,58 +107,36 @@
             }
         }
     }
-    
     &.going-to-next {
         transform: translateX(-120%);
         opacity: 0;
     }
     &.active {
-        .home {
-            &__header {
-                &-title-text {
-                    opacity: 1;
-                    transform: none;
-                    transition: all .4s .4s;
-                }
-                &-subtitle-text {
-                    opacity: 1;
-                    transform: none;
-                    transition: all .4s .8s;
-                }
-                &-copyright-text {
-                    opacity: 1;
-                    transform: none;
-                    transition: all .4s .8s;
+        .home__main-round-box {
+            &:before {
+                top: 25%;
+                right: 50%;
+                bottom: 25%;
+                left: 0;
+                transition: top .4s .1s, right .4s .1s, bottom .4s .1s, left .4s .1s;
+                @include mq-720 {
+                    top: 12%;
+                    right: 50%;
+                    bottom: 12%;
+                    left: 0;
                 }
             }
-            &__main {
-                &-round-box {
-                    &:before {
-                        top: 25%;
-                        right: 50%;
-                        bottom: 25%;
-                        left: 0;
-                        transition: top .4s .1s, right .4s .1s, bottom .4s .1s, left .4s .1s;
-                        @include mq-720 {
-                            top: 12%;
-                            right: 50%;
-                            bottom: 12%;
-                            left: 0;
-                        }
-                    }
-                    &:after {
-                        top: 50%;
-                        right: 20%;
-                        bottom: 0;
-                        left: 20%;
-                        transition: top .4s .1s, right .4s .1s, bottom .4s .1s, left .4s .1s;
-                        @include mq-720 {
-                            top: 50%;
-                            right: 12%;
-                            bottom: 0;
-                            left: 12%;
-                        }
-                    }
+            &:after {
+                top: 50%;
+                right: 20%;
+                bottom: 0;
+                left: 20%;
+                transition: top .4s .1s, right .4s .1s, bottom .4s .1s, left .4s .1s;
+                @include mq-720 {
+                    top: 50%;
+                    right: 12%;
+                    bottom: 0;
+                    left: 12%;
                 }
             }
         }

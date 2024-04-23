@@ -8,12 +8,15 @@
     padding: $padding--m;
     gap: $gap--m;
     background-color: var(--white);
-    transition: background-color .3s ease-in-out;
     z-index: 3;
     position: relative;
     overflow: hidden;
     @include mq-720 {
       padding: $padding--l;
       gap: $gap--l;
+    }
+    @include mq-1024 {
+      padding: $padding--xl;
+      gap: $gap--xl;
     }
   }

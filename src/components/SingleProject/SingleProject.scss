@@ -2,7 +2,6 @@
 @import '../../scss/variables';
 
 .single-project {
-    // display: grid;
     display: grid;
     grid-template-rows: repeat(2, 1fr);
     background-color: var(--white);
@@ -13,59 +12,65 @@
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: 1fr;
     }
-    
-
-    &-header, &-main {
-        padding: $padding--m;
-
-        @include mq-720 {
-            padding: $padding--l;
-        }
-        @include mq-1024 {
-            padding: $padding--xl;
-        }
+    @include mq-720x720 {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
     }
-    &-header {
+    &__header, &__main {
+        padding: $padding--m;
+    }
+    &__header {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         position: relative;
-       
+        border-bottom: 1px dashed var(--black);
+
+        @include mq-720 {
+            padding: $padding--l $padding--l $padding--m ;
+        }
         @include mq-1024 {
             border-bottom: none;
-            border-right: 1px solid var(--black);
+            border-right: 1px dashed var(--black);
+            padding: $padding--l;
         }
-        
-    }
-    &-title, &-subtitle {
-        display: flex;
-        justify-content: space-between;
-        gap: $gap--m;
+        @include mq-720x720 {
+            border-right: 1px dashed var(--black);
+            border-bottom: none;
+        }
 
-        &-item:nth-child(2) {
+        &-row {
             display: flex;
-            justify-content: flex-end;
-        }
-
-        h3, p, span {
-            text-transform: uppercase;
-            height: fit-content;
+            justify-content: space-between;
+            .title {
+                text-align: center;
+                text-transform: uppercase;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            .type {
+                text-transform: uppercase;
+            }
         }
     }
-
-    &-image {
-        flex: 1;
+    &__main {
+        @include mq-720 {
+            padding: $padding--m $padding--l $padding--l ;
+        }
+        @include mq-1024 {
+            padding: $padding--l;
+        }
+    }
+    &-row {
         display: flex;
-        align-items: center;
-        justify-content: center;
-
-        .img--project {
-            width: clamp(16rem, 20vw, 34rem);
-            height: clamp(16rem, 20vw, 34rem);
-        }
+        gap: $gap--m;
     }
-    
-    &-main {
+    &-subtitle {
+        justify-content: space-between;
+    }
+    &__main {
         display: flex;
         flex-direction: column;
         gap: $gap--l;
@@ -73,20 +78,16 @@
         grid-template-rows: auto 1fr auto;
 
         @include mq-1024 {
-            gap: $gap--xxl;
+            gap: $gap--xl;
         }
     }
-    
-
     &-description {
-        width: 50%;
-        @include mq-720 {
-            max-width: 50%;
-        }
+        max-width: 75%;
+        // @include mq-720 {
+        //     max-width: 50%;
+        // }
     }
     &-attributes {
-        // display: grid;
-        // grid-template-columns: repeat(2, 1fr);
         gap: $gap--m;
         @include mq-1024 {
             gap: $gap--l;
@@ -95,34 +96,49 @@
     &-attribute {
         display: flex;
         flex-direction: column;
-        gap: $gap--m;
-
-        @include mq-1024 {
-            gap: $gap--l;
-        }
+        gap: $gap--s;
         
-        h5 {
-            text-transform: uppercase;
+        @include mq-720 {
+            gap: $gap--l;
         }
     }
     &-attribute-list {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: $gap--m;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: $gap--m;
+        row-gap: $gap--m;
+        @include mq-720 {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        @include mq-720v {
+            column-gap: $gap--s;
+            row-gap: $gap--s;
+        }
+        @include mq-360x720 {
+            grid-template-columns: repeat(4, 1fr);
+            column-gap: $gap--m;
+            row-gap: $gap--m;
+        }
+        @include mq-720x720 {
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: $gap--m;
+            row-gap: $gap--m;
+        }
+        @include mq-1024 {
+            grid-template-columns: repeat(4, 1fr);
+        }
         
+    
         .list-item {
             display: flex;
             align-items: center;
-            gap: $gap--m;
+            gap: $gap--xs;
 
             @include mq-1024 {
                 flex-direction: column;
                 align-items: flex-start;
                 gap: $gap--l;
             }
-        }
-        .span {
-            font-size: $fs--xs;
         }
     }
     &-links {

@@ -1,48 +1,15 @@
 import './scss/style.scss'
-import { Route, Routes, useLocation, useNavigate } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import Home from './views/home/Home'
 import Hello from './views/hello/Hello'
 import Work from './views/work/Work'
 import Contact from './views/contact/Contact'
-import { useEffect, useState } from 'react'
 import Navbar from './components/Navbar/Navbar'
+import usePageTransition from './hooks/usePageTransition'
 
 function App() {
-  // Managing location
-  let location = useLocation();
-  
-  // Handling navigation
-  const [toSection, setToSection] = useState('');
-  const [fromSection, setFromSection] = useState('');
-  const [sectionStatus, setSectionStatus] = useState('');
 
-  const navigate = useNavigate();
-
-  const handleFromSection = (toSection) => {
-    toSection === 'next' ? setFromSection('prev') : setFromSection('next');
-  }
-  //
-  const handleSectionNavigation = (e,path,toSection) => {
-    e.preventDefault();
-    setToSection(toSection)
-    setTimeout(() => {
-      setSectionStatus('inactive')
-      navigate(path)
-      handleFromSection(toSection);
-      setToSection('')
-    },200)
-  }
-
-  // Checking location
-  useEffect(() => {
-    // setFromSection('')
-    setTimeout(() => {
-      setFromSection('')
-    },100)
-    setTimeout(() => {
-      setSectionStatus('active')
-    },300)
-  },[location])
+  const {toSection, setToSection, fromSection, handleSectionNavigation, sectionStatus} = usePageTransition();
 
   return (
     <div 

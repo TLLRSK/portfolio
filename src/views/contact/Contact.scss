@@ -7,12 +7,8 @@
         display: grid;
         grid-template-rows: 1fr 4fr auto;
         padding: $padding--m;
-
         @include mq-720 {
             padding: $padding--l;
-        }
-        @include mq-1024 {
-            padding: $padding--xl;
         }
     }
     &__subtitle {
@@ -21,14 +17,9 @@
     &__links-list {
         display: grid;
         grid-template-rows: repeat(4, 1fr);
-
         &-item {
             box-shadow: 0 1px 0 var(--black);
             overflow: hidden;
-
-            p {
-                font-size: $fs--l;
-            }
         }
     }
     &__bottom-row {
