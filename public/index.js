@@ -136,11 +136,20 @@ export const helloLists = [
     }
 ];
 
+export  const navLinks = [
+    {index: 0, path: '/hello', title: 'Hello'},
+    {index: 1, path: '/work', title: 'Work'},
+    {index: 2, path: '/contact', title: 'Contact'}
+]
+
 /* Components */
 export {default as HeaderSection } from "../src/components/Headers/HeaderSection/HeaderSection";
-export {default as HelloDescription} from "../src/components/Hello/HelloDescription"
-export {default as HelloListBox} from "../src/components/Hello/HelloListBox"
-export {default as BtnHelloPageToggler} from "../src/components/Buttons/BtnHelloPageToggler"
+export {default as HelloDescription} from "../src/components/Hello/HelloDescription";
+export {default as HelloListBox} from "../src/components/Hello/HelloListBox";
+export {default as ContactLinksList} from "../src/components/Contact/ContactLinksList";
+export {default as ContactLink} from "../src/components/Contact/ContactLink";
+export {default as BtnHelloPageToggler} from "../src/components/Buttons/BtnHelloPageToggler";
+export {default as BtnWorkCloseProject} from "../src/components/Buttons/BtnWorkCloseProject";
 export {default as SingleProject } from "../src/components/SingleProject/SingleProject";
 export {default as ProjectTab } from "../src/components/ProjectTab/ProjectTab";
 export {default as Navbar } from "../src/components/Navbar/Navbar";

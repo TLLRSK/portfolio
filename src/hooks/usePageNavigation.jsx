@@ -4,45 +4,50 @@ import { useLocation, useNavigate } from "react-router-dom";
 const usePageNavigation = () => {
     // Managing location
     let location = useLocation();
-
-    // Handling navigation
-    const [toSection, setToSection] = useState('');
-    const [fromSection, setFromSection] = useState('');
-    const [sectionStatus, setSectionStatus] = useState('');
+    
+    const [toSection, setToSection] = useState(null);
+    const [fromSection, setFromSection] = useState(null);
+    const [sectionStatus, setSectionStatus] = useState(null);
 
     const navigate = useNavigate();
     
-    const sectionTransition = `${toSection == 'next' ? 'going-to-next' : toSection == 'prev' ? 'going-to-prev' : ''} 
-    ${fromSection == 'next' ? 'coming-from-next' : fromSection == 'prev' ? 'coming-from-prev' : ''} 
-    ${sectionStatus}`;
+    // Transition classes logic
+    const sectionTransition = 
+        `${toSection == 'next'
+        ? 'going-to-next'
+        : toSection == 'prev'
+        ? 'going-to-prev'
+        : ''} 
+        ${fromSection == 'next'
+        ? 'coming-from-next'
+        : fromSection == 'prev'
+        ? 'coming-from-prev'
+        : ''} 
+        ${sectionStatus}`;
 
-    const handleFromSection = (toSection) => {
-        toSection === 'next' ? setFromSection('prev') : setFromSection('next');
-    }
-    //
-    const handleSectionNavigation = (e,path,toSection) => {
+    const handleNavigation = (e,path,toSection) => {
         e.preventDefault();
+
         setToSection(toSection)
+
         setTimeout(() => {
             setSectionStatus('inactive')
             navigate(path)
-            handleFromSection(toSection);
+            toSection === 'next' ? setFromSection('prev') : setFromSection('next');
             setToSection('')
         },200)
     }
 
     // Checking location
     useEffect(() => {
-        // setFromSection('')
         setTimeout(() => {
-            setFromSection('')
-        },100)
-        setTimeout(() => {
+            setFromSection(null)
             setSectionStatus('active')
-        },300)
-    },[location])
+        },100)
+   
+    },[location]);
 
-    return {toSection, setToSection, fromSection, sectionStatus, handleSectionNavigation, sectionTransition}
+    return {toSection, setToSection, fromSection, sectionStatus, handleNavigation, sectionTransition};
 }
 
 export default usePageNavigation;
