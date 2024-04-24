@@ -4,10 +4,10 @@
 .project-tab {
     display: flex;
     flex-direction: column;
-    box-shadow: 1px 1px 0 var(--black);
+    box-shadow: 1px 1px 0 var(--secondary);
     position: relative;
     overflow: hidden;
-    color: var(--black);
+    color: var(--secondary);
 
     @include mq-720 {
         &:hover {
@@ -36,7 +36,7 @@
             overflow: hidden;
             position: relative;
             transform: translateY(0);
-            transition: transform .3s ease-in-out, opacity .2s ease-in-out;
+            transition: transform .4s cubic-bezier(.34,.79,.73,.92), opacity .2s ease-in-out;
             @include mq-720x720 {
                 padding: $padding--l;
             }
@@ -49,7 +49,7 @@
             position: absolute;
             inset: 0 0 0 0;
             transform: translateY(100%);
-            transition: transform .3s ease-in-out, opacity .2s ease-in-out;
+            transition: transform .4s cubic-bezier(.34,.79,.73,.92), opacity .2s ease-in-out;
             opacity: 0;
 
             .arrow {
@@ -72,10 +72,6 @@
                 }
             }
         }
-        &__index, &__title, &__title--hover, &__date, &__type {
-            opacity: 1;
-            transition: opacity .2s ease-in-out, .2s ease-in-out;
-        }
         &__index, &__title {
             grid-column: 2 span;
         }
@@ -87,7 +83,7 @@
             text-align: right;
         }
         &__title--hover {
-            color: var(--black);
+            color: var(--secondary);
         }
     }
 }

@@ -1,51 +1,28 @@
 // ** COLORS **
 
 // colors
-.color--white {
-    color: var(--white);
+.color--main {
+    color: var(--main);
 }
-.color--black {
-    color: var(--black);
-}
-
-// background
-.color-bg--grey-0 {
-    background-color: var(--grey-0);
-}
-.color-bg--grey-100 {
-    background-color: var(--grey-100);
-}
-.color-bg--grey-200 {
-    background-color: var(--grey-200);
-}
-.color-bg--black {
-    background-color: var(--black);
-}
-.color-bg--red {
-    background-color: var(--red);
-}
-.color-bg--yellow {
-    background-color: var(--yellow);
-}
-.color-bg--blue {
-    background-color: var(--blue);
+.color--secondary {
+    color: var(--secondary);
 }
 
 // Border
-.border-bottom--s {
-    border-bottom: 1px solid;
-}
-.border-bottom--d {
-    border-bottom: 1px dashed;
-}
+// .border-bottom--s {
+//     border-bottom: 1px solid;
+// }
+// .border-bottom--d {
+//     border-bottom: 1px dashed;
+// }
 
-// Size
-.max-w--80 {
-    max-width: 80%;
-}
-.max-w--90 {
-    max-width: 90%;
-}
+// // Size
+// .max-w--80 {
+//     max-width: 80%;
+// }
+// .max-w--90 {
+//     max-width: 90%;
+// }
 // Display
 .flex-1 {
     flex: 1;
@@ -103,28 +80,6 @@
 .ta--left {
     text-align: left;
 }
-
-.f-weight--thin {
-    font-weight: 100;
-}
-.f-weight--extralight {
-    font-weight: 200;
-}
-.f-weight--light {
-    font-weight: 300;
-}
-.f-weight--regular {
-    font-weight: 400;
-}
-.f-weight--medium {
-    font-weight: 500;
-}
-.f-style--italic {
-    font-style: italic;
-}
-.f-style--normal {
-    font-style: normal;
-}
 // Before
 .hover--bg-b {
     position: relative;
@@ -133,7 +88,7 @@
         position: absolute;
         content: "";
         inset: 0 0 0 0;
-        background-color: var(--black);
+        background-color: var(--secondary);
         transform: scaleY(0%);
         transform-origin: bottom;
         transition: transform .2s ease-in-out;
@@ -191,11 +146,15 @@
 .active {
     opacity: 1;
 }
+.active, .going-to-next, .coming-from-next,
+.going-to-prev, .coming-from-prev {
+    transition: transform .3s  ease-in-out, opacity .2s ease-in-out;
+}
 .going-to-next, .coming-from-next  {
-    transform: translateX(-100%);
+    transform: translateX(-25%);
     opacity: 0;
 }
 .going-to-prev, .coming-from-prev {
-    transform: translateX(100%);
+    transform: translateX(25%);
     opacity: 0;
 }

@@ -16,8 +16,8 @@ const ProjectTab = ({i, project, selectProject}) => {
 
             <div className="project-tab__cover--hover">
                 <span className='project-tab__title--hover title--hover'>{project.title}</span>
-                <ArrowDown className="arrow arrow--project-tab color--black"/>
-                <ArrowDown className="arrow arrow--project-tab color--black"/>
+                <ArrowDown className="arrow arrow--project-tab color--secondary"/>
+                <ArrowDown className="arrow arrow--project-tab color--secondary"/>
             </div >
 
             <button data-index={i} onClick={e => selectProject(e)} className="btn btn--select-project"/>

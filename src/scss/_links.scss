@@ -4,7 +4,7 @@
 .link {
     text-decoration: none;
     font-size: $fs--m;
-    color: var(--black);
+    color: var(--secondary);
     width: fit-content;
 
     &--to-home {
@@ -18,7 +18,7 @@
     }
     &--project {
         text-transform: uppercase;
-        border: 1px solid var(--black);
+        border: 1px solid var(--secondary);
         border-radius: $unit*2;
         padding: $padding--xs $padding--s;
         display: flex;
@@ -26,14 +26,14 @@
         justify-content: center;
         
         .link-text, .link-text--hover {
-            transition: transform .2s ease-in-out, opacity .2s ease-in-out;
+            transition: transform .3s cubic-bezier(.34,.79,.73,.92), opacity .2s ease-in-out;
         }
         .link-text {
             transform: translateY(0);
         }
         .link-text--hover {
             position: absolute;
-            color: var(--white);
+            color: var(--main);
             transform: translateY(calc(100% + $padding--s));
         }
         @include mq-720 {
@@ -58,7 +58,7 @@
             height: 100%;
             padding-top: $padding--m;
             transform: translateY(0);
-            transition: transform .2s ease-in-out, opacity .2s ease-in-out;
+            transition: transform .3s cubic-bezier(.34,.79,.73,.92), opacity .2s ease-in-out;
         }
         .row--hover {
             inset: 0 0 0 0;

@@ -3,7 +3,6 @@
 
 .work {
     flex-direction: row;
-    transition: transform .3s ease-in-out, opacity .2s ease-in-out;
     
     &__main {
         gap: 0;
@@ -27,17 +26,20 @@
         }
     }
     &__projects-grid, &__single-project {
-        transition: transform .4s ease-in-out;
+        transition: transform .6s cubic-bezier(.35,.99,.99,.99);
+        &.hidden {
+            transition: transform .6s cubic-bezier(.54,.81,.71,1);
+        }
     }
 
     &__projects-grid {
-        z-index: 3;
+        z-index: 1;
         flex: 1;
         display: grid;
         grid-template-rows: repeat(4, 1fr);
-        background-color: var(--white);
+        background-color: var(--main);
         transform: translateY(0);
-        box-shadow: 0px 1px 1px 0px var(--black);
+        box-shadow: 0px 1px 1px 0px var(--secondary);
         overflow: hidden;
 
         @include mq-720 {
@@ -51,7 +53,7 @@
 
         &.hidden {
             transform: translateY(-100%);
-            box-shadow: inset 0px -1px 1px 0px var(--black);
+            box-shadow: inset 0px -1px 1px 0px var(--secondary);
         }
     }
     

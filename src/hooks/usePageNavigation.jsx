@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const usePageNavigation = () => {
-    // Managing location
     let location = useLocation();
     
     const [toSection, setToSection] = useState(null);
@@ -11,43 +10,34 @@ const usePageNavigation = () => {
 
     const navigate = useNavigate();
     
-    // Transition classes logic
-    const sectionTransition = 
-        `${toSection == 'next'
-        ? 'going-to-next'
-        : toSection == 'prev'
-        ? 'going-to-prev'
-        : ''} 
-        ${fromSection == 'next'
-        ? 'coming-from-next'
-        : fromSection == 'prev'
-        ? 'coming-from-prev'
-        : ''} 
-        ${sectionStatus}`;
+    // Transition classes
+    const sectionTransition = `${toSection == 'next' ? 'going-to-next': toSection == 'prev'? 'going-to-prev': ''} ${fromSection == 'next'? 'coming-from-next': fromSection == 'prev'? 'coming-from-prev': ''} ${sectionStatus}`;
 
+    // Navigating
     const handleNavigation = (e,path,toSection) => {
         e.preventDefault();
-
         setToSection(toSection)
 
         setTimeout(() => {
             setSectionStatus('inactive')
             navigate(path)
-            toSection === 'next' ? setFromSection('prev') : setFromSection('next');
+
+            toSection === 'next' 
+                ? setFromSection('prev') 
+                : setFromSection('next');
+
             setToSection('')
         },200)
     }
 
-    // Checking location
     useEffect(() => {
         setTimeout(() => {
             setFromSection(null)
             setSectionStatus('active')
-        },100)
-   
+        },200)
     },[location]);
 
-    return {toSection, setToSection, fromSection, sectionStatus, handleNavigation, sectionTransition};
+    return {toSection,  fromSection, sectionStatus, sectionTransition, setToSection, handleNavigation};
 }
 
 export default usePageNavigation;

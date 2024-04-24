@@ -1,8 +1,6 @@
 @import '../../scss/mixins';
 @import '../../scss/variables';
 .contact {
-    transition: transform .3s ease-in-out, opacity .2s ease-in-out;
-    
     &__main {
         display: grid;
         grid-template-rows: 1fr 4fr auto;
@@ -12,14 +10,18 @@
         }
     }
     &__subtitle {
-        box-shadow: 0 1px 0 var(--black);
+        box-shadow: 0 1px 0 var(--secondary);
     }
     &__links-list {
         display: grid;
         grid-template-rows: repeat(4, 1fr);
         &-item {
-            box-shadow: 0 1px 0 var(--black);
+            box-shadow: 0 1px 0 var(--secondary);
             overflow: hidden;
+
+            &:nth-last-child(1) {
+                box-shadow: none;
+            }
         }
     }
     &__bottom-row {

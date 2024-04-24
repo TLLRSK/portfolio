@@ -6,7 +6,6 @@
     flex-direction: column;
     gap: $gap--s;
     padding: $padding--m;
-    transition: transform .3s ease-in-out, opacity .2s ease-in-out;
     position: relative;
 
     @include mq-720 {
@@ -28,12 +27,12 @@
             display: flex;
             justify-content: center;
             overflow: hidden;
-            @include mq-720 {
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%,-50%);
-                justify-content: center;
-            }
+            // @include mq-720 {
+            //     top: 50%;
+            //     left: 50%;
+            //     transform: translate(-50%,-48%);
+            //     justify-content: center;
+            // }
         }
         &-subtitle {
             position: absolute;
@@ -58,10 +57,10 @@
         inset: 0 0 0 0;
 
         @include mq-720 {
-            padding: 15% 15%;
+            padding: 12rem 12rem;
         }
         @include mq-1024 {
-            padding: 12rem 12rem;
+            padding: 16rem 16rem;
         }
         &-round-box {
             flex: 1;
@@ -106,10 +105,6 @@
                 }
             }
         }
-    }
-    &.going-to-next {
-        transform: translateX(-120%);
-        opacity: 0;
     }
     &.active {
         .home__main-round-box {

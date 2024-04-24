@@ -146,6 +146,8 @@ export  const navLinks = [
 export {default as HeaderSection } from "../src/components/Headers/HeaderSection/HeaderSection";
 export {default as HelloDescription} from "../src/components/Hello/HelloDescription";
 export {default as HelloListBox} from "../src/components/Hello/HelloListBox";
+export {default as SingleProjectAttList} from "../src/components/SingleProject/SingleProjectAttList";
+export {default as SingleProjectLinksList} from "../src/components/SingleProject/SingleProjectLinksList";
 export {default as ContactLinksList} from "../src/components/Contact/ContactLinksList";
 export {default as ContactLink} from "../src/components/Contact/ContactLink";
 export {default as BtnHelloPageToggler} from "../src/components/Buttons/BtnHelloPageToggler";

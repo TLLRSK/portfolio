@@ -16,11 +16,11 @@
         display: flex;
         text-transform: uppercase;
         position: relative;
-        color: var(--black);
+        color: var(--secondary);
         overflow: hidden;
 
         &::after {
-            background-color: var(--black);
+            background-color: var(--secondary);
         }
 
         &:nth-child(1) {
@@ -47,7 +47,7 @@
             top: 100%;
             bottom: 0;
             width: 100%;
-            transition: top .2s ease-in-out;
+            transition: top .3s cubic-bezier(.34,.79,.73,.92);
             content: '';
         }
         
@@ -59,7 +59,7 @@
             justify-content: center;
             padding: $padding--s $padding--s;
             overflow: hidden;
-            transition: transform .2s ease-in-out;
+            transition: transform .3s cubic-bezier(.34,.79,.73,.92);
         }
         &__title-container--active {
             z-index: 1;

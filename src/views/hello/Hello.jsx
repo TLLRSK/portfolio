@@ -13,7 +13,7 @@ export default function Hello() {
     const lists = helloLists;
 
     return (
-        <section className={`hello ${sectionTransition} `}>
+        <section className={`hello ${sectionTransition}`}>
 
             <HeaderSection sectionIndex={"1"} sectionName={"H"}/>
 

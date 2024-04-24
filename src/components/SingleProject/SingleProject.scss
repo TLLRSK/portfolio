@@ -4,10 +4,9 @@
 .single-project {
     display: grid;
     grid-template-rows: repeat(2, 1fr);
-    background-color: var(--white);
+    background-color: var(--main);
     z-index: 1;
     opacity: 1;
-
     @include mq-1024 {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: 1fr;
@@ -24,18 +23,18 @@
         flex-direction: column;
         justify-content: space-between;
         position: relative;
-        border-bottom: 1px dashed var(--black);
+        border-bottom: 1px dashed var(--secondary);
 
         @include mq-720 {
             padding: $padding--l $padding--l $padding--m ;
         }
         @include mq-1024 {
             border-bottom: none;
-            border-right: 1px dashed var(--black);
+            border-right: 1px dashed var(--secondary);
             padding: $padding--l;
         }
         @include mq-720x720 {
-            border-right: 1px dashed var(--black);
+            border-right: 1px dashed var(--secondary);
             border-bottom: none;
         }
 
@@ -83,9 +82,6 @@
     }
     &-description {
         max-width: 75%;
-        // @include mq-720 {
-        //     max-width: 50%;
-        // }
     }
     &-attributes {
         gap: $gap--m;
@@ -96,7 +92,7 @@
     &-attribute {
         display: flex;
         flex-direction: column;
-        gap: $gap--s;
+        gap: $gap--m;
         
         @include mq-720 {
             gap: $gap--l;

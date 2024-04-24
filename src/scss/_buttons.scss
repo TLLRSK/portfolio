@@ -21,17 +21,17 @@
         display: flex;
         position: absolute;
         right: $padding--m;
-        background-color: var(--white);
-        border: 1px solid var(--black);
+        background-color: var(--main);
+        border: 1px solid var(--secondary);
         transform: translateY(0);
-        transition: transform .2s .5s ease-in-out;
+        transition: transform .2s .6s cubic-bezier(.34,.79,.73,.92);
         @include mq-720 {
             right: $padding--l;
         }
         .btn {
             display: flex;
             align-items: center;
-            transition: padding .2s ease-in-out;
+            transition: padding .2s cubic-bezier(.34,.79,.73,.92);
             padding: $padding--m*1.2 $padding--s $padding--m*1.2 $padding--s;
             &:hover {
                 padding-top: $padding--xl;
@@ -61,7 +61,7 @@
         .burger, .burger::before {
             width: $fs--m;
             height: 1px;
-            background-color: var(--black);
+            background-color: var(--secondary);
             @include mq-720v {
                 width: $fs--s;
             }
@@ -81,7 +81,7 @@
         border-top: none;
         &.hidden {
             transform: translateY(-100%);
-            transition: transform .2s ease-in-out;
+            transition: transform .2s cubic-bezier(.34,.79,.73,.92);
         }
         .btn {
             .burger {
@@ -101,7 +101,7 @@
             border-bottom-left-radius: $unit*3;
             &.hidden {
                 transform: translateY(-100%);
-                transition: transform .2s ease-in-out;
+                transition: transform .2s cubic-bezier(.34,.79,.73,.92);
             }
             .btn {
                 .burger::before {
@@ -117,7 +117,7 @@
             border-top-left-radius: $unit*3;
             &.hidden {
                 transform: translateY(100%);
-                transition: transform .2s ease-in-out;
+                transition: transform .2s cubic-bezier(.34,.79,.73,.92);
             }
             .btn {
                 padding: $padding--m*1.2 $padding--s $padding--m*1.2 $padding--s;

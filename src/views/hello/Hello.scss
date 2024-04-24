@@ -4,7 +4,6 @@
 .hello {
     display: flex;
     flex-direction: column;
-    transition: transform .3s ease-in-out, opacity .2s ease-in-out;
     overflow: hidden;
 
     &__main {
@@ -16,8 +15,8 @@
     &__page-2 {
         display: flex;
         flex-direction: column;
-        background-color: var(--white);
-        box-shadow: 0px -1px 0px 0px var(--black);
+        background-color: var(--main);
+        box-shadow: 0px -1px 0px 0px var(--secondary);
         @include mq-1024 {
             flex-direction: row;
         }
@@ -25,7 +24,7 @@
             flex-direction: row;
         }
         &.hidden {
-            box-shadow: inset 0px 1px 0px 0px var(--black);
+            box-shadow: inset 0px 1px 0px 0px var(--secondary);
         }
     }
 
@@ -53,7 +52,7 @@
                 justify-content: space-between;
                 gap: $gap--m;
                 padding: $padding--m;
-                border-bottom: 1px dashed var(--black);
+                border-bottom: 1px dashed var(--secondary);
     
                 &:nth-last-child(1) {
                     border-bottom: none;
@@ -62,23 +61,19 @@
                 @include mq-720 {
                     padding: $padding--l;
                     &:nth-child(1) {
-                        border-right: 1px dashed var(--black);
+                        border-right: 1px dashed var(--secondary);
                     }
                     &:nth-last-child(2) {
-                        border-right: 1px dashed var(--black);
+                        border-right: 1px dashed var(--secondary);
                         border-bottom: none;
                     }
                 }
-                // @include mq-1024 {
-                //     padding: $padding--xl;
-                // }
-              
                 @include mq-360x720 {
                     &:nth-child(1) {
-                        border-right: 1px dashed var(--black);
+                        border-right: 1px dashed var(--secondary);
                     }
                     &:nth-last-child(2) {
-                        border-right: 1px dashed var(--black);
+                        border-right: 1px dashed var(--secondary);
                         border-bottom: none;
                     }
                 }
@@ -121,9 +116,6 @@
                 padding: $padding--l;
                 gap: $gap--xl;
             }
-            // @include mq-1024 {
-            //     gap: $gap--xl;
-            // }
             @include mq-720v {
                 padding: $padding--m;
                 gap: $gap--m;
@@ -133,18 +125,18 @@
                 gap: $gap--xl;
             }
             &:nth-child(1) {
-                border-bottom: 1px dashed var(--black);
+                border-bottom: 1px dashed var(--secondary);
 
                 @include mq-1024 {
-                    border-right: 1px dashed var(--black);
+                    border-right: 1px dashed var(--secondary);
                     border-bottom: none;
                 }
                 @include mq-360x720 {
                     border-right: none;
-                    border-bottom: 1px dashed var(--black);
+                    border-bottom: 1px dashed var(--secondary);
                 }
                 @include mq-720x720 {
-                    border-right: 1px dashed var(--black);
+                    border-right: 1px dashed var(--secondary);
                     border-bottom: none;
                 }
             }
