@@ -1,20 +1,14 @@
 import './Contact.scss'
-import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import HeaderSection from '../../components/Headers/HeaderSection/HeaderSection';
-import { LINKS } from '../../../public';
+import { HeaderSection, linksList } from '../../../public';
+import { usePageNavigationContext } from '../../contexts/PageNavigationContext';
 
-export default function Contact(props) {
-    const {toSection, fromSection, sectionStatus, handleSectionNavigation} = props;
+const Contact = () => {
+    const {toSection, fromSection, sectionStatus, handleSectionNavigation, sectionTransition} = usePageNavigationContext();
 
-    const links = LINKS;
+    const links = linksList;
 
-    const sectionTransition = `${toSection == 'next' ? 'going-to-next' : toSection == 'prev' ? 'going-to-prev' : ''} 
-    ${fromSection == 'next' ? 'coming-from-next' : fromSection == 'prev' ? 'coming-from-prev' : ''} 
-    ${sectionStatus}`
     
-    return <section className={`contact 
-        ${sectionTransition}`}>
+    return <section className={`contact ${sectionTransition}`}>
         <article className='contact__content'>
             <HeaderSection handleSectionNavigation={handleSectionNavigation}  sectionIndex={"3"} sectionName={"C"}/>
             <main className='contact__main'>
@@ -57,3 +51,5 @@ export default function Contact(props) {
         </article>
     </section>
 }
+
+export default Contact;

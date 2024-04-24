@@ -1,15 +1,12 @@
 import {useTimer} from '../../../public/hooks.js';
+import { usePageNavigationContext } from '../../contexts/PageNavigationContext.jsx';
 import './Home.scss';
 
-export default function Home(props) {
-    const {toSection, fromSection, sectionStatus} = props;
-
+export default function Home() {
+    const {sectionTransition} = usePageNavigationContext();
     const {currentTime} = useTimer();
     
-    return <section className={`home 
-        ${toSection == 'next' ? 'going-to-next' : toSection == 'prev' ? 'going-to-prev' : ''} 
-        ${fromSection == 'next' ? 'coming-from-next' : fromSection == 'prev' ? 'coming-from-prev' : ''} 
-        ${sectionStatus}`}>
+    return <section className={`home ${sectionTransition}`}>
             
         <header className="home__header">
             <div className="home__header-title">

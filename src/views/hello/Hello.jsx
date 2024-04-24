@@ -1,116 +1,36 @@
-import './Hello.scss';
-import HeaderSection from '../../components/Headers/HeaderSection/HeaderSection';
 import { useState } from 'react';
+import { usePageNavigationContext } from '../../contexts/PageNavigationContext';
+import { BtnHelloPageToggler, HeaderSection, HelloDescription, HelloListBox, helloDescription, helloLists } from '../../../public';
+import './Hello.scss';
 
-export default function Hello(props) {
+export default function Hello() {
 
-    const {toSection, fromSection, sectionStatus, handleSectionNavigation} = props;
+    const {handleSectionNavigation, sectionTransition} = usePageNavigationContext();
  
     const [pageToggle, setPageToggle] = useState(false);
 
-    const description = [
-        {
-            char: "a",
-            text : ["This is", "Pedro"]
-        },
-        {
-            char: "b",
-            text : ["Junior", "Frontend Dev"]
-        },
-        {
-            char: "c",
-            text : ["Visual Artist", "for +10 years"]
-        },
-        {
-            char: "d",
-            text : ["Based in", "Valencia, Esp"]
-        }
-    ]
+    const description = helloDescription;
+    const lists = helloLists;
 
-    const lists = [
-        {  
-            char: "b",
-            title: "fields",
-            items: ["Web Development", "E-commerce", "UX/UI Design", "Illustration", "2D Animation"]
-        },
-        {
-            char: "c",
-            title: "tools",
-            items: ["Html", "Sass", "Js", "React", "Typescript", "Php", "Figma", "Wordpress"]
-        }
-    ];
-
-    return <section className={`hello 
-            ${toSection == 'next' ? 'going-to-next' : toSection == 'prev' ? 'going-to-prev' : ''} 
-            ${fromSection == 'next' ? 'coming-from-next' : fromSection == 'prev' ? 'coming-from-prev' : ''} 
-            ${sectionStatus}
-        `}>
+    return <section className={`hello ${sectionTransition} `}>
 
         <HeaderSection handleSectionNavigation={handleSectionNavigation}  sectionIndex={"1"} sectionName={"H"}/>
 
         <main className={`hello__main sliding-main`}>
             
-            {/* <div className={`hello__page-1 sliding-page-1 ${pageToggle ? "hidden" : ""}`}> */}
             <div className={`hello__page-1 sliding-page-1`}>
                 <HelloDescription description={description} setPageToggle={setPageToggle}/>
-                
             </div>
 
             <div className={`hello__page-2 sliding-page-2 ${!pageToggle ?  "hidden" : ""}`}>
-                {
-                    lists.map(list => {
-                        return (
-                            <HelloListBox key={list.title} list={list} setPageToggle={setPageToggle}/>
-                        )
-                    })
-                }
-                
+                {lists.map(list => {
+                    return <HelloListBox key={list.title} list={list} setPageToggle={setPageToggle}/>
+                })}
             </div>
-            <div className={`btn--hello-toggler next${pageToggle ? " hidden" : ""}`}>
-                <button className={`btn`} onClick={() => setPageToggle(true)}>
-                    <span className="burger"></span>
-                </button>
-            </div>
-            <div className={`btn--hello-toggler prev ${!pageToggle ? " hidden" : ""}`}>
-                <button className={`btn`} onClick={() => setPageToggle(false)}>
-                    <span className="burger"></span>
-                </button>
-            </div>
+
+            <BtnHelloPageToggler to={"next"} pageToggle={pageToggle}/>
+            <BtnHelloPageToggler to={"prev"} pageToggle={pageToggle}/>
+            
         </main>
     </section>
-}
-
-const HelloDescription = ({description}) => {
-    return (
-        <ul className="hello__description-grid">
-
-            {description.map((e,i) => {
-                return (
-                    <li key={i} className='hello__description-grid-item'>
-                        <span className='char'>{`${e.char} )`}</span>
-                        <p className='text'>{e.text[0]}</p>
-                        <p className='text'>{e.text[1]}</p>
-                    </li>
-                )
-            })}
-        </ul>
-    )
-}
-const HelloListBox = ({list}) => {
-    return (
-        <div className="hello__list-box">
-            <h3 className="list-title">{list.title}</h3>
-
-            <ul className={`hello__list hello__list--${list.title}`}>
-                {list.items.map((item, i) => {
-                    return (
-                        <li key={i} className="list-item">
-                            <span className='index'>{`${i}.`}</span>
-                            <p className='text'>{item}</p>
-                        </li>
-                    )
-                })}
-            </ul>
-        </div>
-    )
 }

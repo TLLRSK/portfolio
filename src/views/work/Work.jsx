@@ -1,12 +1,13 @@
-import { PROJECTS, HeaderSection, SingleProject, ProjectTab } from "../../../public/index.js";
-import './Work.scss';
 import { useState } from "react";
+import { HeaderSection, SingleProject, ProjectTab, projectsList } from "../../../public";
+import { usePageNavigationContext } from "../../contexts/PageNavigationContext.jsx";
+import './Work.scss';
 
-export default function Work(props) {
-    const {toSection, fromSection, sectionStatus, handleSectionNavigation, location} = props;
+export default function Work() {
+    const {handleSectionNavigation, sectionTransition} = usePageNavigationContext();
     const [selectedProject, setSelectedProject] = useState(null);
     const [onProject, setOnProject] = useState(false);
-    const projects = PROJECTS;
+    const projects = projectsList;
     
     const selectProject = (e) => {
         const project = projects[e.target.dataset.index];
@@ -20,10 +21,7 @@ export default function Work(props) {
         setOnProject(false)
     }
 
-    return <section className={`work 
-        ${toSection == 'next' ? 'going-to-next' : toSection == 'prev' ? 'going-to-prev' : ''} 
-        ${fromSection == 'next' ? 'coming-from-next' : fromSection == 'prev' ? 'coming-from-prev' : ''} 
-        ${sectionStatus}`}>
+    return <section className={`work ${sectionTransition}`}>
         <article className="work__content">
             <HeaderSection handleSectionNavigation={handleSectionNavigation} sectionIndex={"2"} sectionName={"W"}/>
             

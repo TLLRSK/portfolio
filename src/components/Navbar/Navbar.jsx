@@ -1,10 +1,11 @@
 import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import './Navbar.scss';
+import { usePageNavigationContext } from "../../contexts/PageNavigationContext";
 
 export default function Navbar(props) {
 
-  const {handleSectionNavigation} = props;
+  const {handleSectionNavigation} = usePageNavigationContext();
   
   // Nav Links
   const navLinks = [

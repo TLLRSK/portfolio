@@ -3,11 +3,14 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import App from './App.jsx'
 import './index.css'
+import { PageNavigationProvider } from './contexts/PageNavigationContext.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <PageNavigationProvider>
+        <App />
+      </PageNavigationProvider>
     </BrowserRouter>
   </React.StrictMode>,
 )

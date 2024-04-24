@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
-const usePageTransition = () => {
+const usePageNavigation = () => {
     // Managing location
     let location = useLocation();
 
@@ -11,6 +11,10 @@ const usePageTransition = () => {
     const [sectionStatus, setSectionStatus] = useState('');
 
     const navigate = useNavigate();
+    
+    const sectionTransition = `${toSection == 'next' ? 'going-to-next' : toSection == 'prev' ? 'going-to-prev' : ''} 
+    ${fromSection == 'next' ? 'coming-from-next' : fromSection == 'prev' ? 'coming-from-prev' : ''} 
+    ${sectionStatus}`;
 
     const handleFromSection = (toSection) => {
         toSection === 'next' ? setFromSection('prev') : setFromSection('next');
@@ -38,7 +42,7 @@ const usePageTransition = () => {
         },300)
     },[location])
 
-    return {toSection, setToSection, fromSection, sectionStatus, handleSectionNavigation}
+    return {toSection, setToSection, fromSection, sectionStatus, handleSectionNavigation, sectionTransition}
 }
 
-export default usePageTransition;
+export default usePageNavigation;

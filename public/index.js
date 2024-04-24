@@ -1,4 +1,4 @@
-export const PROJECTS = [
+export const projectsList = [
     {
         index: "01",
         title: 'Aboutme',
@@ -81,7 +81,7 @@ export const PROJECTS = [
     }
 ];
 
-export const LINKS = [
+export const linksList = [
     {
         action: "Talk",
         url: "mailto:hi@pedrojgil.com",
@@ -104,8 +104,50 @@ export const LINKS = [
     }
 ]
 
+export const helloDescription = [
+    {
+        char: "a",
+        text : ["This is", "Pedro"]
+    },
+    {
+        char: "b",
+        text : ["Junior", "Frontend Dev"]
+    },
+    {
+        char: "c",
+        text : ["Visual Artist", "for +10 years"]
+    },
+    {
+        char: "d",
+        text : ["Based in", "Valencia, Esp"]
+    }
+]
+
+export const helloLists = [
+    {  
+        char: "b",
+        title: "fields",
+        items: ["Web Development", "E-commerce", "UX/UI Design", "Illustration", "2D Animation"]
+    },
+    {
+        char: "c",
+        title: "tools",
+        items: ["Html", "Sass", "Js", "React", "Typescript", "Php", "Figma", "Wordpress"]
+    }
+];
+
 /* Components */
 export {default as HeaderSection } from "../src/components/Headers/HeaderSection/HeaderSection";
+export {default as HelloDescription} from "../src/components/Hello/HelloDescription"
+export {default as HelloListBox} from "../src/components/Hello/HelloListBox"
+export {default as BtnHelloPageToggler} from "../src/components/Buttons/BtnHelloPageToggler"
 export {default as SingleProject } from "../src/components/SingleProject/SingleProject";
 export {default as ProjectTab } from "../src/components/ProjectTab/ProjectTab";
 export {default as Navbar } from "../src/components/Navbar/Navbar";
+export {default as ArrowDown} from "../src/components/Arrows/ArrowDown";
+
+/* Views */
+export {default as Home } from "../src/views/home/Home";
+export {default as Hello } from "../src/views/hello/Hello";
+export {default as Work } from "../src/views/work/Work";
+export {default as Contact } from "../src/views/contact/Contact";
