@@ -162,3 +162,15 @@
         }
     }
 }
+.dark .btn {
+    &--close-project, &--hello-toggler {
+        color: var(--secondary-dark);
+        border-color: var(--secondary-dark);
+        background-color: var(--main-dark);
+        .burger, .burger::before {
+            background-color: var(--secondary-dark);
+        }
+    }
+    
+}
+    

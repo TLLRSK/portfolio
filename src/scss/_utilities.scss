@@ -101,6 +101,11 @@
         }
     }
 }
+.dark .hover--bg-b {
+    &::before {
+        background-color: var(--secondary-dark);
+    }
+}
 
 // Transition Delay
 .transition-delay {

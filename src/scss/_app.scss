@@ -11,6 +11,7 @@
     z-index: 3;
     position: relative;
     overflow: hidden;
+    transition: background-color .4s ease-in-out;
     @include mq-720 {
       padding: $padding--l;
       gap: $gap--l;
@@ -20,3 +21,7 @@
       gap: $gap--xl;
     }
   }
+.dark .app {
+  background-color: var(--main-dark);
+  color-scheme: dark;
+}

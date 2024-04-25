@@ -4,7 +4,6 @@
 .single-project {
     display: grid;
     grid-template-rows: repeat(2, 1fr);
-    background-color: var(--main);
     z-index: 1;
     opacity: 1;
 
@@ -33,14 +32,14 @@
         flex-direction: column;
         justify-content: space-between;
         position: relative;
-        // border-bottom: 1px dashed var(--secondary);
+        border-bottom: 1px dashed;
  
         @include mq-1024 {
             border-bottom: none;
-            border-right: 1px dashed var(--secondary);
+            border-right: 1px dashed;
         }
         @include mq-720x780 {
-            border-right: 1px dashed var(--secondary);
+            border-right: 1px dashed;
             border-bottom: none;
         }
 
@@ -59,12 +58,6 @@
                 text-transform: uppercase;
             }
         }
-    }
-    &__main {
-        // @include mq-720 {
-        //     padding: $padding--m;
-        // }
-        
     }
     &-row {
         display: flex;
@@ -107,15 +100,15 @@
         grid-template-columns: repeat(2, 1fr);
         column-gap: $gap--m;
         row-gap: $gap--m;
-        @include mq-720 {
-            grid-template-columns: repeat(4, 1fr);
+        @include mq-360 {
+            grid-template-columns: repeat(3, 1fr);
         }
         @include mq-780v {
             column-gap: $gap--s;
             row-gap: $gap--s;
         }
         @include mq-360x780 {
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             column-gap: $gap--m;
             row-gap: $gap--m;
         }
@@ -123,9 +116,6 @@
             grid-template-columns: repeat(2, 1fr);
             column-gap: $gap--m;
             row-gap: $gap--m;
-        }
-        @include mq-1024 {
-            grid-template-columns: repeat(4, 1fr);
         }
         .list-item {
             display: flex;

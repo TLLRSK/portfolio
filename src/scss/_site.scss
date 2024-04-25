@@ -13,7 +13,11 @@ html {
 body {
   line-height: 1;
   -webkit-font-smoothing: antialiased;
+  transition: $trns---color;
   color: var(--secondary);
+}
+.dark body {
+  color: var(--secondary-dark);
 }
 img, picture, video, canvas, svg {
   display: block;

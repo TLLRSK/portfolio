@@ -230,3 +230,16 @@
         }
     }
 }
+// Dark mode
+.dark .hello {
+    &__page-2 {
+        background-color: var(--main-dark);
+    }
+    &__description-grid-item {
+        border-color: var(--secondary-dark);
+    }
+    &__list-box {
+        border-color: var(--secondary-dark);
+    }
+
+}

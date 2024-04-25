@@ -18,6 +18,7 @@
         position: relative;
         color: var(--secondary);
         overflow: hidden;
+        transition: $trns---color, $trns---bg-color;
 
         &::after {
             background-color: var(--secondary);
@@ -90,6 +91,36 @@
             .navbar-item__title-container--active {
                 transform: translateY(0);
             }
+        }
+    }
+}
+// Dark mode
+.dark .navbar {
+    &-item {
+        color: var(--secondary-dark);
+        &::after {
+            background-color: var(--secondary-dark);
+        }
+        &:nth-child(1) {
+            background-color: var(--grey-dark-100);
+            &::before {
+                background-color: var(--blue-dark);
+            }
+        }
+        &:nth-child(2) {
+            background-color: var(--grey-dark-200);
+            &::before {
+                background-color: var(--green-dark);
+            }
+        }
+        &:nth-child(3) {
+            background-color: var(--grey-dark-300);
+            &::before {
+                background-color: var(--pink-dark);
+            }
+        }
+        &__title--active {
+            color: var(--main-dark);
         }
     }
 }

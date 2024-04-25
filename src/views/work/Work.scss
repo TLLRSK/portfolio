@@ -65,3 +65,13 @@
         inset: 0 0 0 0;
     }
 }
+
+// Dark mode
+.dark .work {
+    &__projects-grid {
+        background-color: var(--main-dark);
+        &.hidden {
+            box-shadow: inset 0px -1px 1px 0px var(--main-dark);
+        }
+    }
+}

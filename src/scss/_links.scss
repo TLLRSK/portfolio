@@ -18,7 +18,7 @@
     }
     &--project {
         text-transform: uppercase;
-        border: 1px solid var(--secondary);
+        border: 1px solid;
         border-radius: $unit*2;
         padding: $padding--xs $padding--s;
         display: flex;
@@ -88,6 +88,15 @@
                 transform: translateY(0);
                 opacity: 1;
             }
+        }
+    }
+}
+.dark .link {
+    color: var(--secondary-dark);
+
+    &--project {
+        .link-text--hover {
+            color: var(--main-dark);
         }
     }
 }
