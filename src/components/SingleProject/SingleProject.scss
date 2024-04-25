@@ -7,33 +7,39 @@
     background-color: var(--main);
     z-index: 1;
     opacity: 1;
+
     @include mq-1024 {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: 1fr;
-    }
-    @include mq-720x720 {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: auto;
     }
+    @include mq-720x780 {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+    }
+    @include mq-1024v {
+        grid-template-columns: auto;
+        grid-template-rows: repeat(2, 1fr);
+    }
+
     &__header, &__main {
         padding: $padding--m;
+        @include mq-1024 {
+            padding: $padding--l;
+        }
     }
+
     &__header {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         position: relative;
-        border-bottom: 1px dashed var(--secondary);
-
-        @include mq-720 {
-            padding: $padding--l $padding--l $padding--m ;
-        }
+        // border-bottom: 1px dashed var(--secondary);
+ 
         @include mq-1024 {
             border-bottom: none;
             border-right: 1px dashed var(--secondary);
-            padding: $padding--l;
         }
-        @include mq-720x720 {
+        @include mq-720x780 {
             border-right: 1px dashed var(--secondary);
             border-bottom: none;
         }
@@ -55,12 +61,10 @@
         }
     }
     &__main {
-        @include mq-720 {
-            padding: $padding--m $padding--l $padding--l ;
-        }
-        @include mq-1024 {
-            padding: $padding--l;
-        }
+        // @include mq-720 {
+        //     padding: $padding--m;
+        // }
+        
     }
     &-row {
         display: flex;
@@ -106,16 +110,16 @@
         @include mq-720 {
             grid-template-columns: repeat(4, 1fr);
         }
-        @include mq-720v {
+        @include mq-780v {
             column-gap: $gap--s;
             row-gap: $gap--s;
         }
-        @include mq-360x720 {
+        @include mq-360x780 {
             grid-template-columns: repeat(4, 1fr);
             column-gap: $gap--m;
             row-gap: $gap--m;
         }
-        @include mq-720x720 {
+        @include mq-720x780 {
             grid-template-columns: repeat(2, 1fr);
             column-gap: $gap--m;
             row-gap: $gap--m;
@@ -123,8 +127,6 @@
         @include mq-1024 {
             grid-template-columns: repeat(4, 1fr);
         }
-        
-    
         .list-item {
             display: flex;
             align-items: center;

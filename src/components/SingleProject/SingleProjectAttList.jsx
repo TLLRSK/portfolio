@@ -4,7 +4,7 @@ const SingleProjectAttList = ({list}) => {
             {list.map((item, i) => {
                 return (
                     <li key={i} className="list-item">
-                        <span className='index'>{`${i}.`}</span>
+                        {/* <span className='index'>{`${i}.`}</span> */}
                         <p className='tech'>{item}</p>
                     </li>
                 )

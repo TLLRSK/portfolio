@@ -36,7 +36,7 @@
         z-index: 1;
         flex: 1;
         display: grid;
-        grid-template-rows: repeat(4, 1fr);
+        grid-template-rows: auto;
         background-color: var(--main);
         transform: translateY(0);
         box-shadow: 0px 1px 1px 0px var(--secondary);
@@ -46,7 +46,7 @@
             grid-template-columns: repeat(2, 1fr);
             grid-template-rows: auto;
         }
-        @include mq-360x720 {
+        @include mq-360x780 {
             grid-template-columns: repeat(2, 1fr);
             grid-template-rows: auto;
         }

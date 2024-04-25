@@ -1,21 +1,61 @@
 export const projectsList = [
     {
-        index: "01",
-        title: 'Aboutme',
-        slug: "aboutme",
-        date: "2023",
+        index: "03",
+        title: 'Blanca Amorós',
+        slug: "blancaamoros",
+        date: "2024",
         type: "web",
-        description: 'One page project',
-        techs: ["Html", "Css",  "Js"],
+        description: 'Website & e-Commerce for Blanca Amorós, painter based in Vienna',
+        techs: ["Html", "Sass", "Js", "React", "Php", "Wordpress"],
         roles: ["Frontend Dev", "UX/UI Designer"],
         links: [
             {
                 name: "Github",
-                url: "https://github.com/TLLRSK/Project-Alpha--ID3"
+                url: "https://github.com/TLLRSK/QuoteApp"
             },
             {
                 name: "Live",
-                url: "https://aboutme-pjgv.netlify.app/"
+                url: "https:/www.blancaamoros.com"
+            }
+        ]
+    },
+    {
+        index: "02",
+        title: 'Pokedex',
+        slug: "pokedex",
+        date: "2024",
+        type: "web",
+        description: "Find & filter a list of pokemon. Powered by PokeAPI.",
+        techs: ["Html", "Css", "Js", "Typescript"],
+        roles: ["Frontend Dev", "UX/UI Designer"],
+        links: [
+            {
+                name: "Github",
+                url: "https://github.com/TLLRSK/TodoApp"
+            },
+            {
+                name: "Live",
+                url: "https://todoapp-pjgv.netlify.app/"
+            }
+        ]
+    },
+    {
+        index: "04",
+        title: "Robberta's",
+        slug: "robbertas",
+        date: "2023",
+        type: "web",
+        description: 'Fake Balaclava e-Commerce built-up on Wordpress.',
+        techs: ["Html", "Sass", "Js", "Php", "Wordpress"],
+        roles: ["Frontend Dev", "UX/UI Designer"],
+        links: [
+            {
+                name: "Github",
+                url: "https://github.com/TLLRSK/Robbertas"
+            },
+            {
+                name: "Live",
+                url: "https://pedrojgil.com/robbertas/"
             }
         ]
     },
@@ -24,8 +64,8 @@ export const projectsList = [
         title: 'Todoapp',
         slug: "todoapp",
         date: "2023",
-        type: "web",
-        description: 'Add, check & delete any task',
+        type: "App",
+        description: 'Add, check & delete any task with this to-do-list app',
         techs: ["Html", "Sass", "Js"],
         roles: ["Frontend Dev", "UX/UI Designer"],
         links: [
@@ -40,42 +80,22 @@ export const projectsList = [
         ]
     },
     {
-        index: "03",
-        title: 'Blanca Amorós',
-        slug: "blancaamoros",
-        date: "2024",
+        index: "01",
+        title: 'Aboutme',
+        slug: "aboutme",
+        date: "2022",
         type: "web",
-        description: 'Headless React Web and e-Commerce on Wordpress',
-        techs: ["Html", "Sass", "Js", "React"],
+        description: 'One page project for a Jr Frontend Dev + Jr UX/UI Designer.',
+        techs: ["Html", "Css",  "Js"],
         roles: ["Frontend Dev", "UX/UI Designer"],
         links: [
             {
                 name: "Github",
-                url: "https://github.com/TLLRSK/QuoteApp"
+                url: "https://github.com/TLLRSK/Project-Alpha--ID3"
             },
             {
                 name: "Live",
-                url: "https:/www.blancaamoros.com"
-            }
-        ]
-    },
-    {
-        index: "04",
-        title: "Robberta's",
-        slug: "robbertas",
-        date: "2023",
-        type: "web",
-        description: 'E-commerce setted up on Wordpress',
-        techs: ["Html", "Sass", "Js", "Php"],
-        roles: ["Frontend Dev", "UX/UI Designer"],
-        links: [
-            {
-                name: "Github",
-                url: "https://github.com/TLLRSK/Robbertas"
-            },
-            {
-                name: "Live",
-                url: "https://pedrojgil.com/robbertas/"
+                url: "https://aboutme-pjgv.netlify.app/"
             }
         ]
     }
@@ -144,6 +164,7 @@ export  const navLinks = [
 
 /* Components */
 export {default as HeaderSection } from "../src/components/Headers/HeaderSection/HeaderSection";
+export {default as LightToggler} from "../src/components/LightToggler/LightToggler";
 export {default as HelloDescription} from "../src/components/Hello/HelloDescription";
 export {default as HelloListBox} from "../src/components/Hello/HelloListBox";
 export {default as SingleProjectAttList} from "../src/components/SingleProject/SingleProjectAttList";

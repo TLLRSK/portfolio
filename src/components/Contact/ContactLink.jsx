@@ -6,11 +6,11 @@ const ContactLink = ({i, link}) => {
 
                 <div className='row'>
 
-                    <span className='span'>{link.action}</span>
+                    <span className='link-span'>{link.action}</span>
 
-                    <div className='link-text'>
+                    <div className="link-text-container">
                         {link.text.map((p,i) => {
-                            return <p className="text" key={i}>{p}</p>
+                            return <p className="link-text" key={i}>{p}</p>
                         })}
                     </div>
 
@@ -18,11 +18,11 @@ const ContactLink = ({i, link}) => {
 
                 <div className='row row--hover'>
 
-                    <span className='span--hover'>&gt;</span>
+                    <span className='link-span--hover'>&gt;</span>
 
-                    <div className='link-text--hover'>
+                    <div className="link-text-container">
                         {link.text.map((p,i) => {
-                            return <p className="text--hover" key={i}>{p}</p>
+                            return <p className="link-text--hover" key={i}>{p}</p>
                         })}
                     </div>
 

@@ -37,7 +37,8 @@
             position: relative;
             transform: translateY(0);
             transition: transform .4s cubic-bezier(.34,.79,.73,.92), opacity .2s ease-in-out;
-            @include mq-720x720 {
+            
+            @include mq-1024 {
                 padding: $padding--l;
             }
         }
@@ -54,19 +55,20 @@
 
             .arrow {
                 position: absolute;
+                bottom: $padding--m;
+                @include mq-720x780 {
+                    bottom: $padding--l;
+                }
                 &:nth-child(2) {
-                    bottom: $padding--m;
                     left: $padding--m;
-                    @include mq-720x720 {
-                        bottom: $padding--l;
+                    @include mq-720x780 {
                         left: $padding--l;
                     }
                 }
                 &:nth-child(3) {
-                    bottom: $padding--m;
+                   
                     right: $padding--m;
-                    @include mq-720x720 {
-                        bottom: $padding--l;
+                    @include mq-720x780 {
                         right: $padding--l;
                     }
                 }

@@ -69,6 +69,9 @@
             overflow: hidden;
             transform: translateY(100%);
         }
+        &__title--active {
+            color: var(--main);
+        }
 
         /* Navbar item states */
         &:hover {

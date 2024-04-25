@@ -8,7 +8,6 @@ function App() {
   return (
       <div className={`app`}>
         <PageNavigationProvider>
-
           <Routes>
             <Route path='/' element={<Home/>}/>
             <Route path='/hello' element={<Hello/>}/>

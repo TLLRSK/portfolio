@@ -1,4 +1,5 @@
 import {useTimer} from '../../../public/hooks.js';
+import {LightToggler} from '../../../public';
 import { usePageNavigationContext } from '../../contexts/PageNavigationContext.jsx';
 import './Home.scss';
 
@@ -20,6 +21,10 @@ export default function Home() {
 
                 <div className="home__header-timer">
                     <span className='timer'>{currentTime}</span>
+                </div>
+
+                <div className='home__header-light-toggler'>
+                    <LightToggler/>
                 </div>
             </header>
 

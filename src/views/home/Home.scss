@@ -8,9 +8,10 @@
     padding: $padding--m;
     position: relative;
 
-    @include mq-720 {
-        padding: 2.4rem;
+    @include mq-1024 {
+        padding: $padding--l;
     }
+    
     &__header {
         flex: 1;
         display: flex;
@@ -45,9 +46,15 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            top: 0;
+            bottom: 0;
             right: 0;
             overflow: hidden;
+        }
+        &-light-toggler {
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: flex;
         }
     }
     &__main {

@@ -15,14 +15,14 @@ const Contact = () => {
                 <main className='contact__main'>
 
                     <div className='contact__subtitle'>
-                        <p className='subtitle'>Let&apos;s</p>
+                        <p className='text'>Let&apos;s</p>
                     </div>
 
                     <ContactLinksList/>
 
                     <div className='contact__bottom-row'>
-                        <p className='bottom'>©2024</p>
-                        <p className='bottom'>PJGV</p>
+                        <p className='text'>©2024</p>
+                        <p className='text'>PJGV</p>
                     </div>
 
                 </main>

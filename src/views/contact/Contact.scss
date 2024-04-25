@@ -5,7 +5,7 @@
         display: grid;
         grid-template-rows: 1fr 4fr auto;
         padding: $padding--m;
-        @include mq-720 {
+        @include mq-1024 {
             padding: $padding--l;
         }
     }

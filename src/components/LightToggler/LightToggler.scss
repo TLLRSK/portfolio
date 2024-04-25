@@ -1,0 +1,39 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+.light-toggler {
+    &-container {
+        cursor: pointer;
+        width: $unit*2;
+        height: $unit*4;
+        box-shadow: 0px 0px 0px 1px var(--secondary);
+        border-radius: $unit*2;
+        padding: 0 0 100% 0;
+        transition: padding .3s ease-in-out;
+        @include mq-360 {
+            width: $unit*4;
+            height: $unit*2;
+            padding: 0 50% 0 0;
+        }
+    }
+    &-container:has(input:checked) {
+        padding: 100% 0 0 0;
+        @include mq-360 {
+            padding: 0 0 0 50%;
+        }
+    }
+    &-button {
+        width: $unit*2;
+        height: $unit*2;
+        background-color: var(--main);
+        box-shadow: 0px 0px 0px 1px var(--secondary);
+        border-radius: 50%;
+        transition: background-color .2s ease-in-out;
+        @include mq-480 {
+            &:hover {
+                background-color: var(--secondary);
+            }
+            
+        }
+    }
+    
+}

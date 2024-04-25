@@ -23,4 +23,11 @@ $fs--l: clamp(2rem, 6vw, 3.2rem);
 $fs--xl: clamp(3.2rem, 4vw, 4rem);
 $fs--xxl: clamp(4.8rem, 6vw, 12rem);
 
+$fs-v--xs: clamp(1rem, 3vh, 1.6rem);
+$fs-v--s: clamp(1.4rem, 4vh, 2rem);
+$fs-v--m: clamp(1.6rem, 4vh, 2.4rem);
+$fs-v--l: clamp(2rem, 6vh, 3.2rem);
+$fs-v--xl: clamp(3.2rem, 4vh, 4rem);
+$fs-v--xxl: clamp(4.8rem, 6vh, 12rem);
+
 $ff--literata: 'Literata', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
