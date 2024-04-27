@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import './LightToggler.scss'
 const LightToggler = () => {
     const switchLight = (checked) => {

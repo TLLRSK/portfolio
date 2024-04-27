@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import './ProjectTab.scss';
 import ArrowDown from '../Arrows/ArrowDown';
 

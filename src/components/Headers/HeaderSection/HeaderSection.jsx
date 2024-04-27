@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import './HeaderSection.scss';
-import { usePageNavigationContext } from '../../../contexts/PageNavigationContext';
 import useNavbar from '../../../hooks/useNavbar';
 
 const HeaderSection = (props) => {
