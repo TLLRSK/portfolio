@@ -26,4 +26,3 @@ const HeaderSection = (props) => {
 }
 
 export default HeaderSection;
-
