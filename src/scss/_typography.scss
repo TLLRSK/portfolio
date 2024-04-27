@@ -65,7 +65,7 @@ h1, h2, h3, h4, h5, p, span, a, button {
     }
     @include mq-360 {
         .title {
-            font-weight: 200;
+            font-weight: 300;
         }
         .timer, .subtitle {
             font-weight: 300;
@@ -97,21 +97,28 @@ h1, h2, h3, h4, h5, p, span, a, button {
     .list-title {
         text-transform: uppercase;
     }
-    .index {
+    .char, .index {
         font-size: $fs--xs;
-        font-weight: 400;
-    }
-    .char {
-        font-size: $fs--xs;
-        font-weight: 400;
+        font-weight: 600;
     }
     .list-title {
         font-size: $fs--s;
-        font-weight: 300;
+        font-weight: 400;
     }
     .text {
         font-size: $fs--l;
-        font-weight: 200;
+        font-weight: 300;
+    }
+    @include mq-360 {
+        .list-title {
+            font-weight: 300;
+        }
+        .text {
+            font-weight: 300;
+        }
+        .char, .index {
+            font-weight: 500;
+        }
     }
     @include mq-480 {
         .text {
@@ -119,7 +126,7 @@ h1, h2, h3, h4, h5, p, span, a, button {
         }
     }
     @include mq-720 {
-        .char {
+        .char, .index {
             font-size: $fs--s;
             font-weight: 300;
         }
@@ -129,12 +136,18 @@ h1, h2, h3, h4, h5, p, span, a, button {
     }
     @include mq-1024 {
         .list-title {
-            font-size: $fs--s;
+            // font-size: $fs--s;
             font-weight: 300;
         }
         .text {
             font-size: $fs--l;
             font-weight: 200;
+        }
+    }
+    @include mq-360x780 {
+        .char, .index {
+            font-size: $fs--xs;
+            font-weight: 400;
         }
     }
     @include mq-780v {
@@ -162,16 +175,26 @@ h1, h2, h3, h4, h5, p, span, a, button {
     }
     .index, .date, .type {
         font-size: $fs--xs;
-        font-weight: 400;
+        font-weight: 500;
     }
     @include mq-480 {
         .title {
             font-weight: 200;
         }
+        .index, .date, .type {
+            font-weight: 400;
+        }
+    }
+    @include mq-360x780 {
+        .index, .date, .type {
+            font-size: $fs--xs;
+            font-weight: 400;
+        }
     }
     @include mq-780v {
         .title {
             font-size: $fs--m;
+            font-weight: 300;
         }
         .title--hover {
             font-size: $fs--m;
@@ -187,21 +210,21 @@ h1, h2, h3, h4, h5, p, span, a, button {
     .list-title {
         text-transform: uppercase;
     }
-    .description, .tech {
-        font-weight: 400;
-    }
     .description, .tech, .link-text, .link-text--hover {
         font-size: $fs--l;
-        font-weight: 100;
+        font-weight: 300;
     }
     .index, .type, .date, .list-title {
         font-size: $fs--xs;
-        font-weight: 400;
+        font-weight: 600;
     }
-    @include mq-360 {
-        // .description, .tech {
-        //     font-weight: 300;
-        // }
+    @include mq-480 {
+        .description, .tech, .link-text, .link-text--hover {
+            font-weight: 200;
+        }
+        .index, .type, .date, .list-title {
+            font-weight: 500;
+        }
     }
     @include mq-1024 {
         .description, .tech {

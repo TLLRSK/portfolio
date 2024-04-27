@@ -1,17 +1,17 @@
 export const projectsList = [
     {
-        index: "03",
-        title: 'Blanca Amorós',
+        index: "01",
+        title: "Blanca Amorós",
         slug: "blancaamoros",
         date: "2024",
         type: "web",
-        description: 'Website & e-Commerce for Blanca Amorós, painter based in Vienna',
+        description: "Site & e-Commerce for Blanca Amorós, artist based in Vienna",
         techs: ["Html", "Sass", "Js", "React", "Php", "Wordpress"],
         roles: ["Frontend Dev", "UX/UI Designer"],
         links: [
             {
                 name: "Github",
-                url: "https://github.com/TLLRSK/QuoteApp"
+                url: "https://github.com/TLLRSK/BlancaAmoros"
             },
             {
                 name: "Live",
@@ -21,31 +21,31 @@ export const projectsList = [
     },
     {
         index: "02",
-        title: 'Pokedex',
+        title: "Pokedex",
         slug: "pokedex",
         date: "2024",
         type: "web",
-        description: "Find & filter a list of pokemon. Powered by PokeAPI.",
+        description: "Find & filter any of the 151 original pokemons. Powered by PokeAPI.",
         techs: ["Html", "Css", "Js", "Typescript"],
         roles: ["Frontend Dev", "UX/UI Designer"],
         links: [
             {
                 name: "Github",
-                url: "https://github.com/TLLRSK/TodoApp"
+                url: "https://github.com/TLLRSK/Pokedex-Js-Tsc"
             },
             {
                 name: "Live",
-                url: "https://todoapp-pjgv.netlify.app/"
+                url: "https://pokedex-pjgil.netlify.app"
             }
         ]
     },
     {
-        index: "04",
+        index: "03",
         title: "Robberta's",
         slug: "robbertas",
         date: "2023",
         type: "web",
-        description: 'Fake Balaclava e-Commerce built-up on Wordpress.',
+        description: "Fake Balaclava e-Commerce built-up on Wordpress.",
         techs: ["Html", "Sass", "Js", "Php", "Wordpress"],
         roles: ["Frontend Dev", "UX/UI Designer"],
         links: [
@@ -60,12 +60,12 @@ export const projectsList = [
         ]
     },
     {
-        index: "02",
-        title: 'Todoapp',
+        index: "04",
+        title: "Todoapp",
         slug: "todoapp",
         date: "2023",
         type: "App",
-        description: 'Add, check & delete any task with this to-do-list app',
+        description: "Add, check & delete any task with this to-do-list app",
         techs: ["Html", "Sass", "Js"],
         roles: ["Frontend Dev", "UX/UI Designer"],
         links: [
@@ -80,12 +80,32 @@ export const projectsList = [
         ]
     },
     {
-        index: "01",
-        title: 'Aboutme',
+        index: "05",
+        title: "Quoteapp",
+        slug: "quoteapp",
+        date: "2023",
+        type: "app",
+        description: "Get inspired or not with this random famous quotes generator",
+        techs: ["Html", "Sass", "Js"],
+        roles: ["Frontend Dev", "UX/UI Designer"],
+        links: [
+            {
+                name: "Github",
+                url: "https://github.com/TLLRSK/QuoteApp"
+            },
+            {
+                name: "Live",
+                url: "https://quoteapp-pjgv.netlify.app/"
+            }
+        ]
+    },
+    {
+        index: "06",
+        title: "Aboutme",
         slug: "aboutme",
         date: "2022",
         type: "web",
-        description: 'One page project for a Jr Frontend Dev + Jr UX/UI Designer.',
+        description: "One page project for a Jr Frontend Dev + Jr UX/UI Designer.",
         techs: ["Html", "Css",  "Js"],
         roles: ["Frontend Dev", "UX/UI Designer"],
         links: [
@@ -157,9 +177,9 @@ export const helloLists = [
 ];
 
 export  const navLinks = [
-    {index: 0, path: '/hello', title: 'Hello'},
-    {index: 1, path: '/work', title: 'Work'},
-    {index: 2, path: '/contact', title: 'Contact'}
+    {index: 0, path: "/hello", title: "Hello"},
+    {index: 1, path: "/work", title: "Work"},
+    {index: 2, path: "/contact", title: "Contact"}
 ]
 
 /* Components */
