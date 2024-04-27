@@ -17,4 +17,4 @@ https://pedrojgil.com/
 
 - useContext.
 - More custom hooks.
-- Creating a dynamic page transition system.g
+- Creating a dynamic page transition system.
