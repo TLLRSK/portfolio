@@ -4,13 +4,7 @@
 .navbar {
     display: flex;
     flex-direction: row;
-    border-radius: $unit*2;
     overflow: hidden;
-
-    @include mq-720 {
-        border-radius: $unit*3;
-    }
- 
     &-item {
         flex: 1;
         display: flex;
@@ -23,7 +17,6 @@
         &::after {
             background-color: var(--secondary);
         }
-
         &:nth-child(1) {
             background-color: var(--grey-100);
             &::before {
@@ -109,32 +102,34 @@
     }
 }
 // Dark mode
-.dark .navbar {
-    &-item {
-        color: var(--secondary-dark);
-        &::after {
-            background-color: var(--secondary-dark);
-        }
-        &:nth-child(1) {
-            background-color: var(--grey-dark-100);
-            &::before {
-                background-color: var(--blue-dark);
+.dark {
+    .navbar {
+        &-item {
+            color: var(--secondary-dark);
+            &::after {
+                background-color: var(--secondary-dark);
             }
-        }
-        &:nth-child(2) {
-            background-color: var(--grey-dark-200);
-            &::before {
-                background-color: var(--green-dark);
+            &:nth-child(1) {
+                background-color: var(--grey-dark-100);
+                &::before {
+                    background-color: var(--blue-dark);
+                }
             }
-        }
-        &:nth-child(3) {
-            background-color: var(--grey-dark-300);
-            &::before {
-                background-color: var(--pink-dark);
+            &:nth-child(2) {
+                background-color: var(--grey-dark-200);
+                &::before {
+                    background-color: var(--green-dark);
+                }
             }
-        }
-        &__title--active, &__char--active {
-            color: var(--main-dark);
-        }
+            &:nth-child(3) {
+                background-color: var(--grey-dark-300);
+                &::before {
+                    background-color: var(--pink-dark);
+                }
+            }
+            &__title--active, &__char--active {
+                color: var(--main-dark);
+            }
+        } 
     }
 }

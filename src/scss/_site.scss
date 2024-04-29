@@ -40,9 +40,7 @@ section, article, main {
     z-index: 1;
 }
 section {
-  border: 1px solid;
-  border-radius: $unit*2;
-  overflow: hidden;
+  border: 1px solid var(--secondary);
 }
 
 ul {
@@ -51,4 +49,10 @@ ul {
 
 li {
   list-style: none;
+}
+
+.dark {
+  section {
+    border: 1px solid var(--secondary-dark);
+  }
 }

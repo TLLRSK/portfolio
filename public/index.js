@@ -137,9 +137,9 @@ export const helloLists = [
 ];
 
 export  const navLinks = [
-    {char: "a", path: "/hello", title: "Hello"},
-    {char: "b", path: "/work", title: "Work"},
-    {char: "c", path: "/contact", title: "Contact"}
+    {char: "1", path: "/hello", title: "Hello"},
+    {char: "2", path: "/work", title: "Work"},
+    {char: "3", path: "/contact", title: "Contact"}
 ]
 
 /* Components */

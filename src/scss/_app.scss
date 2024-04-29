@@ -6,7 +6,6 @@
     height: 100dvh;
     flex-direction: column;
     padding: $padding--m;
-    gap: $gap--m;
     background-color: var(--main);
     z-index: 3;
     position: relative;
@@ -14,13 +13,12 @@
     transition: background-color .4s ease-in-out;
     @include mq-720 {
       padding: $padding--l;
-      gap: $gap--l;
     }
     @include mq-1024 {
       padding: $padding--xl;
-      gap: $gap--xl;
     }
   }
+  
 .dark .app {
   background-color: var(--main-dark);
   color-scheme: dark;

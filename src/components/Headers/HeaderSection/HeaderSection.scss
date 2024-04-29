@@ -4,6 +4,7 @@
 .section__header {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    align-items: center;
     padding: $padding--m;
     border-bottom: 1px solid;
     @include mq-1024 {

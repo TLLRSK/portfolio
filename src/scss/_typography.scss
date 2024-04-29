@@ -21,7 +21,7 @@ h1, h2, h3, h4, h5, p, span, a, button {
             font-weight: 600;
         }
     }
-    @include mq-720 {
+    @include mq-1024 {
         .title, .title--active, .char, .char--active {
             font-size: $fs--l;
         }
@@ -39,13 +39,14 @@ h1, h2, h3, h4, h5, p, span, a, button {
     }
 }
 .section__header {
-    .section-index, .section-name, .link-text {
+    .section-name, .link-text {
         font-size: $fs--m;
         font-weight: 500;
     }
-    @include mq-480 {
-        .section-index, .section-name, .link-text {
-        }
+    .section-index {
+        font-size: $fs--xs;
+        line-height: $fs--xs;
+        font-weight: 500;
     }
     @include mq-780v {
         .section-index, .section-name, .link-text {
@@ -60,8 +61,8 @@ h1, h2, h3, h4, h5, p, span, a, button {
         font-weight: 600;
     }
     .timer, .subtitle {
-        font-size: $fs--l;
-        font-weight: 400;
+        font-size: $fs--s;
+        font-weight: 500;
     }
     @include mq-360 {
         .title {
@@ -69,16 +70,22 @@ h1, h2, h3, h4, h5, p, span, a, button {
         }
         .timer, .subtitle {
             font-weight: 400;
+            text-transform: uppercase;
         }
     }
     @include mq-720 {
         .title {
             text-align: center;
-            font-size: $fs--xxl;
+            font-size: $fs--xl;
             font-weight: 400;
         }
         .timer, .subtitle {
-            font-size: $fs--xl;
+            font-size: $fs--s;
+        }
+    }
+    @include mq-1024 {
+        .title {
+            font-size: $fs--xxl;
         }
     }
     @include mq-780v {
