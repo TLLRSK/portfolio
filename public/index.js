@@ -5,7 +5,7 @@ export const projectsList = [
         slug: "blancaamoros",
         date: "2024",
         type: "web",
-        description: "Site & e-Commerce for Blanca Amorós, artist based in Vienna",
+        description: "Site & E-Commerce for Blanca Amorós, artist based in Vienna",
         techs: ["Html", "Sass", "Js", "React", "Php", "Wordpress"],
         roles: ["Frontend Dev", "UX/UI Designer"],
         links: [

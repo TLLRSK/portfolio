@@ -5,12 +5,14 @@
     display: flex;
     flex-direction: row;
     overflow: hidden;
+    border: 1px solid var(--secondary);
     &-item {
         flex: 1;
         display: flex;
         text-transform: uppercase;
         position: relative;
         color: var(--secondary);
+        border-right: 1px solid var(--secondary);
         overflow: hidden;
         transition: $trns---color, $trns---bg-color;
 
@@ -31,6 +33,7 @@
         }
         &:nth-child(3) {
             background-color: var(--grey-300);
+            border-right: none;
             &::before {
                 background-color: var(--pink);
             }
@@ -104,8 +107,10 @@
 // Dark mode
 .dark {
     .navbar {
+        border: 1px solid var(--secondary-dark);
         &-item {
             color: var(--secondary-dark);
+            border-color: var(--secondary-dark);
             &::after {
                 background-color: var(--secondary-dark);
             }
