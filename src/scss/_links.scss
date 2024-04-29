@@ -18,7 +18,8 @@
     }
     &--project {
         text-transform: uppercase;
-        border: 1px solid;
+        // border: 1px solid;
+        box-shadow: inset 0px 0px 0px .1rem var(--secondary);
         border-radius: $unit*2;
         padding: $padding--xs $padding--s;
         display: flex;
@@ -95,6 +96,7 @@
     color: var(--secondary-dark);
 
     &--project {
+        box-shadow: inset 0px 0px 0px .1rem var(--secondary-dark);
         .link-text--hover {
             color: var(--main-dark);
         }

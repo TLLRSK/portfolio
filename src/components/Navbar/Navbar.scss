@@ -61,6 +61,14 @@
             padding: $padding--s $padding--s;
             overflow: hidden;
             transition: transform .3s cubic-bezier(.34,.79,.73,.92);
+
+            @include mq-480 {
+                justify-content: space-between;
+                padding: $padding--s $padding--m;
+            }
+            @include mq-1024 {
+                padding: $padding--m $padding--l;
+            }
         }
         &__title-container--active {
             z-index: 1;
@@ -70,7 +78,13 @@
             overflow: hidden;
             transform: translateY(100%);
         }
-        &__title--active {
+        &__char, &__char--active {
+            display: none;
+            @include mq-480 {
+                display: block;
+            }
+        }
+        &__title--active, &__char--active {
             color: var(--main);
         }
 
@@ -119,7 +133,7 @@
                 background-color: var(--pink-dark);
             }
         }
-        &__title--active {
+        &__title--active, &__char--active {
             color: var(--main-dark);
         }
     }

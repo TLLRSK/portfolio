@@ -63,7 +63,7 @@
         }
         .burger, .burger::before {
             width: $fs--m;
-            height: 1px;
+            height: .2rem;
             background-color: var(--secondary);
             @include mq-780v {
                 width: $fs--s;

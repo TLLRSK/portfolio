@@ -1,37 +1,39 @@
 h1, h2, h3, h4, h5, p, span, a, button {
-    font-family: "nunito", Arial, Helvetica, sans-serif;
     font-size: $fs--m;
     font-weight: 300;
 }
 
 .navbar {
-    .title, .title--active {
-        font-size: $fs--s;
+    .title, .title--active, .char, .char--active {
+        font-size: $fs--m;
     }
-    .title {
-        font-weight: 400;
+    .title, .char {
+        font-weight: 500;
     }
-    .title--active {
+    .title--active, .char--active {
         font-weight: 800;
     } 
     @include mq-480 {
-        .title {
-            font-weight: 300;
+        .title, .char {
+            font-weight: 400;
+        }
+        .title--active, .char--active {
+            font-weight: 600;
         }
     }
     @include mq-720 {
-        .title, .title--active {
-            font-size: $fs--m;
+        .title, .title--active, .char, .char--active {
+            font-size: $fs--l;
         }
     }
     @include mq-780v {
-        .title, .title--active {
+        .title, .title--active, .char, .char--active {
             font-size: $fs--xs;
         }
-        .title {
-            font-weight: 400;
+        .title, .char {
+            font-weight: 500;
         }
-        .title--active {
+        .title--active, .char--active {
             font-weight: 600;
         }
     }
@@ -39,54 +41,49 @@ h1, h2, h3, h4, h5, p, span, a, button {
 .section__header {
     .section-index, .section-name, .link-text {
         font-size: $fs--m;
-        font-weight: 400;
+        font-weight: 500;
     }
     @include mq-480 {
         .section-index, .section-name, .link-text {
-            font-weight: 300;
         }
     }
     @include mq-780v {
         .section-index, .section-name, .link-text {
             font-size: $fs--xs;
-            font-weight: 400;
+            font-weight: 500;
         }
     }
 }
 .home {
     .title {
-        font-size: $fs--l;
-        font-weight: 300;
+        font-size: $fs--xl;
+        font-weight: 600;
     }
     .timer, .subtitle {
-        font-size: $fs--s;
+        font-size: $fs--l;
         font-weight: 400;
-        text-transform: uppercase;
     }
     @include mq-360 {
         .title {
-            font-weight: 300;
+            font-weight: 600;
         }
         .timer, .subtitle {
-            font-weight: 300;
+            font-weight: 400;
         }
     }
     @include mq-720 {
         .title {
             text-align: center;
-            font-size: $fs--xl;
-            font-weight: 200;
+            font-size: $fs--xxl;
+            font-weight: 400;
         }
-    }
-    @include mq-1024 {
         .timer, .subtitle {
-            font-size: $fs--m;
+            font-size: $fs--xl;
         }
     }
     @include mq-780v {
         .title {
             font-size: $fs--m;
-            font-weight: 300;
         }
         .timer, .subtitle {
             font-size: $fs--s;
@@ -98,72 +95,52 @@ h1, h2, h3, h4, h5, p, span, a, button {
         text-transform: uppercase;
     }
     .char, .index {
-        font-size: $fs--xs;
+        font-size: $fs--s;
         font-weight: 600;
     }
     .list-title {
-        font-size: $fs--s;
-        font-weight: 400;
+        font-size: $fs--xs;
+        font-weight: 500;
     }
     .text {
         font-size: $fs--l;
-        font-weight: 300;
+        font-weight: 500;
     }
     @include mq-360 {
-        .list-title {
-            font-weight: 300;
-        }
         .text {
-            font-weight: 300;
+            font-weight: 400;
         }
         .char, .index {
             font-weight: 500;
         }
     }
-    @include mq-480 {
-        .text {
-            font-weight: 200;
-        }
-    }
-    @include mq-720 {
-        .char, .index {
-            font-size: $fs--s;
-            font-weight: 300;
-        }
-        .list-title {
-            font-size: $fs--m;
-        }
-    }
     @include mq-1024 {
         .list-title {
-            // font-size: $fs--s;
-            font-weight: 300;
         }
         .text {
             font-size: $fs--l;
-            font-weight: 200;
+            font-weight: 400;
         }
     }
     @include mq-360x780 {
         .char, .index {
             font-size: $fs--xs;
-            font-weight: 400;
+            font-weight: 500;
         }
     }
     @include mq-780v {
         .list-title {
             font-size: $fs--xs;
-            font-weight: 400;
+            font-weight: 500;
         }
         .text {
             font-size: $fs--s;
-            font-weight: 300;
         }
     }
 }
 .project-tab {
     .title, .title--hover {
-        font-weight: 300;
+        font-weight: 400;
     }
     .title {
         font-size: $fs--l;
@@ -171,142 +148,107 @@ h1, h2, h3, h4, h5, p, span, a, button {
     .title--hover {
         text-transform: uppercase;
         font-size: $fs--xl;
-        font-weight: 200;
     }
     .index, .date, .type {
         font-size: $fs--xs;
         font-weight: 500;
     }
     @include mq-480 {
-        .title {
-            font-weight: 200;
-        }
-        .index, .date, .type {
-            font-weight: 400;
-        }
+       
     }
     @include mq-360x780 {
         .index, .date, .type {
             font-size: $fs--xs;
-            font-weight: 400;
         }
     }
     @include mq-780v {
         .title {
             font-size: $fs--m;
-            font-weight: 300;
         }
         .title--hover {
             font-size: $fs--m;
-            font-weight: 300;
         }
     }
 }
 .single-project {
     .title {
         font-size: $fs--xl;
-        font-weight: 200;
+        font-weight: 400;
     }
     .list-title {
         text-transform: uppercase;
     }
     .description, .tech, .link-text, .link-text--hover {
         font-size: $fs--l;
-        font-weight: 300;
+        font-weight: 400;
     }
     .index, .type, .date, .list-title {
         font-size: $fs--xs;
-        font-weight: 600;
-    }
-    @include mq-480 {
-        .description, .tech, .link-text, .link-text--hover {
-            font-weight: 200;
-        }
-        .index, .type, .date, .list-title {
-            font-weight: 500;
-        }
+        font-weight: 500;
     }
     @include mq-1024 {
         .description, .tech {
             font-size: $fs--l;
-            font-weight: 200;
-        }
-        .index, .type, .date, .list-title {
-            font-size: $fs--s;
-            font-weight: 300;
         }
     }
     @include mq-780v {
         .title {
             font-size: $fs--m;
-            font-weight: 300;
         }
         .description, .tech, .link-text, .link-text--hover {
             font-size: $fs--s;
-            font-weight: 300;
         }
     }
 }
 .contact {
     .text {
-        font-size: $fs--s;
-        font-weight: 400;
-    }
-    @include mq-360 {
-        .text {
-            font-weight: 300;
-        }
+        font-size: $fs--xs;
+        font-weight: 500;
     }
     @include mq-780v {
         .text {
             font-size: $fs--xs;
-            font-weight: 400;
         }
     }
     .link--contact {
         .text, .link-span, .link-span--hover {
-            font-size: $fs--s;
+            font-size: $fs--xs;
             font-weight: 400;
         }
         .link-text {
             font-size: $fs--l;
-            font-weight: 300;
+            font-weight: 400;
         }
         .link-text--hover {
             font-size: $fs--xl;
-            font-weight: 200;
+            font-weight: 400;
         }
         .span--hover {
             font-weight: 600;
         }
         @include mq-360 {
             .text, .link-span, .link-span--hover {
-                font-weight: 300;
             }
             .link-text {
-                font-weight: 200;
             }
         }
         @include mq-780v {
             .text, .link-span, .link-span--hover {
                 font-size: $fs--xs;
-                font-weight: 400;
             }
             .link-text {
                 font-size: $fs--m;
-                font-weight: 300;
             }
             .link-text--hover {
                 font-size: $fs--m;
-                font-weight: 300;
             }
         }
     }
 }
 
 @font-face {
-    font-family: "nunito";
-    src: url("../../public/fonts/Nunito-VariableFont_wght.ttf") format('truetype');
+    font-family: "source sans 3";
+    src: url("../../public/fonts/SourceSans3-VariableFont_wght.ttf") format('truetype');
     font-style: normal;
     font-weight: light;
 }

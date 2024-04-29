@@ -24,7 +24,7 @@ export const projectsList = [
         title: "Pokedex",
         slug: "pokedex",
         date: "2024",
-        type: "web",
+        type: "app",
         description: "Find & filter any of the 151 original pokemons. Powered by PokeAPI.",
         techs: ["Html", "Css", "Js", "Typescript"],
         roles: ["Frontend Dev", "UX/UI Designer"],
@@ -45,7 +45,7 @@ export const projectsList = [
         slug: "robbertas",
         date: "2023",
         type: "web",
-        description: "Fake Balaclava e-Commerce built-up on Wordpress.",
+        description: "Fake Balaclava E-Commerce built-up on Wordpress.",
         techs: ["Html", "Sass", "Js", "Php", "Wordpress"],
         roles: ["Frontend Dev", "UX/UI Designer"],
         links: [
@@ -64,7 +64,7 @@ export const projectsList = [
         title: "Todoapp",
         slug: "todoapp",
         date: "2023",
-        type: "App",
+        type: "app",
         description: "Add, check & delete any task with this to-do-list app",
         techs: ["Html", "Sass", "Js"],
         roles: ["Frontend Dev", "UX/UI Designer"],
@@ -76,46 +76,6 @@ export const projectsList = [
             {
                 name: "Live",
                 url: "https://todoapp-pjgv.netlify.app/"
-            }
-        ]
-    },
-    {
-        index: "05",
-        title: "Quoteapp",
-        slug: "quoteapp",
-        date: "2023",
-        type: "app",
-        description: "Get inspired or not with this random famous quotes generator",
-        techs: ["Html", "Sass", "Js"],
-        roles: ["Frontend Dev", "UX/UI Designer"],
-        links: [
-            {
-                name: "Github",
-                url: "https://github.com/TLLRSK/QuoteApp"
-            },
-            {
-                name: "Live",
-                url: "https://quoteapp-pjgv.netlify.app/"
-            }
-        ]
-    },
-    {
-        index: "06",
-        title: "Aboutme",
-        slug: "aboutme",
-        date: "2022",
-        type: "web",
-        description: "One page project for a Jr Frontend Dev + Jr UX/UI Designer.",
-        techs: ["Html", "Css",  "Js"],
-        roles: ["Frontend Dev", "UX/UI Designer"],
-        links: [
-            {
-                name: "Github",
-                url: "https://github.com/TLLRSK/Project-Alpha--ID3"
-            },
-            {
-                name: "Live",
-                url: "https://aboutme-pjgv.netlify.app/"
             }
         ]
     }
@@ -177,9 +137,9 @@ export const helloLists = [
 ];
 
 export  const navLinks = [
-    {index: 0, path: "/hello", title: "Hello"},
-    {index: 1, path: "/work", title: "Work"},
-    {index: 2, path: "/contact", title: "Contact"}
+    {char: "a", path: "/hello", title: "Hello"},
+    {char: "b", path: "/work", title: "Work"},
+    {char: "c", path: "/contact", title: "Contact"}
 ]
 
 /* Components */
