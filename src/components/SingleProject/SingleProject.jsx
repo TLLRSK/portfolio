@@ -29,7 +29,7 @@ const SingleProject = ({project}) => {
 
                 <div className='single-project-description'>
 
-                    <p className='description'>{description}</p>
+                    <p className='text'>{description}</p>
 
                 </div>
 

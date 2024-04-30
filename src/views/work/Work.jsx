@@ -1,11 +1,11 @@
 import { HeaderSection, SingleProject, ProjectTab, BtnWorkCloseProject} from "../../../public";
 import { usePageNavigationContext } from "../../contexts/PageNavigationContext.jsx";
-import useWork from "../../hooks/useWork.jsx";
+import { useWorkTogglerContext } from "../../contexts/WorkTogglerContext.jsx";
 import './Work.scss';
 
 export default function Work() {
     const {sectionTransition} = usePageNavigationContext();
-    const {projects, selectedProject, onProject, selectProject, closeProject} = useWork();
+    const {projects, selectedProject, onProject, selectProject, closeProject} = useWorkTogglerContext();
 
     return (
         <section className={`work ${sectionTransition}`}>

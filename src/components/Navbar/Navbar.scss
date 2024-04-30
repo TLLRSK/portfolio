@@ -5,14 +5,14 @@
     display: flex;
     flex-direction: row;
     overflow: hidden;
-    border: 1px solid var(--secondary);
+    border: $border-solid;
     &-item {
         flex: 1;
         display: flex;
         text-transform: uppercase;
         position: relative;
         color: var(--secondary);
-        border-right: 1px solid var(--secondary);
+        border-right: $border-solid;
         overflow: hidden;
         transition: $trns---color, $trns---bg-color;
 
@@ -20,34 +20,29 @@
             background-color: var(--secondary);
         }
         &:nth-child(1) {
-            background-color: var(--grey-100);
             &::before {
                 background-color: var(--blue);
             }
         }
         &:nth-child(2) {
-            background-color: var(--grey-200);
             &::before {
                 background-color: var(--green);
             }
         }
         &:nth-child(3) {
-            background-color: var(--grey-300);
             border-right: none;
             &::before {
                 background-color: var(--pink);
             }
         }
-
         &::before, &::after {
             position: absolute;
             top: 100%;
             bottom: 0;
             width: 100%;
-            transition: top .3s cubic-bezier(.34,.79,.73,.92);
+            transition: top .3s $cubic-bezier;
             content: '';
         }
-        
         &__title-container, &__title-container--active {
             position: relative;
             flex: 1;
@@ -56,7 +51,7 @@
             justify-content: center;
             padding: $padding--s $padding--s;
             overflow: hidden;
-            transition: transform .3s cubic-bezier(.34,.79,.73,.92);
+            transition: transform .3s $cubic-bezier;
 
             @include mq-480 {
                 justify-content: space-between;
@@ -74,16 +69,15 @@
             overflow: hidden;
             transform: translateY(100%);
         }
-        &__char, &__char--active {
+        &__index, &__index--active {
             display: none;
             @include mq-480 {
                 display: block;
             }
         }
-        &__title--active, &__char--active {
+        &__title--active, &__index--active {
             color: var(--main);
         }
-
         /* Navbar item states */
         &:hover {
             &::before {
@@ -107,7 +101,7 @@
 // Dark mode
 .dark {
     .navbar {
-        border: 1px solid var(--secondary-dark);
+        border-color: $color-border--dark;
         &-item {
             color: var(--secondary-dark);
             border-color: var(--secondary-dark);
@@ -115,24 +109,21 @@
                 background-color: var(--secondary-dark);
             }
             &:nth-child(1) {
-                background-color: var(--grey-dark-100);
                 &::before {
                     background-color: var(--blue-dark);
                 }
             }
             &:nth-child(2) {
-                background-color: var(--grey-dark-200);
                 &::before {
                     background-color: var(--green-dark);
                 }
             }
             &:nth-child(3) {
-                background-color: var(--grey-dark-300);
                 &::before {
                     background-color: var(--pink-dark);
                 }
             }
-            &__title--active, &__char--active {
+            &__title--active, &__index--active {
                 color: var(--main-dark);
             }
         } 

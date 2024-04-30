@@ -5,19 +5,13 @@ import { usePageNavigationContext } from "../contexts/PageNavigationContext";
 
 const useNavbar = () => {
 
-    const {handleNavigation} = usePageNavigationContext();
+    const {handleNavigation, currentIndex, setCurrentIndex, currentPath, setCurrentPath} = usePageNavigationContext();
    
     // Nav links
     const links = navLinks;
 
     // Location
     let location = useLocation();
-
-    // Path
-    const [currentPath, setCurrentPath] = useState('');
-
-    // Index
-    const [currentIndex, setCurrentIndex] = useState(null);
 
     // Handling link click
     const navigateTo = (e, el) => {
@@ -29,7 +23,7 @@ const useNavbar = () => {
         if (currentPath !== path) {
             setCurrentIndex(index)
             // Calls handleNavigation from usePageNavigation
-            currentIndex > index 
+            currentIndex && currentIndex > index 
                 ? handleNavigation(e,path,'prev') 
                 : handleNavigation(e,path,'next');
         }

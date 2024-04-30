@@ -6,7 +6,7 @@
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
     padding: $padding--m;
-    border-bottom: 1px solid;
+    border-bottom: $border-solid;
     @include mq-1024 {
         padding: $padding--l;
     }
@@ -19,5 +19,11 @@
             text-align: right;
         }
     }
+}
 
+// Dark mode
+.dark {
+    .section__header {
+        border-color: $color-border--dark;
+    }
 }

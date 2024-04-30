@@ -4,36 +4,36 @@ h1, h2, h3, h4, h5, p, span, a, button {
 }
 
 .navbar {
-    .title, .title--active, .char, .char--active {
+    .title, .title--active, .index, .index--active {
         font-size: $fs--m;
     }
-    .title, .char {
+    .title, .index {
         font-weight: 500;
     }
-    .title--active, .char--active {
+    .title--active, .index--active {
         font-weight: 800;
     } 
     @include mq-480 {
-        .title, .char {
+        .title, .index {
             font-weight: 400;
         }
-        .title--active, .char--active {
+        .title--active, .index--active {
             font-weight: 600;
         }
     }
     @include mq-1024 {
-        .title, .title--active, .char, .char--active {
+        .title, .title--active, .index, .index--active {
             font-size: $fs--l;
         }
     }
     @include mq-780v {
-        .title, .title--active, .char, .char--active {
+        .title, .title--active, .index, .index--active {
             font-size: $fs--xs;
         }
-        .title, .char {
+        .title, .index {
             font-weight: 500;
         }
-        .title--active, .char--active {
+        .title--active, .index--active {
             font-weight: 600;
         }
     }
@@ -185,7 +185,7 @@ h1, h2, h3, h4, h5, p, span, a, button {
     .list-title {
         text-transform: uppercase;
     }
-    .description, .tech, .link-text, .link-text--hover {
+    .text, .link-text, .link-text--hover {
         font-size: $fs--l;
         font-weight: 400;
     }
@@ -194,7 +194,7 @@ h1, h2, h3, h4, h5, p, span, a, button {
         font-weight: 500;
     }
     @include mq-1024 {
-        .description, .tech {
+        .text {
             font-size: $fs--l;
         }
     }
@@ -202,7 +202,7 @@ h1, h2, h3, h4, h5, p, span, a, button {
         .title {
             font-size: $fs--m;
         }
-        .description, .tech, .link-text, .link-text--hover {
+        .text, .link-text, .link-text--hover {
             font-size: $fs--s;
         }
     }

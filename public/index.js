@@ -14,7 +14,7 @@ export const projectsList = [
                 url: "https://github.com/TLLRSK/BlancaAmoros"
             },
             {
-                name: "Live",
+                name: "Visit",
                 url: "https:/www.blancaamoros.com"
             }
         ]
@@ -34,7 +34,7 @@ export const projectsList = [
                 url: "https://github.com/TLLRSK/Pokedex-Js-Tsc"
             },
             {
-                name: "Live",
+                name: "Visit",
                 url: "https://pokedex-pjgil.netlify.app"
             }
         ]
@@ -54,7 +54,7 @@ export const projectsList = [
                 url: "https://github.com/TLLRSK/Robbertas"
             },
             {
-                name: "Live",
+                name: "Visit",
                 url: "https://pedrojgil.com/robbertas/"
             }
         ]
@@ -74,7 +74,7 @@ export const projectsList = [
                 url: "https://github.com/TLLRSK/TodoApp"
             },
             {
-                name: "Live",
+                name: "Visit",
                 url: "https://todoapp-pjgv.netlify.app/"
             }
         ]
@@ -137,9 +137,9 @@ export const helloLists = [
 ];
 
 export  const navLinks = [
-    {char: "1", path: "/hello", title: "Hello"},
-    {char: "2", path: "/work", title: "Work"},
-    {char: "3", path: "/contact", title: "Contact"}
+    {index: "1", path: "/hello", title: "Hello"},
+    {index: "2", path: "/work", title: "Work"},
+    {index: "3", path: "/contact", title: "Contact"}
 ]
 
 /* Components */

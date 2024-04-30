@@ -8,13 +8,13 @@ const HeaderSection = (props) => {
     let {sectionIndex, sectionName} = props;
 
     const home = {
-        index: -1,
+        index: "-1",
         path: '/'
     }
    
     return <header className="section__header">
 
-        <Link to={home.path} className={`link--to-home link section__header-item`} onClick={(e) => navigateTo(e,home)}>
+        <Link to={home.path} className={`link--to-home link section__header-item`} onClick={(e) => navigateTo(e, home)}>
             <span className='link-text'>PJ</span>
         </Link>
 

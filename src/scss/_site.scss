@@ -3,7 +3,6 @@
 html {
     font-size: 62.5%;
 }
-
 *, *::before, *::after {
     box-sizing: border-box;
 }
@@ -40,19 +39,16 @@ section, article, main {
     z-index: 1;
 }
 section {
-  border: 1px solid var(--secondary);
+  border: $border-solid;
 }
-
 ul {
   padding: 0;
 }
-
 li {
   list-style: none;
 }
-
 .dark {
   section {
-    border: 1px solid var(--secondary-dark);
+    border-color: $color-border--dark;
   }
 }

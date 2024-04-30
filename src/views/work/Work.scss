@@ -25,10 +25,10 @@
             text-align: center;
         }
     }
-    &__projects-grid, &__single-project {
-        transition: transform .3s cubic-bezier(.35,.99,.99,.99);
+    &__projects-grid {
+        transition: transform .6s $cubic-bezier;
         &.hidden {
-            transition: transform .3s cubic-bezier(.54,.81,.71,1);
+            transition: transform .6s $cubic-bezier;
         }
     }
 

@@ -63,7 +63,7 @@
                 padding-top: $padding--m;
                 padding-bottom: $padding--m;
                 gap: $gap--m;
-                border-bottom: 1px dashed var(--secondary);
+                border-bottom: $border-dashed;
 
                 &:nth-child(1) {
                     padding-top: 0;
@@ -75,14 +75,14 @@
     
                 @include mq-720 {
                     &:nth-child(1) {
-                        border-right: 1px dashed var(--secondary);
+                        border-right: $border-dashed;
                     }
                     &:nth-child(2) {
                         padding-top: 0;
                     }
                     &:nth-child(3) {
                         padding-bottom: 0;
-                        border-right: 1px dashed var(--secondary);
+                        border-right: $border-dashed;
                         border-bottom: none;
                     }
                     &:nth-child(2n) {
@@ -100,7 +100,7 @@
                 @include mq-360x780 {
                     padding-bottom: $padding--l;
                     &:nth-child(1), &:nth-child(3) {
-                        border-right: 1px dashed var(--secondary);
+                        border-right: $border-dashed;
                     }
                     &:nth-child(3), &:nth-child(4) {
                         padding-bottom: 0;
@@ -153,7 +153,7 @@
 
             &:nth-child(1) {
                 padding-bottom: $padding--m;
-                border-bottom: 1px dashed var(--secondary);
+                border-bottom: $border-dashed;
             }
             &:nth-child(2) {
                 padding-top: $padding--m;
@@ -174,7 +174,7 @@
                     padding-bottom: 0;
                 }
                 &:nth-child(1) {
-                    border-right: 1px dashed var(--secondary);
+                    border-right: $border-dashed;
                     border-bottom: none;
                 }
                 &:nth-child(2) {
@@ -188,14 +188,14 @@
             @include mq-360x780 {
                 &:nth-child(1) {
                     border-right: none;
-                    border-bottom: 1px dashed var(--secondary);
+                    border-bottom: $border-dashed;
                 }
             }
             @include mq-720x780 {
                 gap: $gap--l;
                 &:nth-child(1) {
                     padding-bottom: 0;
-                    border-right: 1px dashed var(--secondary);
+                    border-right: $border-dashed;
                     border-bottom: none;
                 }
                 &:nth-child(2) {
@@ -207,7 +207,7 @@
                 &:nth-child(1) {
                     padding-bottom: 0;
                     border-right: none;
-                    border-bottom: 1px dashed var(--secondary);
+                    border-bottom: $border-dashed;
                 }
                 &:nth-child(2) {
                     padding-top: $padding--l;
@@ -231,15 +231,18 @@
     }
 }
 // Dark mode
-.dark .hello {
-    &__page-2 {
-        background-color: var(--main-dark);
-    }
-    &__description-grid-item {
-        border-color: var(--secondary-dark);
-    }
-    &__list-box {
-        border-color: var(--secondary-dark);
-    }
+.dark {
+    .hello {
+        &__page-2 {
+            box-shadow: 0px -1px 0px 0px var(--secondary-dark);
+            background-color: var(--main-dark);
 
+            &.hidden {
+                box-shadow: inset 0px 1px 0px 0px var(--secondary-dark);
+            }
+        }
+        &__description-grid-item, &__list-box {
+            border-color: $color-border--dark;
+        }
+    }
 }

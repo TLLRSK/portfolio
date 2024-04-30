@@ -4,9 +4,11 @@ import { useLocation, useNavigate } from "react-router-dom";
 const usePageNavigation = () => {
     let location = useLocation();
     
+    const [currentPath, setCurrentPath] = useState('');
     const [toSection, setToSection] = useState(null);
     const [fromSection, setFromSection] = useState(null);
     const [sectionStatus, setSectionStatus] = useState(null);
+    const [currentIndex, setCurrentIndex] = useState(null);
 
     const navigate = useNavigate();
     
@@ -21,11 +23,9 @@ const usePageNavigation = () => {
         setTimeout(() => {
             setSectionStatus('inactive')
             navigate(path)
-
             toSection === 'next' 
                 ? setFromSection('prev') 
                 : setFromSection('next');
-
             setToSection('')
         },200)
     }
@@ -37,7 +37,16 @@ const usePageNavigation = () => {
         },200)
     },[location]);
 
-    return {toSection,  fromSection, sectionStatus, sectionTransition, setToSection, handleNavigation};
+    return {
+        currentPath,
+        setCurrentPath,
+        currentIndex,
+        setCurrentIndex,
+        toSection,  
+        fromSection, 
+        sectionTransition, 
+        handleNavigation
+    };
 }
 
 export default usePageNavigation;

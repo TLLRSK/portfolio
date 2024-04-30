@@ -73,7 +73,7 @@
         &-round-box {
             flex: 1;
             display: flex;
-            border: 1px dashed;
+            border: $border-dashed;
             border-radius: 12rem;
             position: relative;
             
@@ -144,4 +144,10 @@
             }
         }
     }
+}
+/* Dark mode */
+.dark {
+    .home__main-round-box {
+        border-color: $color-border--dark;
+    }   
 }

@@ -32,14 +32,14 @@
         flex-direction: column;
         justify-content: space-between;
         position: relative;
-        border-bottom: 1px dashed;
+        border-bottom: $border-dashed;
  
         @include mq-1024 {
             border-bottom: none;
-            border-right: 1px dashed;
+            border-right: $border-dashed;
         }
         @include mq-720x780 {
-            border-right: 1px dashed;
+            border-right: $border-dashed;
             border-bottom: none;
         }
 
@@ -133,5 +133,10 @@
         display: flex;
         justify-content: space-between;
         gap: $fs--m;
+    }
+}
+.dark {
+    .single-project__header {
+        border-color: $color-border--dark;
     }
 }
